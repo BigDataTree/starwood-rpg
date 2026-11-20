@@ -1,0 +1,97 @@
+{
+  "version": "v1.1.8",
+  "baseGame": "v1.1.6",
+  "replacesLive": "v1.1.7",
+  "characterSpriteFormat": "192x256 RGBA 3 columns x 4 rows of 64x64",
+  "directionRows": [
+    "down-front",
+    "left-profile",
+    "right-profile",
+    "up-back"
+  ],
+  "frameColumns": [
+    "left-step",
+    "idle",
+    "right-step"
+  ],
+  "approvedForIntegration": [
+    {
+      "id": "novice",
+      "number": 1,
+      "label": "主角",
+      "asset": "assets/walk64-v118/01_novice_64x64_4dir_3walk.png"
+    },
+    {
+      "id": "knight",
+      "number": 2,
+      "label": "騎士",
+      "asset": "assets/walk64-v118/02_knight_64x64_4dir_3walk.png"
+    },
+    {
+      "id": "mage",
+      "number": 3,
+      "label": "法師",
+      "asset": "assets/walk64-v118/03_mage_64x64_4dir_3walk.png"
+    },
+    {
+      "id": "ranger",
+      "number": 4,
+      "label": "遊俠",
+      "asset": "assets/walk64-v118/04_ranger_64x64_4dir_3walk.png"
+    },
+    {
+      "id": "elder",
+      "number": 5,
+      "label": "村長",
+      "asset": "assets/walk64-v118/05_elder_64x64_4dir_3walk.png"
+    },
+    {
+      "id": "merchant",
+      "number": 6,
+      "label": "商人",
+      "asset": "assets/walk64-v118/06_merchant_64x64_4dir_3walk.png"
+    },
+    {
+      "id": "smith",
+      "number": 7,
+      "label": "鐵匠",
+      "asset": "assets/walk64-v118/07_smith_64x64_4dir_3walk.png"
+    },
+    {
+      "id": "trainer",
+      "number": 8,
+      "label": "訓練師",
+      "asset": "assets/walk64-v118/08_trainer_64x64_4dir_3walk.png"
+    },
+    {
+      "id": "healer",
+      "number": 9,
+      "label": "治療師",
+      "asset": "assets/walk64-v118/09_healer_64x64_4dir_3walk.png"
+    },
+    {
+      "id": "guard",
+      "number": 10,
+      "label": "守衛",
+      "asset": "assets/walk64-v118/10_guard_64x64_4dir_3walk.png"
+    },
+    {
+      "id": "librarian",
+      "number": 11,
+      "label": "圖書管理員",
+      "asset": "assets/walk64-v118/11_librarian_64x64_4dir_3walk.png"
+    }
+  ],
+  "unchangedActors": [
+    "12_child",
+    "13_guide",
+    "14_scout",
+    "15_campmerchant",
+    "16_camphealer",
+    "17_traveler",
+    "18_duskhead",
+    "19_wood",
+    "20_duskmerchant"
+  ],
+  "note": "The 11 integrated artworks are production candidates, pending user aesthetic review. Actors 12–20 are unchanged from v1.1.7; they are NOT claimed to have new artwork."
+}
