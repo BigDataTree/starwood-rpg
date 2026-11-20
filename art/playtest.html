@@ -1,0 +1,37 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>星森傳說｜職業角色移動測試</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#111e21;color:#eaf9e9;font-family:system-ui,"Noto Sans TC",sans-serif}main{max-width:850px;margin:auto;padding:20px 12px 45px}h1{font-size:clamp(24px,5vw,36px);margin:8px 0}.sub{font-size:14px;line-height:1.65;color:#b7d1c2}.warning{padding:10px 13px;border-radius:10px;background:#203b36;border:1px solid #557969;font-size:13px}.roles{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 12px}button{font:inherit;cursor:pointer;background:#25493a;border:1px solid #618675;color:#eef9ec;border-radius:10px;padding:11px 17px;touch-action:manipulation}button.active{background:#a3e0ae;color:#163528;font-weight:bold}#stage{border:3px solid #688c71;border-radius:15px;background:#284736;display:block;width:100%;aspect-ratio:16/10;image-rendering:pixelated;touch-action:none}.info{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:10px 0;font-size:12px;color:#d5e6d8}.pad{display:grid;grid-template-columns:repeat(3,56px);justify-content:center;gap:6px;margin:10px auto}.pad button{padding:7px 0;font-size:22px;user-select:none}.pad .blank{visibility:hidden}.footer{font-size:13px;color:#aec5b7;line-height:1.7}.footer a{color:#bde9c7}
+</style></head><body><main><h1>🌲 星森傳說｜角色移動測試</h1>
+<p class="sub">這是獨立的操作測試場，不是正式版遊戲。角色使用新製作的候選 SVG 造型，場景是簡化測試地圖。</p>
+<div class="warning">✅ 可以切換角色、行走與改變朝向。⚠️ 新角色目前是靜態圖搭配移動效果，尚未完成真正的逐幀步行圖集。</div>
+<div class="roles"><button class="active" data-role="knight">🛡️ 騎士</button><button data-role="novice">✨ 新手</button><button data-role="ranger">🏹 遊俠</button><button id="reset">回到起點</button></div>
+<canvas id="stage" width="640" height="400" aria-label="角色移動測試場"></canvas>
+<div class="info"><span id="who">目前角色：銀甲騎士</span><span id="coords">位置：320，200</span></div>
+<div class="pad">
+<span class="blank"></span><button data-dir="up" aria-label="向上">↑</button><span class="blank"></span>
+<button data-dir="left" aria-label="向左">←</button><button data-dir="down" aria-label="向下">↓</button><button data-dir="right" aria-label="向右">→</button></div>
+<p class="footer">電腦：方向鍵或 WASD 移動；手機：按住畫面下方的箭頭。角色目前以縮放、踏步彈跳和左右翻轉示意移動，不能當成已完成四方向動畫。<a href="class-comparison.html">查看原版與候選圖對照</a></p>
+</main><script>
+const root='https://raw.githubusercontent.com/BigDataTree/starwood-rpg/automation/npc-sprite-audit-20261120/art/candidates/';
+const roles={knight:{name:'銀甲騎士',file:'knight.svg'},novice:{name:'星光新手',file:'novice.svg'},ranger:{name:'森影遊俠',file:'ranger.svg'}};
+const canvas=document.getElementById('stage'),ctx=canvas.getContext('2d');ctx.imageSmoothingEnabled=false;
+const imgs={};for(const [key,v]of Object.entries(roles)){const im=new Image();im.src=root+v.file;imgs[key]=im}
+let role='knight',x=320,y=200,facing='down',walking=0,last=performance.now();const keys=new Set();
+function reset(){x=320;y=200;facing='down'}document.getElementById('reset').addEventListener('click',reset);
+document.querySelectorAll('[data-role]').forEach(b=>b.addEventListener('click',()=>{role=b.dataset.role;document.querySelectorAll('[data-role]').forEach(t=>t.classList.toggle('active',t===b));document.getElementById('who').textContent='目前角色：'+roles[role].name}));
+const dirs={up:['arrowup','w'],down:['arrowdown','s'],left:['arrowleft','a'],right:['arrowright','d']};
+window.addEventListener('keydown',e=>{const k=e.key.toLowerCase();if(Object.values(dirs).flat().includes(k)){e.preventDefault();keys.add(k)}});
+window.addEventListener('keyup',e=>keys.delete(e.key.toLowerCase()));window.addEventListener('blur',()=>keys.clear());
+document.querySelectorAll('[data-dir]').forEach(b=>{const d=b.dataset.dir;const down=e=>{e.preventDefault();keys.add(d)};const up=e=>{e.preventDefault();keys.delete(d)};b.addEventListener('pointerdown',down);b.addEventListener('pointerup',up);b.addEventListener('pointerleave',up);b.addEventListener('pointercancel',up)});
+function ground(){ctx.fillStyle='#385d44';ctx.fillRect(0,0,640,400);for(let j=0;j<13;j++)for(let i=0;i<20;i++){ctx.fillStyle=(i+j)%3===0?'#3c6549':'#41694c';ctx.fillRect(i*32+2,j*32+2,28,28)}
+ctx.fillStyle='#a89870';ctx.fillRect(0,164,640,78);ctx.fillStyle='#bfad80';for(let i=0;i<20;i++)ctx.fillRect(i*32,166+(i%3)*3,26,68);
+for(let i=0;i<11;i++){const px=(i*173+37)%620+8,py=(i*97+25)%360+18;if(Math.abs(px-x)<48&&Math.abs(py-y)<48)continue;ctx.fillStyle='#173e31';ctx.fillRect(px-13,py-3,27,20);ctx.fillStyle='#286b46';ctx.fillRect(px-18,py-28,36,33);ctx.fillStyle='#36935f';ctx.fillRect(px-10,py-34,24,12)}
+ctx.fillStyle='#ddd69c';ctx.font='bold 16px system-ui';ctx.fillText('STARWOOD • 角色美術測試場',14,26)}
+function frame(now){const dt=Math.min((now-last)/1000,.06);last=now;let dx=0,dy=0;for(const [dir,aliases] of Object.entries(dirs)){if(aliases.some(k=>keys.has(k))||keys.has(dir)){if(dir==='left')dx--;if(dir==='right')dx++;if(dir==='up')dy--;if(dir==='down')dy++;facing=dir}}
+const moving=dx||dy;if(moving){const len=Math.hypot(dx,dy);x=Math.max(20,Math.min(620,x+dx/len*125*dt));y=Math.max(36,Math.min(385,y+dy/len*125*dt));walking+=dt*11}
+ground();ctx.fillStyle='#122d29aa';ctx.beginPath();ctx.ellipse(x,y+13,20,8,0,0,Math.PI*2);ctx.fill();
+const img=imgs[role];if(img.complete&&img.naturalWidth){const bob=moving?Math.abs(Math.sin(walking))*4:0;ctx.save();ctx.translate(x,y-bob);ctx.scale(facing==='left'?-1:1,1);ctx.drawImage(img,-31,-53,62,62);ctx.restore()}
+ctx.fillStyle='#fff2d8';ctx.font='13px system-ui';ctx.textAlign='center';ctx.fillText(roles[role].name,x,y-59);ctx.textAlign='start';document.getElementById('coords').textContent='位置：'+Math.round(x)+'，'+Math.round(y);requestAnimationFrame(frame)}
+requestAnimationFrame(frame);
+</script></body></html>
