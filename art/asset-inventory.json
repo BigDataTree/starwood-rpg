@@ -1,0 +1,554 @@
+{
+  "schemaVersion": 1,
+  "sourceBranch": "automation/npc-sprite-audit-20261120",
+  "kind": "asset-inventory-not-visual-QA",
+  "counts": {
+    "actorPortraits": 73,
+    "boards": 5,
+    "commonFiles": 14
+  },
+  "actors": [
+    {
+      "id": "aide_sena",
+      "file": "assets/portraits/aide_sena.webp",
+      "sha": "a9018d45a565b6c985a704014d3173470be52ce0",
+      "bytes": 7242
+    },
+    {
+      "id": "ambient_camp_0",
+      "file": "assets/portraits/ambient_camp_0.webp",
+      "sha": "6ea188681a3711d262c02a824264dbca55e0b0d8",
+      "bytes": 1370
+    },
+    {
+      "id": "ambient_camp_1",
+      "file": "assets/portraits/ambient_camp_1.webp",
+      "sha": "2df520381dcf1bd1c0b3974b9769c996288204db",
+      "bytes": 1390
+    },
+    {
+      "id": "ambient_camp_2",
+      "file": "assets/portraits/ambient_camp_2.webp",
+      "sha": "79218424943473439bc386cd10953ebf69ea1fb5",
+      "bytes": 1482
+    },
+    {
+      "id": "ambient_camp_3",
+      "file": "assets/portraits/ambient_camp_3.webp",
+      "sha": "bfcdddd9a9c0e8d04a77aca917ea9442e0a5786a",
+      "bytes": 1530
+    },
+    {
+      "id": "ambient_dusk_0",
+      "file": "assets/portraits/ambient_dusk_0.webp",
+      "sha": "8b5756cb151c795df140d24ac344321d5195eba2",
+      "bytes": 1360
+    },
+    {
+      "id": "ambient_dusk_1",
+      "file": "assets/portraits/ambient_dusk_1.webp",
+      "sha": "3c0fe1944465081762bc62bd267c51dde54ae7aa",
+      "bytes": 1336
+    },
+    {
+      "id": "ambient_dusk_2",
+      "file": "assets/portraits/ambient_dusk_2.webp",
+      "sha": "7389329cdf770790e50ddc9eeac626b3205b3b39",
+      "bytes": 1358
+    },
+    {
+      "id": "ambient_dusk_3",
+      "file": "assets/portraits/ambient_dusk_3.webp",
+      "sha": "90d2588073191fa5572e6abd6a025ad3cb23166f",
+      "bytes": 1508
+    },
+    {
+      "id": "ambient_dusk_4",
+      "file": "assets/portraits/ambient_dusk_4.webp",
+      "sha": "934fda64f0f08f926ec1b2a90c32833d2dee6f04",
+      "bytes": 1498
+    },
+    {
+      "id": "ambient_forgecamp_0",
+      "file": "assets/portraits/ambient_forgecamp_0.webp",
+      "sha": "ed6ac4f5d8cedc5381d60019fa9e7390b2027ff0",
+      "bytes": 1434
+    },
+    {
+      "id": "ambient_forgecamp_1",
+      "file": "assets/portraits/ambient_forgecamp_1.webp",
+      "sha": "972394a508f018f53238521a4f85ef6968c1ad9e",
+      "bytes": 1588
+    },
+    {
+      "id": "ambient_forgecamp_2",
+      "file": "assets/portraits/ambient_forgecamp_2.webp",
+      "sha": "16d582fd13ddb60f252595eb5af71664c257cc2f",
+      "bytes": 1514
+    },
+    {
+      "id": "ambient_forgecamp_3",
+      "file": "assets/portraits/ambient_forgecamp_3.webp",
+      "sha": "dc398edab39069b9e23c23ffef8c8cc3896d61ea",
+      "bytes": 1436
+    },
+    {
+      "id": "ambient_moon_0",
+      "file": "assets/portraits/ambient_moon_0.webp",
+      "sha": "195ed8eb224f45362efdeefe8be0debf8ce25d75",
+      "bytes": 1442
+    },
+    {
+      "id": "ambient_moon_1",
+      "file": "assets/portraits/ambient_moon_1.webp",
+      "sha": "766a22b707f6a5b49abd2ef74c0263c569b4e136",
+      "bytes": 1440
+    },
+    {
+      "id": "ambient_moon_2",
+      "file": "assets/portraits/ambient_moon_2.webp",
+      "sha": "3e7e36d30a7e10f50453b395c10ba6c1f9c12d7d",
+      "bytes": 1422
+    },
+    {
+      "id": "ambient_moon_3",
+      "file": "assets/portraits/ambient_moon_3.webp",
+      "sha": "172d038415be80e6f65898c7cf5abf535b57ca7d",
+      "bytes": 1318
+    },
+    {
+      "id": "ambient_town_0",
+      "file": "assets/portraits/ambient_town_0.webp",
+      "sha": "81a2615dc8487e7eeab9dd43d8f9ddea829864c7",
+      "bytes": 28656
+    },
+    {
+      "id": "ambient_town_1",
+      "file": "assets/portraits/ambient_town_1.webp",
+      "sha": "d0118dc797ecf85cb7eea3bd8ca123981219f435",
+      "bytes": 26084
+    },
+    {
+      "id": "ambient_town_10",
+      "file": "assets/portraits/ambient_town_10.webp",
+      "sha": "a2e452a9d5c72c76b40d5a78aa2e3e31551ad376",
+      "bytes": 1490
+    },
+    {
+      "id": "ambient_town_11",
+      "file": "assets/portraits/ambient_town_11.webp",
+      "sha": "f534e0a0e1ab267d26f3b7d9d65e6981f5792d8c",
+      "bytes": 1448
+    },
+    {
+      "id": "ambient_town_12",
+      "file": "assets/portraits/ambient_town_12.webp",
+      "sha": "c481dc3602f04d84ac2ee92273b21cda44eb602b",
+      "bytes": 1416
+    },
+    {
+      "id": "ambient_town_13",
+      "file": "assets/portraits/ambient_town_13.webp",
+      "sha": "ca5e832288866c8a40323f709fd8a5d25e1f8cf3",
+      "bytes": 1502
+    },
+    {
+      "id": "ambient_town_2",
+      "file": "assets/portraits/ambient_town_2.webp",
+      "sha": "f71861438f7b35bc3e64670f65b6541436a0408a",
+      "bytes": 28760
+    },
+    {
+      "id": "ambient_town_3",
+      "file": "assets/portraits/ambient_town_3.webp",
+      "sha": "530de01cdb5f6f428ff99d11f64ba0d94dba17b5",
+      "bytes": 28764
+    },
+    {
+      "id": "ambient_town_4",
+      "file": "assets/portraits/ambient_town_4.webp",
+      "sha": "f5a39edb4e855540d849f5d133a1efe56ca9f651",
+      "bytes": 27898
+    },
+    {
+      "id": "ambient_town_5",
+      "file": "assets/portraits/ambient_town_5.webp",
+      "sha": "ea9bc0bd827165564fe3a44f3b42c586d7c2c67e",
+      "bytes": 27204
+    },
+    {
+      "id": "ambient_town_6",
+      "file": "assets/portraits/ambient_town_6.webp",
+      "sha": "421d0914889071d432bc961a0332a55a331175cc",
+      "bytes": 30012
+    },
+    {
+      "id": "ambient_town_7",
+      "file": "assets/portraits/ambient_town_7.webp",
+      "sha": "530eb63b92261428c0ed3bab9e3c71aebc00b290",
+      "bytes": 26874
+    },
+    {
+      "id": "ambient_town_8",
+      "file": "assets/portraits/ambient_town_8.webp",
+      "sha": "645d2b87800043ee62cf06bb5f95301c2f981e49",
+      "bytes": 1378
+    },
+    {
+      "id": "ambient_town_9",
+      "file": "assets/portraits/ambient_town_9.webp",
+      "sha": "51ed8145777c89f205ef643a554d9e3b60d25f8c",
+      "bytes": 1510
+    },
+    {
+      "id": "apprentice_tio",
+      "file": "assets/portraits/apprentice_tio.webp",
+      "sha": "ea6f6f377f7f961076bf684daffdd82bc5f25329",
+      "bytes": 6844
+    },
+    {
+      "id": "archivist_nora",
+      "file": "assets/portraits/archivist_nora.webp",
+      "sha": "22b9c3ba87286c0bd04ade6f22f94dbc9fbf0839",
+      "bytes": 6100
+    },
+    {
+      "id": "artificer",
+      "file": "assets/portraits/artificer.webp",
+      "sha": "14a85436a90c03b9870264babe58b17f5931d9b3",
+      "bytes": 6162
+    },
+    {
+      "id": "astronomer_vega",
+      "file": "assets/portraits/astronomer_vega.webp",
+      "sha": "66a6787725992445f660444b7fe36f1df075c177",
+      "bytes": 6844
+    },
+    {
+      "id": "baker_lumi",
+      "file": "assets/portraits/baker_lumi.webp",
+      "sha": "63b7f148e30ee613ff49a3fccce67c9bf05f14cc",
+      "bytes": 28502
+    },
+    {
+      "id": "campcook_odo",
+      "file": "assets/portraits/campcook_odo.webp",
+      "sha": "965f83ee071109f098e1737d3966283cd9864507",
+      "bytes": 6990
+    },
+    {
+      "id": "camphealer",
+      "file": "assets/portraits/camphealer.webp",
+      "sha": "691d9e4a919690a6b9a2d54dd3e4f416c365454f",
+      "bytes": 7576
+    },
+    {
+      "id": "campmerchant",
+      "file": "assets/portraits/campmerchant.webp",
+      "sha": "c217a5d2d7631924cbe3c702f6bdd6def751f780",
+      "bytes": 30590
+    },
+    {
+      "id": "cartographer",
+      "file": "assets/portraits/cartographer.webp",
+      "sha": "5c743e8e0a28d34a551487cf3e300c2d30cc5012",
+      "bytes": 30434
+    },
+    {
+      "id": "child",
+      "file": "assets/portraits/child.webp",
+      "sha": "3fd60d54642619d2a72ead8c8176acf89341634d",
+      "bytes": 29616
+    },
+    {
+      "id": "cook_bram",
+      "file": "assets/portraits/cook_bram.webp",
+      "sha": "5c614f79b3cf71e508707712cc6be35563ac7be9",
+      "bytes": 7198
+    },
+    {
+      "id": "duskhead",
+      "file": "assets/portraits/duskhead.webp",
+      "sha": "7a9382a9aec6645ae60660daa5fb6802d6ed70c3",
+      "bytes": 7128
+    },
+    {
+      "id": "duskhealer",
+      "file": "assets/portraits/duskhealer.webp",
+      "sha": "300798bbdf3f65ecec2137e01b774fa56872d823",
+      "bytes": 6962
+    },
+    {
+      "id": "duskmerchant",
+      "file": "assets/portraits/duskmerchant.webp",
+      "sha": "d40ef4706701e5c7352f389adac6e16d33aad603",
+      "bytes": 6892
+    },
+    {
+      "id": "elder",
+      "file": "assets/portraits/elder.webp",
+      "sha": "fbeb8d6a1f3676f6abe2e3503302508048bbc49f",
+      "bytes": 28752
+    },
+    {
+      "id": "florist_nia",
+      "file": "assets/portraits/florist_nia.webp",
+      "sha": "c33d893bd9439b58f52157d448047749f61af7be",
+      "bytes": 32318
+    },
+    {
+      "id": "forgeguard",
+      "file": "assets/portraits/forgeguard.webp",
+      "sha": "456d452711f94abb99cd1e8d7e325c43403908de",
+      "bytes": 5960
+    },
+    {
+      "id": "forgehealer",
+      "file": "assets/portraits/forgehealer.webp",
+      "sha": "589b113b7861f62675aad7468014ebb2050ddd1f",
+      "bytes": 7008
+    },
+    {
+      "id": "forgemerchant",
+      "file": "assets/portraits/forgemerchant.webp",
+      "sha": "36e10eec5986e07da3dd14dec7042df12ea160db",
+      "bytes": 6654
+    },
+    {
+      "id": "guard",
+      "file": "assets/portraits/guard.webp",
+      "sha": "f40840c8e4738aa9a452c1670b48ab73d0e2cecc",
+      "bytes": 27908
+    },
+    {
+      "id": "guest_roan",
+      "file": "assets/portraits/guest_roan.webp",
+      "sha": "f583b1080522b6585034cdb222e415d775254a50",
+      "bytes": 6452
+    },
+    {
+      "id": "guide",
+      "file": "assets/portraits/guide.webp",
+      "sha": "1599f25acc9efbcb7f11ae8d8a00cda5f90e7724",
+      "bytes": 31134
+    },
+    {
+      "id": "healer",
+      "file": "assets/portraits/healer.webp",
+      "sha": "b21e211479564a88ff08582086e164ccb65b5260",
+      "bytes": 26090
+    },
+    {
+      "id": "herbalist",
+      "file": "assets/portraits/herbalist.webp",
+      "sha": "7f3e3c0c33ab1e9b73349213d4b18129ac5042ec",
+      "bytes": 30166
+    },
+    {
+      "id": "housekeeper_mara",
+      "file": "assets/portraits/housekeeper_mara.webp",
+      "sha": "f0cd566a038c1294ffc35215b99a92314f112a49",
+      "bytes": 21324
+    },
+    {
+      "id": "innkeeper_doran",
+      "file": "assets/portraits/innkeeper_doran.webp",
+      "sha": "6f2f2766d50c37e2ad88cfb8e6934a67d6a59b11",
+      "bytes": 27506
+    },
+    {
+      "id": "librarian",
+      "file": "assets/portraits/librarian.webp",
+      "sha": "601c007d64518a8a46736631814837f30f7913fc",
+      "bytes": 27996
+    },
+    {
+      "id": "merchant",
+      "file": "assets/portraits/merchant.webp",
+      "sha": "c311564c470f98f2763ee6f87b25f614577d03e1",
+      "bytes": 28376
+    },
+    {
+      "id": "moonhealer",
+      "file": "assets/portraits/moonhealer.webp",
+      "sha": "40c8064dfc055b23490e90e194d4b611f9d81370",
+      "bytes": 6728
+    },
+    {
+      "id": "moonmerchant",
+      "file": "assets/portraits/moonmerchant.webp",
+      "sha": "20f96203a63337654a03156a8d727191b752d2d9",
+      "bytes": 7554
+    },
+    {
+      "id": "quartermaster_bran",
+      "file": "assets/portraits/quartermaster_bran.webp",
+      "sha": "04f19a445aa5a57ff666eb7e5c294572b122498b",
+      "bytes": 5712
+    },
+    {
+      "id": "researcher_sol",
+      "file": "assets/portraits/researcher_sol.webp",
+      "sha": "aba4b371b39463963f74a7a11c79f76f82c80979",
+      "bytes": 29668
+    },
+    {
+      "id": "scout",
+      "file": "assets/portraits/scout.webp",
+      "sha": "c9f06f678dfd032e9e10a797d92c1c6eb0883da1",
+      "bytes": 29910
+    },
+    {
+      "id": "scribe_luna",
+      "file": "assets/portraits/scribe_luna.webp",
+      "sha": "db156cc15f5869af727bca4d149ef53672ccca45",
+      "bytes": 7016
+    },
+    {
+      "id": "secretary_elin",
+      "file": "assets/portraits/secretary_elin.webp",
+      "sha": "204b9d28b61b04acb4f05a38f952ce471eb9fc45",
+      "bytes": 28738
+    },
+    {
+      "id": "seer",
+      "file": "assets/portraits/seer.webp",
+      "sha": "fd947bb467ec0b055e41e2f445b566cbf696e19b",
+      "bytes": 7232
+    },
+    {
+      "id": "smith",
+      "file": "assets/portraits/smith.webp",
+      "sha": "97ebae55898f92569f726b46cae3c92e5f353cbd",
+      "bytes": 27216
+    },
+    {
+      "id": "trainer",
+      "file": "assets/portraits/trainer.webp",
+      "sha": "ea27ff03d539f9c4cca2ed39a7aeffe7b9f1b6c1",
+      "bytes": 29480
+    },
+    {
+      "id": "traveler",
+      "file": "assets/portraits/traveler.webp",
+      "sha": "48e8c2eb011cb9d0b7b2452b6420b4509340e6d3",
+      "bytes": 28526
+    },
+    {
+      "id": "weaver_mira",
+      "file": "assets/portraits/weaver_mira.webp",
+      "sha": "57de20b36ec97424b1a8581909a982264a3bdc3d",
+      "bytes": 7140
+    },
+    {
+      "id": "wood",
+      "file": "assets/portraits/wood.webp",
+      "sha": "004802c25a719f82fb08bd84e3617935d3d668e3",
+      "bytes": 32132
+    }
+  ],
+  "boards": [
+    {
+      "id": "board",
+      "file": "assets/portraits/board.webp",
+      "sha": "66ebec551bb1dc61f8fc12db3830f20560f2005f",
+      "bytes": 786
+    },
+    {
+      "id": "campboard",
+      "file": "assets/portraits/campboard.webp",
+      "sha": "8fe3c1c9b80eb3a4066ad0c9e19ce7a014588db7",
+      "bytes": 842
+    },
+    {
+      "id": "duskboard",
+      "file": "assets/portraits/duskboard.webp",
+      "sha": "7242016be5c3f0353f20d8c35fb6014e4779bc97",
+      "bytes": 840
+    },
+    {
+      "id": "forgeboard",
+      "file": "assets/portraits/forgeboard.webp",
+      "sha": "bc9904fa5b1bbe9f3a44edac3d36d28f7113df89",
+      "bytes": 832
+    },
+    {
+      "id": "moonboard",
+      "file": "assets/portraits/moonboard.webp",
+      "sha": "8ed2c85635ddb8e24f120364cd34a4ecd329ebc4",
+      "bytes": 842
+    }
+  ],
+  "common": [
+    {
+      "file": "assets/common/actors.webp",
+      "sha": "b36efed5c3cb51c35c952c4836b303a6f1dc286c",
+      "bytes": 310926
+    },
+    {
+      "file": "assets/common/avatar_knight.webp",
+      "sha": "be989b4e84dea69a5e46ed28af479091957b9b5f",
+      "bytes": 5236
+    },
+    {
+      "file": "assets/common/avatar_mage.webp",
+      "sha": "52871294e8a1fa3240c46bff327d802aa2c8472a",
+      "bytes": 5092
+    },
+    {
+      "file": "assets/common/avatar_novice.webp",
+      "sha": "be989b4e84dea69a5e46ed28af479091957b9b5f",
+      "bytes": 5236
+    },
+    {
+      "file": "assets/common/avatar_ranger.webp",
+      "sha": "be989b4e84dea69a5e46ed28af479091957b9b5f",
+      "bytes": 5236
+    },
+    {
+      "file": "assets/common/boss.webp",
+      "sha": "218c185052d9eb416d3f86b478e17b02275f8c33",
+      "bytes": 9520
+    },
+    {
+      "file": "assets/common/building_amber.webp",
+      "sha": "f6fd9ab1d28a1a09107b4f0d40891558d4cc5a03",
+      "bytes": 9848
+    },
+    {
+      "file": "assets/common/building_blue.webp",
+      "sha": "8ff91896bf850e20046387b6250d19c058f4288d",
+      "bytes": 9982
+    },
+    {
+      "file": "assets/common/building_green.webp",
+      "sha": "a6d5c7bbf50b40d200f70262bf75881682694f3a",
+      "bytes": 10008
+    },
+    {
+      "file": "assets/common/fountain.webp",
+      "sha": "dabb837f8db1d37fc66ed02f58f0878033575985",
+      "bytes": 6828
+    },
+    {
+      "file": "assets/common/heroPortrait.webp",
+      "sha": "bb16667e148dfe106a9ca86d418c01a48bd09011",
+      "bytes": 27958
+    },
+    {
+      "file": "assets/common/monsters.webp",
+      "sha": "23aad5dc0964449bfe84d6dbd171dbbaef73ee39",
+      "bytes": 16090
+    },
+    {
+      "file": "assets/common/objects.webp",
+      "sha": "227ce9292ead3a83707bd45f985050ad2ec7827a",
+      "bytes": 1316
+    },
+    {
+      "file": "assets/common/tiles.webp",
+      "sha": "316d24b216f721e1a4461ce3742ae3fdfdc8f0bc",
+      "bytes": 2024
+    }
+  ]
+}
