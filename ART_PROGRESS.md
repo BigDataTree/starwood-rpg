@@ -45,3 +45,10 @@
 - 主線 `index.html` Git blob SHA 仍為 `daa21a4666b369ff8f07fb3e5fedde550aa057e4`，與原盤點所記錄者相同。
 - 嘗試以 GitHub fetch_file 讀取完整 `index.html` 與 1–100 行，均回傳空字串；GitHub 程式碼搜尋 `V6_ACTOR_MAP` 亦無結果。因此本輪**無法可靠擷取 atlas 定義或逐角色檢查**，不得推定方向、幀數或尺寸正確，A03 保持未完成。
 - 下一輪：取得支援大型單檔的原始碼存取方式（例如分塊 Git blob、可讀的原始碼副本或 checkout），先抽取 `V6_ACTOR_MAP`、方向與 sprite 尺寸規則，再建立逐角色 manifest。不得在無法驗證時更改素材。
+
+## 2026-11-20 GitHub Actions 靜態檢查機制
+
+- 已新增 `scripts/audit-game.mjs`（分支提交 `c5449bc`）：唯讀檢查 HTML 存在、必要美術檔、外部 WebP 檔頭並輸出 Actions summary。靜態檢查通過不代表視覺 QA 完成。
+- 已在預設分支 `main` 新增 `.github/workflows/starwood-static-audit.yml`（提交 `46e6600`），每五分鐘排程（GitHub 可能延遲），檢出本開發分支執行檢查；權限 `contents: read`、不自動提交、不部署。
+- 兩檔已重新讀取核對；GitHub workflow runs 端點在現有連接器不可讀，尚未取得首次執行成功紀錄。請至 Actions 頁確認；如有警告與錯誤依實際日誌排除。
+- 這是 GitHub 靜態監測，**不是**每五分鐘運行 ChatGPT 自主開發；原 Chat 排程仍為每小時一次。A03 視覺與圖集檢驗仍未完成。
