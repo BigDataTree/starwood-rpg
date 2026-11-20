@@ -67,3 +67,10 @@
 - 三個玩家頭像（knight、novice、ranger）同 SHA，頁面可直接作為重複素材的視覺覆核介面；不可擅自改成其他既有職業頭像。
 - 已刪除開發分支不再需要的 `scripts/audit-game.mjs`（commit `752cfc8`）；每五分鐘 Actions workflow 先前已移除。只保留可供美術人工審查的清冊與頁面。
 - 待辦：確認人物外觀設計是否需要區分三職業；取得 2.31MB 主程式可供局部安全修改的文字版本，逐一驗證角色對應與動畫；完成後才提供可遊玩的修正版。
+
+## 2026-11-20 角色候選設計與實際對照頁
+
+- 新增三個互不相同的 32×32 SVG 像素風格角色候選圖：`art/candidates/knight.svg`（銀甲）、`novice.svg`（學徒）、`ranger.svg`（森林弓手）。保留原本 `assets/common/avatar_*.webp` 完整不動；這是設計草稿，不是直接可用的遊戲 WebP 圖集。
+- 新增 `art/class-comparison.html`（commit `fbb024b`），於同一畫面左右呈現 GitHub 原始職業頭像與候選新圖，並連至 NPC 美術檢視頁。
+- 檔案可由 GitHub 再讀取；但原始 WebP 仍無法透過現有工具擷取像素內容，不宣稱完成實際遊戲內的替換或走路幀動畫。
+- 後續優先：確認遊戲使用 `avatar_knight/novice/ranger.webp` 的位置、候選外觀接受程度；再製作相容的原圖尺寸／幀數版本、在開發版接入並 QA。勿直接覆蓋已有優秀美術。
