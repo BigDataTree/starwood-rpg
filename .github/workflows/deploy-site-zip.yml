@@ -1,0 +1,88 @@
+name: Deploy uploaded site.zip
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "site.zip"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy-site-zip
+  cancel-in-progress: true
+
+jobs:
+  unpack-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Unpack site.zip
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [ ! -f site.zip ]; then
+            echo "site.zip not found in repository root."
+            exit 1
+          fi
+
+          rm -rf _site_unpack
+          mkdir -p _site_unpack
+          unzip -q -o site.zip -d _site_unpack
+
+          SITE_DIR="_site_unpack"
+
+          if [ ! -f "$SITE_DIR/index.html" ]; then
+            INDEX_FILE="$(find "$SITE_DIR" -mindepth 2 -maxdepth 3 -type f -name index.html | head -n 1 || true)"
+            if [ -z "$INDEX_FILE" ]; then
+              echo "No index.html found in site.zip."
+              exit 1
+            fi
+            SITE_DIR="$(dirname "$INDEX_FILE")"
+          fi
+
+          echo "Website source: $SITE_DIR"
+
+          cp "$SITE_DIR/index.html" ./index.html
+
+          rm -rf ./assets
+          if [ -d "$SITE_DIR/assets" ]; then
+            cp -R "$SITE_DIR/assets" ./assets
+          else
+            echo "Warning: assets/ was not found in site.zip."
+          fi
+
+          rm -rf _site_unpack
+
+      - name: Commit extracted website files
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add index.html
+          if [ -d assets ]; then
+            git add -A assets
+          else
+            git add -A assets 2>/dev/null || true
+          fi
+
+          if git diff --cached --quiet; then
+            echo "No website changes detected."
+            exit 0
+          fi
+
+          git commit -m "Deploy website from site.zip"
+          git push origin main
