@@ -52,3 +52,11 @@
 - 已在預設分支 `main` 新增 `.github/workflows/starwood-static-audit.yml`（提交 `46e6600`），每五分鐘排程（GitHub 可能延遲），檢出本開發分支執行檢查；權限 `contents: read`、不自動提交、不部署。
 - 兩檔已重新讀取核對；GitHub workflow runs 端點在現有連接器不可讀，尚未取得首次執行成功紀錄。請至 Actions 頁確認；如有警告與錯誤依實際日誌排除。
 - 這是 GitHub 靜態監測，**不是**每五分鐘運行 ChatGPT 自主開發；原 Chat 排程仍為每小時一次。A03 視覺與圖集檢驗仍未完成。
+
+## 2026-11-20 實際美術資產查核與開發方向修正
+
+- 依使用者要求，**停止每五分鐘的純靜態查核**：`main` 的 `.github/workflows/starwood-static-audit.yml` 已刪除（commit `a2d7aff`）。保留原本每小時 Chat 開發排程。
+- GitHub 目錄清單核對：`assets/portraits/` 實際有 **78 張 WebP**，其中以五個告示牌檔名 `board/campboard/duskboard/moonboard/forgeboard` 排除後，**73 張 NPC 肖像**；`assets/common/` 14 個檔案。已建立附 Git blob SHA 與大小的逐檔 manifest：`art/asset-inventory.json`（commit `abf0acd`）。這完成**肖像外部檔案存在性與名稱清冊**，不等同已通過 A03/A04 的尺寸、透明邊界、動畫或畫面 QA。
+- **具體待修問題**：`assets/common/avatar_knight.webp`、`avatar_novice.webp`、`avatar_ranger.webp` 三檔 Git SHA 完全相同（`be989b4e84dea69a5e46ed28af479091957b9b5f`），代表位元內容相同。若設計上應有不同職業外觀，必須補三者各自設計或明確指定共用圖，不能假定已完成獨立外觀。**未擅自覆蓋素材**。
+- 建議修正優先序：(1) 檢驗職業初始頭像是否符合不同職業設定；(2) 由 GitHub 可讀的源碼或下載副本核對 `V6_ACTOR_MAP` 對應與方向、行走幀；(3) 確認肖像真實尺寸和 `object-fit:cover` 是否裁切，再作最小改動；(4) 補怪物幀數的實際圖集驗證。
+- 由於本環境 GitHub `fetch_file` 對 2.31 MB `index.html` 回傳空字串、容器網路無法連線下載，尚無法安全修改遊戲主程式；請勿把 A03 或 A04 標為完成。
