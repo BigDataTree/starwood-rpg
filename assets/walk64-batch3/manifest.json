@@ -1,0 +1,97 @@
+{
+  "version": "v1.1.9-batch3-rc",
+  "status": "candidate_not_formal_release",
+  "base": "v1.1.8",
+  "frameSize": [
+    64,
+    64
+  ],
+  "sheetSize": [
+    192,
+    256
+  ],
+  "directions": [
+    "down-front",
+    "left-side",
+    "right-side",
+    "up-back"
+  ],
+  "poses": [
+    "left-step",
+    "idle",
+    "right-step"
+  ],
+  "artwork": "21 individually redrawn candidate, 22-30 adapted candidate assets; final individual art QA pending",
+  "characters": [
+    {
+      "num": 21,
+      "id": "duskhealer",
+      "name": "林語治癒師",
+      "file": "21_duskhealer_64x64_4dir_3walk.png",
+      "status": "individually_redrawn_candidate"
+    },
+    {
+      "num": 22,
+      "id": "seer",
+      "name": "月泉預言者",
+      "file": "22_seer_64x64_4dir_3walk.png",
+      "status": "adapted_art_candidate"
+    },
+    {
+      "num": 23,
+      "id": "herbalist",
+      "name": "藥草師蒂娜",
+      "file": "23_herbalist_64x64_4dir_3walk.png",
+      "status": "adapted_art_candidate"
+    },
+    {
+      "num": 24,
+      "id": "moonmerchant",
+      "name": "月泉補給商",
+      "file": "24_moonmerchant_64x64_4dir_3walk.png",
+      "status": "adapted_art_candidate"
+    },
+    {
+      "num": 25,
+      "id": "moonhealer",
+      "name": "月泉治癒師",
+      "file": "25_moonhealer_64x64_4dir_3walk.png",
+      "status": "adapted_art_candidate"
+    },
+    {
+      "num": 26,
+      "id": "cartographer",
+      "name": "觀星地圖師",
+      "file": "26_cartographer_64x64_4dir_3walk.png",
+      "status": "adapted_art_candidate"
+    },
+    {
+      "num": 27,
+      "id": "artificer",
+      "name": "星鑄工匠",
+      "file": "27_artificer_64x64_4dir_3walk.png",
+      "status": "adapted_art_candidate"
+    },
+    {
+      "num": 28,
+      "id": "forgemerchant",
+      "name": "礦工商隊",
+      "file": "28_forgemerchant_64x64_4dir_3walk.png",
+      "status": "adapted_art_candidate"
+    },
+    {
+      "num": 29,
+      "id": "forgehealer",
+      "name": "堡壘醫護員",
+      "file": "29_forgehealer_64x64_4dir_3walk.png",
+      "status": "adapted_art_candidate"
+    },
+    {
+      "num": 30,
+      "id": "forgeguard",
+      "name": "礦坑警衛",
+      "file": "30_forgeguard_64x64_4dir_3walk.png",
+      "status": "adapted_art_candidate"
+    }
+  ]
+}
