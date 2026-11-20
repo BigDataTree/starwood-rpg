@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>星森傳說｜前10位四方向12格精靈檢視｜v1.1.8候選</title><style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;font-family:system-ui,'Noto Sans TC',sans-serif;background:#0d1820;color:#e6f2e8}
+header{max-width:1160px;margin:auto;padding:30px 16px 20px}h1{font-size:clamp(22px,3vw,32px);margin:0 0 12px}p{line-height:1.7;color:#bbd3ca}
+.top{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.top a{background:#265646;color:white;border-radius:9px;padding:10px 15px;text-decoration:none}
+main{max-width:1160px;margin:auto;padding:0 16px 42px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.card{border:1px solid #315448;border-radius:16px;background:#172b32;padding:17px}.card h2{font-size:19px;margin:0 0 8px;color:#e7d69e}
+.preview{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:6px;border-radius:10px;background:#0d2022}
+.preview figure{margin:0;text-align:center;min-width:0}.preview canvas{display:block;width:100%;max-width:100%;aspect-ratio:1;image-rendering:pixelated}
+.preview figcaption{font-size:12px;color:#c7d9d2;margin:5px 0}
+.atlas{display:block;width:min(100%,288px);height:auto;image-rendering:pixelated;border:1px solid #41635a;margin:12px auto;background-color:#223c39;background-image:linear-gradient(45deg,#29413f 25%,transparent 25%,transparent 75%,#29413f 75%),linear-gradient(45deg,#29413f 25%,transparent 25%,transparent 75%,#29413f 75%);background-position:0 0,10px 10px;background-size:20px 20px}
+button{cursor:pointer;background:#285b4a;color:#fff;border:1px solid #619c7d;padding:9px 13px;border-radius:9px;font-size:14px}
+label{display:inline-flex;align-items:center;gap:8px;margin-bottom:15px}
+.note{font-size:13px}.status{font-size:13px;color:#acdcc0;margin-top:9px}
+</style></head><body><header><h1>🌲 星森傳說｜前 10 位角色四方向精靈圖集</h1>
+<p>v1.1.8 美術候選預覽。每位角色使用 192×256 圖集，每格 64×64，4 個方向（下／左／右／上），每方向 3 個不同動作（左腳／站立／右腳）。請著重檢查側面頭型、眼睛、帽子及雙腳，不以動畫能播放就代表美術完成。</p>
+<div class="top"><a href="./preview-batch10.html">開啟遊戲測試版</a><a href="./index.html">返回 v1.1.7 正式版</a></div></header>
+<main><label>動畫播放 <input id="play" type="checkbox" checked></label><div id="grid" class="grid"></div></main>
+<script>
+// ── v1.1.8 preview · batch 01 (characters 01–10) ──
+// Builds an exact 3×4 atlas. Six front-biased side rows are reshaped as a
+// temporary profile candidate; pre-existing genuine side rows are preserved.
+// This is an art-review candidate, not a substitute for hand-drawn final art.
+const SW64_BATCH10_IDS=new Set(['novice','knight','mage','ranger','elder','merchant','smith','trainer','healer','guard']);
+const SW64_PROFILE_IDS=new Set(['novice','knight','mage','ranger','elder','trainer']);
+const SW64_BATCH10_ATLAS=new WeakMap();
+function sw64Batch10Atlas(id,image){
+ if(!SW64_BATCH10_IDS.has(id))return image;
+ let sheet=SW64_BATCH10_ATLAS.get(image);
+ if(sheet)return sheet;
+ sheet=document.createElement('canvas');
+ sheet.width=192;sheet.height=256;
+ const c=sheet.getContext('2d',{willReadFrequently:true});
+ c.imageSmoothingEnabled=false;
+ c.drawImage(image,0,0,192,256);
+ if(SW64_PROFILE_IDS.has(id)){
+  for(let f=0;f<3;f++){
+   const src=c.getImageData(f*64,64,64,64), input=src.data;
+   const side=c.createImageData(64,64), out=side.data;
+   for(let y=0;y<64;y++){
+    // Original pixel blocks remain crisp; the head, body and feet each
+    // have a different profile depth instead of scaling the entire actor.
+    const depth=y<34?.72:y<48?.82:.94;
+    const cx=y<34?30:y<48?30:32;
+    for(let x=0;x<64;x++){
+     const sample=Math.round(32+(x-cx)/depth);
+     if(sample<0||sample>63)continue;
+     const a=(y*64+sample)*4, z=(y*64+x)*4;
+     out[z]=input[a];out[z+1]=input[a+1];out[z+2]=input[a+2];out[z+3]=input[a+3];
+    }
+   }
+   // Restore a readable single-eye side-facing face and projecting nose.
+   // Skin tones are sampled from each character's own face, never a global palette.
+   let candidates=[];
+   for(let y=18;y<=30;y++)for(let x=20;x<=43;x++){
+    const z=(y*64+x)*4, r=out[z],g=out[z+1],b=out[z+2],a=out[z+3];
+    if(a>180&&r>115&&r>g+9&&g>b+7&&g>65&&b<205){
+     candidates.push([x,y,r,g,b]);
+    }
+   }
+   if(candidates.length>=8){
+    const flesh=candidates.sort((a,b)=>a[2]-b[2])[Math.floor(candidates.length*.60)];
+    const front=Math.max(17,Math.min(33,Math.min(...candidates.filter(p=>p[1]>=21&&p[1]<=27).map(p=>p[0]))));
+    const noseY=24;
+    // Fill the distant eye with local cheek tone while leaving surrounding hair.
+    for(let y=20;y<=23;y++)for(let x=front+11;x<=front+15&&x<49;x++){
+      const z=(y*64+x)*4;
+      if(out[z+3]>120&&out[z]<95&&out[z+1]<95){
+       out[z]=flesh[2];out[z+1]=flesh[3];out[z+2]=flesh[4];
+      }
+    }
+    for(let dy=0;dy<3;dy++)for(let dx=0;dx<3-dy;dx++){
+     const xx=front-2+dx, yy=noseY+dy;
+     if(xx<0||yy>=64)continue;
+     const z=(yy*64+xx)*4;
+     out[z]=flesh[2];out[z+1]=flesh[3];out[z+2]=flesh[4];out[z+3]=255;
+    }
+    const ex=Math.min(59,front+5),ey=22,z=(ey*64+ex)*4;
+    if(out[z+3]>100){out[z]=45;out[z+1]=28;out[z+2]=39;out[z+3]=255;}
+   }
+   c.putImageData(side,f*64,64);
+   // Right-facing: reverse the profile contour; front and back remain unchanged.
+   // Source art with asymmetric equipment requires later hand-drawn QA.
+   const right=c.createImageData(64,64);
+   for(let y=0;y<64;y++)for(let x=0;x<64;x++){
+    const from=(y*64+(63-x))*4,to=(y*64+x)*4;
+    for(let k=0;k<4;k++)right.data[to+k]=side.data[from+k];
+   }
+   c.putImageData(right,f*64,128);
+  }
+ }
+ SW64_BATCH10_ATLAS.set(image,sheet);
+ return sheet;
+}
+
+
+const characters=[["01","novice","新手"],["02","knight","騎士"],["03","mage","法師"],["04","ranger","遊俠"],["05","elder","長老"],["06","merchant","商人"],["07","smith","鐵匠"],["08","trainer","訓練師"],["09","healer","醫師"],["10","guard","守衛"]];
+const grid=document.querySelector('#grid'),cards=[];
+let active=0;
+for(const [num,id,name] of characters){
+ const card=document.createElement('article');card.className='card';
+ const adjusted=SW64_PROFILE_IDS.has(id);
+ card.innerHTML='<h2>'+num+'・'+name+'</h2><p class="note">'+(adjusted?'側面重構候選稿｜需美術驗收':'沿用原本側面素材｜已取消程式拆腳')+'</p><div class="preview"></div><canvas class="atlas" width="192" height="256"></canvas><button type="button">下載 192×256 PNG 圖集</button><div class="status">讀取精靈中…</div>';
+ grid.append(card);
+ const preview=card.querySelector('.preview'),views=[];
+ for(let d=0;d<4;d++){
+  const fig=document.createElement('figure'),cv=document.createElement('canvas');
+  cv.width=64;cv.height=64;fig.append(cv);const cap=document.createElement('figcaption');
+  cap.textContent=['向下','向左','向右','向上'][d];fig.append(cap);preview.append(fig);views.push(cv);
+ }
+ const atlas=card.querySelector('.atlas'),img=new Image();
+ const obj={id,name,num,atlas,views,img,ready:false};
+ cards.push(obj);
+ card.querySelector('button').onclick=()=>{
+  if(!obj.ready)return;
+  const a=document.createElement('a');a.href=atlas.toDataURL('image/png');
+  a.download='星森傳說_'+num+'_'+id+'_4dir_3frames_64px.png';
+  document.body.append(a);a.click();a.remove();
+ };
+ img.onload=()=>{
+  if(img.naturalWidth!==192||img.naturalHeight!==256){
+   card.querySelector('.status').textContent='尺寸錯誤：'+img.naturalWidth+'×'+img.naturalHeight;return;
+  }
+  const result=sw64Batch10Atlas(id,img);
+  atlas.getContext('2d').drawImage(result,0,0);
+  obj.ready=true;
+  const rows=[0,1,2,3].map(d=>{
+   const cvs=document.createElement('canvas');cvs.width=64;cvs.height=64;
+   cvs.getContext('2d').drawImage(atlas,64,64*d,64,64,0,0,64,64);return cvs;
+  });
+  card.querySelector('.status').textContent='已載入 12 格｜'+(adjusted?'側面重構候選，非正式完稿':'側面素材保留');
+  update(obj,1);
+ };
+ img.onerror=()=>card.querySelector('.status').textContent='載入失敗，請檢查網路';
+ img.src='assets/walk64/'+num+'_'+id+'_64x64_4dir_3walk.png';
+}
+function update(o,col){
+ if(!o.ready)return;
+ for(let d=0;d<4;d++){
+  const c=o.views[d].getContext('2d');c.imageSmoothingEnabled=false;c.clearRect(0,0,64,64);
+  c.drawImage(o.atlas,col*64,d*64,64,64,0,0,64,64);
+ }
+}
+setInterval(()=>{if(!document.querySelector('#play').checked)return;active=(active+1)%4;const frame=[1,0,1,2][active];for(const c of cards)update(c,frame)},170);
+</script></body></html>
