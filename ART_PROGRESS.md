@@ -74,3 +74,10 @@
 - 新增 `art/class-comparison.html`（commit `fbb024b`），於同一畫面左右呈現 GitHub 原始職業頭像與候選新圖，並連至 NPC 美術檢視頁。
 - 檔案可由 GitHub 再讀取；但原始 WebP 仍無法透過現有工具擷取像素內容，不宣稱完成實際遊戲內的替換或走路幀動畫。
 - 後續優先：確認遊戲使用 `avatar_knight/novice/ranger.webp` 的位置、候選外觀接受程度；再製作相容的原圖尺寸／幀數版本、在開發版接入並 QA。勿直接覆蓋已有優秀美術。
+
+## 2026-11-20 可操作角色視覺測試場
+
+- 新增 `art/playtest.html`，Git commit `e590904`，可使用桌面方向鍵/WASD 或手機按住方向鍵操控騎士、新手、遊俠三個候選角色，查看相對於簡化地圖的視覺比例，並可切換職業、重設位置。
+- **限制說明**：本頁為獨立的視覺互動原型，尚未連接既有 `index.html`；角色圖是 32×32 SVG 靜態圖，走動只使用位移、左右翻轉與小幅上下跳動，不是實際四方向步行圖集，也不表示主遊戲功能已修改。
+- 預覽：`https://htmlpreview.github.io/?https://raw.githubusercontent.com/BigDataTree/starwood-rpg/automation/npc-sprite-audit-20261120/art/playtest.html`（第三方 HTML 預覽，仍需瀏覽器端驗證）。
+- 下一步：取得大型主程式可供安全編輯的版本，定位使用角色圖片的地方；製作正式朝向／行走幀圖集，兼容原繪製機制再合併，先比對畫面和 FPS。
