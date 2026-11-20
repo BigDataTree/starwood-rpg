@@ -38,3 +38,10 @@
 - 執行工具不支援或 GitHub 無寫入權限時，只回報事實與可用的下一步，不要宣稱已修改或重複建立排程。
 - 只有可驗證時才將項目勾選；避免重新產圖或覆寫已經完成的素材。
 - 所有工作完成且確認 QA 後，停止後續自動排程並回報。
+
+## 2026-11-20 本輪 A03 預備查核（未完成 A03）
+
+- 透過 GitHub compare API 比對 `main...automation/npc-sprite-audit-20261120`：狀態 `ahead`、ahead 1／behind 0，差異僅新增 `ART_PROGRESS.md`（40 行），未發現分支覆寫 `index.html` 或既有美術資產。
+- 主線 `index.html` Git blob SHA 仍為 `daa21a4666b369ff8f07fb3e5fedde550aa057e4`，與原盤點所記錄者相同。
+- 嘗試以 GitHub fetch_file 讀取完整 `index.html` 與 1–100 行，均回傳空字串；GitHub 程式碼搜尋 `V6_ACTOR_MAP` 亦無結果。因此本輪**無法可靠擷取 atlas 定義或逐角色檢查**，不得推定方向、幀數或尺寸正確，A03 保持未完成。
+- 下一輪：取得支援大型單檔的原始碼存取方式（例如分塊 Git blob、可讀的原始碼副本或 checkout），先抽取 `V6_ACTOR_MAP`、方向與 sprite 尺寸規則，再建立逐角色 manifest。不得在無法驗證時更改素材。
