@@ -1,0 +1,123 @@
+{
+  "baseVersion": "v1.1.6",
+  "patch": "walk20 candidate prototype",
+  "baseCommit": "0c8957940294a250c083342b5066fe846f79030e",
+  "artworkQuality": "WIP; 16 of 20 directional sprites are generated approximations, not accepted final hand-made 4-direction artwork",
+  "frameSize": [
+    64,
+    64
+  ],
+  "sheetSize": [
+    192,
+    256
+  ],
+  "directions": [
+    "down",
+    "left",
+    "right",
+    "up"
+  ],
+  "framesPerDirection": 3,
+  "characters": [
+    {
+      "id": "novice",
+      "file": "assets/walk64/01_novice_64x64_4dir_3walk.png",
+      "gitBlobSha": "85d9b9ad8fe9fead46ada95a05a39b4cfbb5b7f6"
+    },
+    {
+      "id": "knight",
+      "file": "assets/walk64/02_knight_64x64_4dir_3walk.png",
+      "gitBlobSha": "d5cb409540152216d6373e6f6d77c3d0232174db"
+    },
+    {
+      "id": "mage",
+      "file": "assets/walk64/03_mage_64x64_4dir_3walk.png",
+      "gitBlobSha": "4ae7d157fcba25b4617267653743b4b7c351e443"
+    },
+    {
+      "id": "ranger",
+      "file": "assets/walk64/04_ranger_64x64_4dir_3walk.png",
+      "gitBlobSha": "60b50538365d8da70093215b14979918722b12b9"
+    },
+    {
+      "id": "elder",
+      "file": "assets/walk64/05_elder_64x64_4dir_3walk.png",
+      "gitBlobSha": "299f107d45aa15f0fa8a4fe795327b71c1935f07"
+    },
+    {
+      "id": "merchant",
+      "file": "assets/walk64/06_merchant_64x64_4dir_3walk.png",
+      "gitBlobSha": "e5c445f490dc9ef06ffb8a017d5e8ee101913f60"
+    },
+    {
+      "id": "smith",
+      "file": "assets/walk64/07_smith_64x64_4dir_3walk.png",
+      "gitBlobSha": "97a65f2683fc3de33e0f964c8e2eda932edb61db"
+    },
+    {
+      "id": "trainer",
+      "file": "assets/walk64/08_trainer_64x64_4dir_3walk.png",
+      "gitBlobSha": "5e5a2366c2a13ce55e8f167af336ded3793e066d"
+    },
+    {
+      "id": "healer",
+      "file": "assets/walk64/09_healer_64x64_4dir_3walk.png",
+      "gitBlobSha": "9a8766fcba225f4eba5b5685ff4d059703e8e720"
+    },
+    {
+      "id": "guard",
+      "file": "assets/walk64/10_guard_64x64_4dir_3walk.png",
+      "gitBlobSha": "d9ac37e5688b0522970f11a6a45b18fea9c1785d"
+    },
+    {
+      "id": "librarian",
+      "file": "assets/walk64/11_librarian_64x64_4dir_3walk.png",
+      "gitBlobSha": "28c5c609237051de88f3cff8c3da802dcb7b0fd9"
+    },
+    {
+      "id": "child",
+      "file": "assets/walk64/12_child_64x64_4dir_3walk.png",
+      "gitBlobSha": "7e451c322c577ad573c235a173d294368a9cb189"
+    },
+    {
+      "id": "guide",
+      "file": "assets/walk64/13_guide_64x64_4dir_3walk.png",
+      "gitBlobSha": "009886b802628f91ef57a0b839cc6d7b376d9c8f"
+    },
+    {
+      "id": "scout",
+      "file": "assets/walk64/14_scout_64x64_4dir_3walk.png",
+      "gitBlobSha": "7613caae43eaa71706dd38b5a886fd63412e6d85"
+    },
+    {
+      "id": "campmerchant",
+      "file": "assets/walk64/15_campmerchant_64x64_4dir_3walk.png",
+      "gitBlobSha": "3d4ec96144f2dde16d473f37b82be65bd407ec2b"
+    },
+    {
+      "id": "camphealer",
+      "file": "assets/walk64/16_camphealer_64x64_4dir_3walk.png",
+      "gitBlobSha": "1b1c9c332390fe060d07cc589543b21df28e4e6e"
+    },
+    {
+      "id": "traveler",
+      "file": "assets/walk64/17_traveler_64x64_4dir_3walk.png",
+      "gitBlobSha": "ce290a15b26105848b0bbfe9f8d11922f04ba8fd"
+    },
+    {
+      "id": "duskhead",
+      "file": "assets/walk64/18_duskhead_64x64_4dir_3walk.png",
+      "gitBlobSha": "9ac2ce73f0918c02bc0963e45b577c186b89c553"
+    },
+    {
+      "id": "wood",
+      "file": "assets/walk64/19_wood_64x64_4dir_3walk.png",
+      "gitBlobSha": "942b7d1ce92535105882b9c62d47713b9a99d234"
+    },
+    {
+      "id": "duskmerchant",
+      "file": "assets/walk64/20_duskmerchant_64x64_4dir_3walk.png",
+      "gitBlobSha": "44bbe4b4e646d52b463add8606d13815f58f28ec"
+    }
+  ]
+}
