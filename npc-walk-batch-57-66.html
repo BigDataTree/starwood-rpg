@@ -38,8 +38,9 @@ a{color:#ace9c9}
 <canvas id="screen" width="320" height="320" aria-label="行走動畫預覽"></canvas>
 <div class="controls" id="dirs"><button class="ctrl sel" data-dir="0">↓ 下</button><button class="ctrl" data-dir="1">← 左</button><button class="ctrl" data-dir="2">→ 右</button><button class="ctrl" data-dir="3">↑ 上</button></div>
 <div class="controls"><button id="play" class="toggle">⏸ 暫停</button><button id="slow" class="toggle">慢速</button><button id="fast" class="toggle">快速</button></div>
+<label class="meta" style="display:block;margin:13px 0"><input type="checkbox" id="alternate" disabled> 60–66 號：切換查看最新生成草稿（未核准，外觀與權威不符）</label>
 <div class="meta">影格：<strong id="frame">1 / 3</strong>　方向：<strong id="direction">下</strong></div>
-<div class="warning">提醒：目前是57–66號的既有候選素材。60–61的補幀、62–66的側背仍待按權威造型逐像素驗收；先前另生成的「精修預覽」有角色錯配，<strong>尚未替換本頁正式編號素材</strong>。</div>
+<div class="warning" id="artWarning">目前顯示的是與核准正面角色對應的第2批候選素材；60–61補幀、62–66側背尚待精修驗收。可另切換查看最新生成草稿，但不會覆蓋此版本。</div>
 </section>
 <section class="panel list pad"><h2>選擇角色與檢視完整圖集</h2>
 <div class="grid" id="characters"><button class="who on" data-person="57" aria-label="顯示57號凱拉"><img src="https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/57_ambient_town_10_192x256.png" alt="57 凱拉，3欄4列候選精靈" loading="eager" onerror="this.classList.add('broken')"><span>57 凱拉</span></button>
@@ -71,11 +72,16 @@ ctx.fillStyle="#233b33";ctx.fillRect(0,280,320,40)}
 function render(){bg();if(image.complete&&image.naturalWidth){ctx.fillStyle="#172f2b66";ctx.beginPath();ctx.ellipse(160,272,67,15,0,0,2*Math.PI);ctx.fill();
 ctx.drawImage(image,[0,1,2,1][frame]*64,dir*64,64,64,54,50,212,212)}else{ctx.textAlign="center";ctx.fillStyle="#f1e8d1";ctx.font="16px system-ui";ctx.fillText("正在載入角色…",160,160)}}
 function select(n){const c=CHARACTERS.find(v=>v.n===n);if(!c)return;selected=n;get("charLabel").textContent=c.n+" "+c.name+"｜行走預覽";
-document.querySelectorAll("[data-person]").forEach(b=>b.classList.toggle("on",Number(b.dataset.person)===n));get("staticSprite").src=c.url;
+document.querySelectorAll("[data-person]").forEach(b=>b.classList.toggle("on",Number(b.dataset.person)===n));
+const cb=get("alternate");cb.disabled=n<60;if(n<60)cb.checked=false;
+const isAlt=n>=60&&cb.checked;const source=isAlt?"https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/review-alternates/"+n+"_non_authority_3x4.png":c.url;
+get("staticSprite").src=source;
+get("artWarning").textContent=isAlt?"目前是新生成的概念草稿：人物外觀與核准的"+n+"號角色不一致，只用來比較四方向步態，不可做正式遊戲素材。":"目前顯示已核准正面外觀對應的既有候選；60–61補幀、62–66側背仍需細修及E2–E7美術驗收。";
 get("loadStatus").textContent="正在載入圖片…";
 image.onload=()=>{get("loadStatus").textContent="圖片已載入";render()};
 image.onerror=()=>{get("loadStatus").textContent="圖片載入失敗，請使用GitHub素材目錄";render()};
-image.src=c.url;render()}
+image.src=source;render()}
+get("alternate").addEventListener("change",()=>select(selected));
 document.querySelectorAll("[data-person]").forEach(b=>b.addEventListener("click",()=>{select(Number(b.dataset.person));document.querySelector(".stage").scrollIntoView({behavior:"smooth",block:"start"})}));
 document.querySelectorAll("[data-dir]").forEach(b=>b.addEventListener("click",()=>{dir=Number(b.dataset.dir);document.querySelectorAll("[data-dir]").forEach(x=>x.classList.toggle("sel",x===b));get("direction").textContent=["下","左","右","上"][dir];render()}));
 get("play").addEventListener("click",()=>{playing=!playing;get("play").textContent=playing?"⏸ 暫停":"▶ 播放"});
