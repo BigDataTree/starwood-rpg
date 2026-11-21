@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#122820">
+<title>星森傳說｜57–66 第二批移動NPC｜手機互動Demo</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:#ecf7ee;background:linear-gradient(165deg,#112723,#0c1a20 52%,#101826);font-family:system-ui,-apple-system,"Noto Sans TC",sans-serif;min-height:100vh}
+header,.layout,footer{max-width:1110px;margin:auto;padding:16px}header{padding-top:23px}h1{font-size:clamp(22px,4.7vw,31px);margin:0 0 7px}p{line-height:1.6;margin:7px 0;color:#b9d0ca;font-size:14px}.label{color:#e5c778;font-size:12px;font-weight:700;letter-spacing:.12em}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,340px);gap:15px}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.stage{order:0}.list{order:1}}
+.panel{border:1px solid #47675e;border-radius:15px;overflow:hidden;background:#192c30;box-shadow:0 12px 24px #0003}.pad{padding:14px}
+h2{font-size:17px;margin:0 0 11px}.tag{display:inline-block;color:#e6dfb3;border:1px solid #67715b;padding:3px 8px;border-radius:999px;font-size:12px;margin:6px 0}
+#screen{display:block;width:min(100%,370px);height:auto;aspect-ratio:1;image-rendering:pixelated;background:linear-gradient(35deg,#31564c,#204d3d 45%,#31584d);border:1px solid #618276;border-radius:12px;margin:8px auto}
+#staticSprite{display:block;width:160px;height:215px;object-fit:contain;image-rendering:pixelated;max-width:100%;margin:8px auto;background-color:#233b38;background-image:linear-gradient(45deg,#31524c 25%,transparent 25%,transparent 75%,#31524c 75%),linear-gradient(45deg,#31524c 25%,transparent 25%,transparent 75%,#31524c 75%);background-position:0 0,12px 12px;background-size:24px 24px;border:1px solid #557569;border-radius:8px}
+.grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+@media(max-width:650px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.who{border:1px solid #48645d;border-radius:12px;background:#203c3c;color:#f4f0d5;cursor:pointer;padding:7px 4px;min-width:0;font-size:13px}
+.who.on{border:2px solid #e8c77e;background:#294941}
+.who img{display:block;width:100%;height:136px;object-fit:contain;image-rendering:pixelated;background:#182727;border-radius:5px}
+.who span{display:block;padding-top:6px;font-weight:700}.broken{opacity:.2}
+.controls{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:9px 0}
+button{font-family:inherit}button.ctrl,.toggle{border:1px solid #729b8b;border-radius:9px;background:#2d5b51;color:#effbee;padding:10px 15px;min-width:48px;cursor:pointer;font-size:16px}
+button.sel{background:#debc78;color:#1b2b22;font-weight:800}
+.meta{font-size:13px;color:#c9d7ca;line-height:1.7}.meta strong{color:#f4df9f}
+.warning{font-size:13px;border-left:3px solid #c9a15d;padding:9px 11px;background:#302c24;color:#f4e7d0;border-radius:5px;margin:13px 0}
+.smallnote{font-size:12px;color:#a7c3b8}.status{font-weight:700;color:#bbdfad}
+footer{font-size:12px;color:#a7beb8;padding-bottom:30px}
+a{color:#ace9c9}
+</style></head><body>
+<header><div class="label">STARWOOD LEGEND · 第二批 NPC 動畫審查</div><h1>🌲 57–66 號｜四方向行走 Demo</h1>
+<p>手機 Safari / Chrome 可直接使用；點選角色、方向，檢視每人 3×4 的 64px 精靈圖。靜態圖集即使動畫功能無法執行也會顯示。</p>
+<span class="tag">美術候選／待正式核准</span> <span class="tag">正式遊戲不受影響</span>
+</header>
+<div class="layout">
+<section class="panel stage pad">
+<h2 id="charLabel">57 凱拉｜行走預覽</h2>
+<div class="meta">狀態：<span class="status" id="loadStatus">正在載入圖片…</span></div>
+<canvas id="screen" width="320" height="320" aria-label="行走動畫預覽"></canvas>
+<div class="controls" id="dirs"><button class="ctrl sel" data-dir="0">↓ 下</button><button class="ctrl" data-dir="1">← 左</button><button class="ctrl" data-dir="2">→ 右</button><button class="ctrl" data-dir="3">↑ 上</button></div>
+<div class="controls"><button id="play" class="toggle">⏸ 暫停</button><button id="slow" class="toggle">慢速</button><button id="fast" class="toggle">快速</button></div>
+<div class="meta">影格：<strong id="frame">1 / 3</strong>　方向：<strong id="direction">下</strong></div>
+<div class="warning">提醒：目前是57–66號的既有候選素材。60–61的補幀、62–66的側背仍待按權威造型逐像素驗收；先前另生成的「精修預覽」有角色錯配，<strong>尚未替換本頁正式編號素材</strong>。</div>
+</section>
+<section class="panel list pad"><h2>選擇角色與檢視完整圖集</h2>
+<div class="grid" id="characters"><button class="who on" data-person="57" aria-label="顯示57號凱拉"><img src="https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/57_ambient_town_10_192x256.png" alt="57 凱拉，3欄4列候選精靈" loading="eager" onerror="this.classList.add('broken')"><span>57 凱拉</span></button>
+<button class="who" data-person="58" aria-label="顯示58號諾亞"><img src="https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/58_ambient_town_11_192x256.png" alt="58 諾亞，3欄4列候選精靈" loading="eager" onerror="this.classList.add('broken')"><span>58 諾亞</span></button>
+<button class="who" data-person="59" aria-label="顯示59號席爾"><img src="https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/59_ambient_town_12_192x256.png" alt="59 席爾，3欄4列候選精靈" loading="eager" onerror="this.classList.add('broken')"><span>59 席爾</span></button>
+<button class="who" data-person="60" aria-label="顯示60號艾薇"><img src="https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/60_ambient_town_13_192x256.png" alt="60 艾薇，3欄4列候選精靈" loading="eager" onerror="this.classList.add('broken')"><span>60 艾薇</span></button>
+<button class="who" data-person="61" aria-label="顯示61號安妮"><img src="https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/61_ambient_camp_0_192x256.png" alt="61 安妮，3欄4列候選精靈" loading="eager" onerror="this.classList.add('broken')"><span>61 安妮</span></button>
+<button class="who" data-person="62" aria-label="顯示62號羅伊"><img src="https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/62_ambient_camp_1_192x256.png" alt="62 羅伊，3欄4列候選精靈" loading="eager" onerror="this.classList.add('broken')"><span>62 羅伊</span></button>
+<button class="who" data-person="63" aria-label="顯示63號菲恩"><img src="https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/63_ambient_camp_2_192x256.png" alt="63 菲恩，3欄4列候選精靈" loading="eager" onerror="this.classList.add('broken')"><span>63 菲恩</span></button>
+<button class="who" data-person="64" aria-label="顯示64號露西"><img src="https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/64_ambient_camp_3_192x256.png" alt="64 露西，3欄4列候選精靈" loading="eager" onerror="this.classList.add('broken')"><span>64 露西</span></button>
+<button class="who" data-person="65" aria-label="顯示65號席爾"><img src="https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/65_ambient_dusk_0_192x256.png" alt="65 席爾，3欄4列候選精靈" loading="eager" onerror="this.classList.add('broken')"><span>65 席爾</span></button>
+<button class="who" data-person="66" aria-label="顯示66號艾薇"><img src="https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/66_ambient_dusk_1_192x256.png" alt="66 艾薇，3欄4列候選精靈" loading="eager" onerror="this.classList.add('broken')"><span>66 艾薇</span></button></div>
+<p class="smallnote">每張縮圖為完整 192×256 PNG，四方向順序依次為下、左、右、上。可直接在手機長按圖片檢查。</p>
+<img id="staticSprite" src="https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/57_ambient_town_10_192x256.png" alt="目前選取角色的3欄4列完整精靈圖集">
+<p id="fallback" class="smallnote">圖片若未顯示，可點 <a href="https://github.com/BigDataTree/starwood-rpg/tree/art/npc-walk-57-66/assets/npc-walk-batches/batch-02" target="_blank" rel="noopener">GitHub 圖集目錄</a> 檢查素材是否能載入。</p>
+</section></div>
+<footer>審查專頁：不修改正式遊戲 index.html。美術驗收標準參照 E1–E7；外觀對應已核准的77人全身正面總覽。</footer>
+<noscript><p style="padding:20px;color:#fff">JavaScript 未啟用，您仍可在上方看到 10 位角色的完整靜態精靈圖集。</p></noscript>
+<script>
+(()=>{"use strict";
+const CHARACTERS=[{"n":57,"id":"ambient_town_10","name":"凱拉","file":"57_ambient_town_10_192x256.png","url":"https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/57_ambient_town_10_192x256.png"},{"n":58,"id":"ambient_town_11","name":"諾亞","file":"58_ambient_town_11_192x256.png","url":"https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/58_ambient_town_11_192x256.png"},{"n":59,"id":"ambient_town_12","name":"席爾","file":"59_ambient_town_12_192x256.png","url":"https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/59_ambient_town_12_192x256.png"},{"n":60,"id":"ambient_town_13","name":"艾薇","file":"60_ambient_town_13_192x256.png","url":"https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/60_ambient_town_13_192x256.png"},{"n":61,"id":"ambient_camp_0","name":"安妮","file":"61_ambient_camp_0_192x256.png","url":"https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/61_ambient_camp_0_192x256.png"},{"n":62,"id":"ambient_camp_1","name":"羅伊","file":"62_ambient_camp_1_192x256.png","url":"https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/62_ambient_camp_1_192x256.png"},{"n":63,"id":"ambient_camp_2","name":"菲恩","file":"63_ambient_camp_2_192x256.png","url":"https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/63_ambient_camp_2_192x256.png"},{"n":64,"id":"ambient_camp_3","name":"露西","file":"64_ambient_camp_3_192x256.png","url":"https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/64_ambient_camp_3_192x256.png"},{"n":65,"id":"ambient_dusk_0","name":"席爾","file":"65_ambient_dusk_0_192x256.png","url":"https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/65_ambient_dusk_0_192x256.png"},{"n":66,"id":"ambient_dusk_1","name":"艾薇","file":"66_ambient_dusk_1_192x256.png","url":"https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/66_ambient_dusk_1_192x256.png"}];
+const get=id=>document.getElementById(id);
+const canvas=get("screen"),ctx=canvas.getContext("2d"),image=new Image();
+let selected=57,dir=0,frame=0,playing=true,speed=190,last=0;
+ctx.imageSmoothingEnabled=false;
+function bg(){const g=ctx.createLinearGradient(0,0,320,320);g.addColorStop(0,"#416e54");g.addColorStop(1,"#244634");ctx.fillStyle=g;ctx.fillRect(0,0,320,320);
+ctx.fillStyle="#6b7560";for(let y=16;y<320;y+=50){for(let x=8;x<320;x+=48){ctx.fillRect(x+((y/50)|0)%2*17,y,42,32)}}
+ctx.fillStyle="#233b33";ctx.fillRect(0,280,320,40)}
+function render(){bg();if(image.complete&&image.naturalWidth){ctx.fillStyle="#172f2b66";ctx.beginPath();ctx.ellipse(160,272,67,15,0,0,2*Math.PI);ctx.fill();
+ctx.drawImage(image,[0,1,2,1][frame]*64,dir*64,64,64,54,50,212,212)}else{ctx.textAlign="center";ctx.fillStyle="#f1e8d1";ctx.font="16px system-ui";ctx.fillText("正在載入角色…",160,160)}}
+function select(n){const c=CHARACTERS.find(v=>v.n===n);if(!c)return;selected=n;get("charLabel").textContent=c.n+" "+c.name+"｜行走預覽";
+document.querySelectorAll("[data-person]").forEach(b=>b.classList.toggle("on",Number(b.dataset.person)===n));get("staticSprite").src=c.url;
+get("loadStatus").textContent="正在載入圖片…";
+image.onload=()=>{get("loadStatus").textContent="圖片已載入";render()};
+image.onerror=()=>{get("loadStatus").textContent="圖片載入失敗，請使用GitHub素材目錄";render()};
+image.src=c.url;render()}
+document.querySelectorAll("[data-person]").forEach(b=>b.addEventListener("click",()=>{select(Number(b.dataset.person));document.querySelector(".stage").scrollIntoView({behavior:"smooth",block:"start"})}));
+document.querySelectorAll("[data-dir]").forEach(b=>b.addEventListener("click",()=>{dir=Number(b.dataset.dir);document.querySelectorAll("[data-dir]").forEach(x=>x.classList.toggle("sel",x===b));get("direction").textContent=["下","左","右","上"][dir];render()}));
+get("play").addEventListener("click",()=>{playing=!playing;get("play").textContent=playing?"⏸ 暫停":"▶ 播放"});
+get("slow").addEventListener("click",()=>speed=340);get("fast").addEventListener("click",()=>speed=105);
+const cycle=[0,1,2,3];
+function tick(t){if(t-last>speed){if(playing){frame=(frame+1)%4;get("frame").textContent=[1,2,3,2][frame]+" / 3";render()}last=t}requestAnimationFrame(tick)}
+select(57);requestAnimationFrame(tick);
+})();
+</script></body></html>
