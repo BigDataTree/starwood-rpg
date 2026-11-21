@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-11-21",
+  "repository": "BigDataTree/starwood-rpg",
+  "main_protected_by_process": true,
+  "authority": {
+    "approved_front_overview_filename": "星森傳說_77位全身正面_48-66修正版總覽.png",
+    "sha256": "c03701c3e4dcd20ae7ba30d7cc373cd9b993200a34918277baf711d6816655bf",
+    "github_presence": "not yet verified",
+    "source_status": "conversation attachment; supply or verify exact source before producing",
+    "npc_portrait_root": "assets/authority/v81/portraits"
+  },
+  "sprite_spec": {
+    "cell_px": [
+      64,
+      64
+    ],
+    "atlas_px": [
+      192,
+      256
+    ],
+    "columns": 3,
+    "rows": 4,
+    "row_order": [
+      "down",
+      "left",
+      "right",
+      "up"
+    ],
+    "frame_order": [
+      "step_left",
+      "idle",
+      "step_right"
+    ],
+    "animation_cycle": [
+      0,
+      1,
+      2,
+      1
+    ],
+    "background_alpha": 0,
+    "edge_halo_allowed": false,
+    "stretching_allowed": false
+  },
+  "categories": [
+    {
+      "type": "hero",
+      "start": 1,
+      "end": 4,
+      "frames_per_character": 12
+    },
+    {
+      "type": "static_npc",
+      "start": 5,
+      "end": 46,
+      "frames_per_character": 1
+    },
+    {
+      "type": "mobile_npc",
+      "start": 47,
+      "end": 77,
+      "frames_per_character": 12
+    }
+  ],
+  "batches": [
+    {
+      "id": "batch-01",
+      "range": [
+        47,
+        56
+      ],
+      "branch": "art/npc-walk-47-56",
+      "status": "candidate_created_qa_pending",
+      "characters": 10,
+      "expected_frames": 120,
+      "source_candidate_zip_sha256": "387f08a8e97d584ccbaf89c7e5aa8e27ae05fb1df7f1f2f8c4dd7210f43c4121",
+      "notes": "Candidate sprite sheets exist as ChatGPT attachment. Transparent alpha observed previously but outline fringe must be manually repaired; no completed public deployment verified."
+    },
+    {
+      "id": "batch-02",
+      "range": [
+        57,
+        66
+      ],
+      "branch": "art/npc-walk-57-66",
+      "status": "not_started",
+      "characters": 10,
+      "expected_frames": 120
+    },
+    {
+      "id": "batch-03",
+      "range": [
+        67,
+        76
+      ],
+      "branch": "art/npc-walk-67-76",
+      "status": "not_started",
+      "characters": 10,
+      "expected_frames": 120
+    },
+    {
+      "id": "batch-04",
+      "range": [
+        77,
+        77
+      ],
+      "branch": "art/npc-walk-77",
+      "status": "not_started",
+      "characters": 1,
+      "expected_frames": 12
+    },
+    {
+      "id": "hero",
+      "range": [
+        1,
+        4
+      ],
+      "branch": "art/hero-walk-01-04",
+      "status": "separate_task",
+      "characters": 4,
+      "expected_frames": 48
+    }
+  ],
+  "expected_mobile_npc_count": 31,
+  "expected_mobile_npc_frames": 372,
+  "expected_hero_mobile_total": 35,
+  "expected_animated_frames": 420,
+  "acceptance": "E1-E7 all pass, then user art approval before merge"
+}
