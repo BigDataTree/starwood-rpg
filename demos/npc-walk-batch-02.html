@@ -1,97 +1,87 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#132c2b" />
-<title>星森傳說 · 57–66 移動 NPC 四方向動畫 Demo</title>
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#122820">
+<title>星森傳說｜57–66 第二批移動NPC｜手機互動Demo</title>
 <style>
-:root{font-family:system-ui,-apple-system,"Noto Sans TC","PingFang TC",sans-serif;color:#e8f4ef;background:#0c1b1e; color-scheme:dark}
-*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 80% -20%,#284e46 0,transparent 45%),linear-gradient(145deg,#0e2023,#0c1b1e 70%);}
-header{max-width:1380px;margin:auto;padding:24px 20px 14px}h1{font-size:clamp(21px,3vw,30px);letter-spacing:.03em;margin:0 0 8px}header p{margin:4px 0;color:#b6d0c8;font-size:14px;line-height:1.7}.eyebrow{color:#dbbe7c;font-size:12px;font-weight:800;letter-spacing:.15em;margin-bottom:5px}.status{display:inline-flex;border:1px solid #466659;border-radius:999px;padding:4px 10px;color:#e8d99b;font-size:12px;margin-left:10px;vertical-align:middle}.layout{max-width:1380px;margin:0 auto;padding:0 20px 30px;display:grid;grid-template-columns:minmax(0,2fr) minmax(300px, .95fr);gap:16px}.panel{background:#172b2e;border:1px solid #35504c;border-radius:17px;overflow:hidden;box-shadow:0 12px 30px #0004}.panel h2{font-size:17px;margin:0}.panelhead{padding:14px 16px;border-bottom:1px solid #31504b;display:flex;align-items:center;justify-content:space-between;gap:8px}.hint{font-size:12px;color:#abc6bc}.stage{position:relative;padding:12px;background:#142827}.stage canvas{width:100%;height:auto;aspect-ratio:16 / 9;image-rendering:pixelated;display:block;border-radius:11px;background:#31634c;border:1px solid #4d7463;touch-action:none}.gamebar{padding:12px 16px 16px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between}.controller{display:grid;grid-template-columns:repeat(3,48px);grid-template-rows:repeat(3,43px);gap:5px;user-select:none;touch-action:none}.ctrl{background:#254540;border:1px solid #49766b;border-radius:11px;color:#effdf2;font-size:20px;touch-action:none;cursor:pointer;min-width:0;padding:0}.ctrl:active,.ctrl.on{background:#76a68a;color:#071d19}.ctrl.blank{visibility:hidden}.tall{display:grid;gap:8px;align-content:center;flex:1;min-width:120px}.tall .item{display:flex;align-items:center;justify-content:space-between;gap:8px}.value{font-size:12px;color:#b2cdc3}.tall input{width:100%;accent-color:#cde3a1}.toggle{border:1px solid #527463;background:#25433d;color:#e5f1d1;border-radius:8px;font-weight:700;padding:8px 11px;cursor:pointer}.previewgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px}.smallcap{color:#c6d9ce;font-size:12px;margin-bottom:6px}.portrait{width:100%;height:220px;object-fit:contain;object-position:center;border-radius:10px;background:#f5f6f5}.sheetpanel{padding:12px;border-radius:10px;background:#e6ebec;background-image:linear-gradient(45deg,#dde4e5 25%,transparent 25%,transparent 75%,#dde4e5 75%,#dde4e5),linear-gradient(45deg,#dde4e5 25%,transparent 25%,transparent 75%,#dde4e5 75%,#dde4e5);background-size:20px 20px;background-position:0 0,10px 10;overflow:hidden}.sheetpanel canvas{width:100%;max-width:220px;display:block;margin:auto;image-rendering:pixelated}.direction-row{padding:6px 16px 13px;display:flex;gap:6px;flex-wrap:wrap}.dirbtn{border:1px solid #526f64;border-radius:10px;background:#25433b;color:#d0e6db;padding:8px 11px;cursor:pointer}.dirbtn.active{background:#a9cb9e;color:#12241a;font-weight:750}.roster{grid-column:1 / -1}.rostergrid{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:7px;padding:12px}.char{color:#cde3d9;background:#203b38;border:1px solid #3c5b51;border-radius:11px;padding:8px 4px;cursor:pointer;transition:background .12s,border-color .12s;min-width:0}.char.selected{background:#365e47;border-color:#d3c881;box-shadow:inset 0 0 0 1px #b1c47e}.char canvas{width:100%;height:88px;object-fit:contain;image-rendering:pixelated;display:block}.char span{display:block;font-weight:750;font-size:12px;white-space:nowrap}.char small{display:block;font-size:11px;opacity:.7;margin-top:4px;white-space:nowrap}.footnote{grid-column:1 / -1;color:#a7c3b8;font-size:13px;line-height:1.7;padding:3px 5px}a{color:#d6e9a3}button:focus-visible{outline:3px solid #e0cc87;outline-offset:2px}.light{color:#e2d38d}.name{color:#e6db9b;font-weight:800}.statline{padding:0 16px 10px;font-size:12px;color:#b7d0c4}.statline strong{color:#fff}.rowgroup{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;padding:0 12px 12px}.rowgroup div{font-size:11px;color:#acbfb7;text-align:center}
-@media (max-width:950px){.layout{grid-template-columns:1fr}.rostergrid{grid-template-columns:repeat(5,minmax(0,1fr))}.portrait{height:190px}}
-@media (max-width:540px){.layout{padding:0 10px 18px;gap:12px}header{padding:18px 13px 12px}.rostergrid{grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}.char{padding:5px 2px}.char canvas{height:62px}.char span{font-size:11px}.char small{font-size:10px}.panelhead{padding:11px 12px}.gamebar{flex-wrap:nowrap;padding:10px 12px}.controller{grid-template-columns:repeat(3,42px);grid-template-rows:repeat(3,40px);gap:4px}.previewgrid{gap:8px;padding:8px}.portrait{height:180px}.sheetpanel{padding:4px}.hint{font-size:11px}.statline{font-size:11px}}
-</style>
-</head>
-<body>
-<header><div class="eyebrow">星森傳說 · 64PX WALK ANIMATION</div><h1>移動 NPC｜第二批 57–66 <span class="status">美術審核版 · 第二批候選</span></h1>
-<p>10 位 NPC · 每位 4 方向 × 3 影格 · 64×64 RGBA PNG（美術候選，非正式定稿）。使用方向鍵／WASD 或手機方向按鈕移動；可檢查每位人物四方向的外觀與腳步動畫。</p><p style="color:#ffe7a7">來源校驗：已核准的 77 人總覽 SHA256 c03701c3…6655bf。本 GitHub 分支預覽版從 assets 載入 10 張透明圖集；仍須做最終美術驗收。</p></header>
-<main class="layout">
-<section class="panel"><div class="panelhead"><h2 id="mainTitle">57 凱拉｜行走 Demo</h2><span class="hint">場景可移動 · 圖片從同分支載入</span></div>
-<div class="stage"><canvas id="world" width="960" height="540" aria-label="可操作的像素遊戲場景"></canvas></div>
-<div class="gamebar"><div class="controller" aria-label="手機方向鍵">
-<button class="ctrl blank" tabindex="-1"> </button><button class="ctrl" data-move="up" aria-label="向上走">▲</button><button class="ctrl blank" tabindex="-1"> </button>
-<button class="ctrl" data-move="left" aria-label="向左走">◀</button><button class="ctrl" data-move="down" aria-label="向下走">▼</button><button class="ctrl" data-move="right" aria-label="向右走">▶</button>
-</div><div class="tall"><div class="item"><label class="value" for="speed">動畫速度</label><strong class="value" id="speedValue">7 FPS</strong></div><input id="speed" type="range" min="2" max="12" value="7" step="1"/><div class="item"><span class="value">待機也播放步伐</span><button type="button" id="autoplay" class="toggle" aria-pressed="true">開啟</button></div></div></div>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:#ecf7ee;background:linear-gradient(165deg,#112723,#0c1a20 52%,#101826);font-family:system-ui,-apple-system,"Noto Sans TC",sans-serif;min-height:100vh}
+header,.layout,footer{max-width:1110px;margin:auto;padding:16px}header{padding-top:23px}h1{font-size:clamp(22px,4.7vw,31px);margin:0 0 7px}p{line-height:1.6;margin:7px 0;color:#b9d0ca;font-size:14px}.label{color:#e5c778;font-size:12px;font-weight:700;letter-spacing:.12em}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,340px);gap:15px}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.stage{order:0}.list{order:1}}
+.panel{border:1px solid #47675e;border-radius:15px;overflow:hidden;background:#192c30;box-shadow:0 12px 24px #0003}.pad{padding:14px}
+h2{font-size:17px;margin:0 0 11px}.tag{display:inline-block;color:#e6dfb3;border:1px solid #67715b;padding:3px 8px;border-radius:999px;font-size:12px;margin:6px 0}
+#screen{display:block;width:min(100%,370px);height:auto;aspect-ratio:1;image-rendering:pixelated;background:linear-gradient(35deg,#31564c,#204d3d 45%,#31584d);border:1px solid #618276;border-radius:12px;margin:8px auto}
+#staticSprite{display:block;width:160px;height:215px;object-fit:contain;image-rendering:pixelated;max-width:100%;margin:8px auto;background-color:#233b38;background-image:linear-gradient(45deg,#31524c 25%,transparent 25%,transparent 75%,#31524c 75%),linear-gradient(45deg,#31524c 25%,transparent 25%,transparent 75%,#31524c 75%);background-position:0 0,12px 12px;background-size:24px 24px;border:1px solid #557569;border-radius:8px}
+.grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+@media(max-width:650px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.who{border:1px solid #48645d;border-radius:12px;background:#203c3c;color:#f4f0d5;cursor:pointer;padding:7px 4px;min-width:0;font-size:13px}
+.who.on{border:2px solid #e8c77e;background:#294941}
+.who img{display:block;width:100%;height:136px;object-fit:contain;image-rendering:pixelated;background:#182727;border-radius:5px}
+.who span{display:block;padding-top:6px;font-weight:700}.broken{opacity:.2}
+.controls{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:9px 0}
+button{font-family:inherit}button.ctrl,.toggle{border:1px solid #729b8b;border-radius:9px;background:#2d5b51;color:#effbee;padding:10px 15px;min-width:48px;cursor:pointer;font-size:16px}
+button.sel{background:#debc78;color:#1b2b22;font-weight:800}
+.meta{font-size:13px;color:#c9d7ca;line-height:1.7}.meta strong{color:#f4df9f}
+.warning{font-size:13px;border-left:3px solid #c9a15d;padding:9px 11px;background:#302c24;color:#f4e7d0;border-radius:5px;margin:13px 0}
+.smallnote{font-size:12px;color:#a7c3b8}.status{font-weight:700;color:#bbdfad}
+footer{font-size:12px;color:#a7beb8;padding-bottom:30px}
+a{color:#ace9c9}
+</style></head><body>
+<header><div class="label">STARWOOD LEGEND · 第二批 NPC 動畫審查</div><h1>🌲 57–66 號｜四方向行走 Demo</h1>
+<p>手機 Safari / Chrome 可直接使用；點選角色、方向，檢視每人 3×4 的 64px 精靈圖。靜態圖集即使動畫功能無法執行也會顯示。</p>
+<span class="tag">美術候選／待正式核准</span> <span class="tag">正式遊戲不受影響</span>
+</header>
+<div class="layout">
+<section class="panel stage pad">
+<h2 id="charLabel">57 凱拉｜行走預覽</h2>
+<div class="meta">狀態：<span class="status" id="loadStatus">正在載入圖片…</span></div>
+<canvas id="screen" width="320" height="320" aria-label="行走動畫預覽"></canvas>
+<div class="controls" id="dirs"><button class="ctrl sel" data-dir="0">↓ 下</button><button class="ctrl" data-dir="1">← 左</button><button class="ctrl" data-dir="2">→ 右</button><button class="ctrl" data-dir="3">↑ 上</button></div>
+<div class="controls"><button id="play" class="toggle">⏸ 暫停</button><button id="slow" class="toggle">慢速</button><button id="fast" class="toggle">快速</button></div>
+<div class="meta">影格：<strong id="frame">1 / 3</strong>　方向：<strong id="direction">下</strong></div>
+<div class="warning">提醒：目前是57–66號的既有候選素材。60–61的補幀、62–66的側背仍待按權威造型逐像素驗收；先前另生成的「精修預覽」有角色錯配，<strong>尚未替換本頁正式編號素材</strong>。</div>
 </section>
-<section class="panel"><div class="panelhead"><h2>角色細節與 12 格精靈圖</h2><span class="hint">每格 64 × 64 px</span></div>
-<div class="previewgrid"><div><div class="smallcap">已核准的 77 人正面造型</div><img class="portrait" id="approved" alt="角色既有權威正面造型"/></div><div><div class="smallcap">實際 192 × 256 圖集</div><div class="sheetpanel"><canvas id="sheet" width="192" height="256" aria-label="精靈圖集 3 欄乘 4 列"></canvas></div></div></div>
-<div class="rowgroup"><div>第1列：下</div><div>第2列：左</div><div>第3列：右</div><div>第4列：上</div></div>
-<div class="statline">目前檢視：<strong id="current">57 凱拉</strong> · <span id="dirword">向下</span> · 第 <span id="frameno">2</span> 格</div>
-<div class="direction-row"><button class="dirbtn active" data-dir="down">↓ 正面</button><button class="dirbtn" data-dir="left">← 左側</button><button class="dirbtn" data-dir="right">→ 右側</button><button class="dirbtn" data-dir="up">↑ 背面</button></div>
-</section>
-<section class="panel roster"><div class="panelhead"><h2>第二批角色清單</h2><span class="hint">點選切換 Demo · 共 10 位</span></div><div id="roster" class="rostergrid"></div></section>
-<p class="footnote">素材說明：⚠ 此為第二批技術測試稿。57–61 的四方向有 AI 繪製來源，但 60–61 部分踏步是技術補幀；62–66 的正面忠於核准總覽，側面與背面為過渡候選，並非精修定案。請勿直接整合至正式版。請逐位檢查是否為同一角色、手腳是否自然、頭身比例、服裝、透明邊緣。</p>
-</main>
+<section class="panel list pad"><h2>選擇角色與檢視完整圖集</h2>
+<div class="grid" id="characters"><button class="who on" data-person="57" aria-label="顯示57號凱拉"><img src="https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/57_ambient_town_10_192x256.png" alt="57 凱拉，3欄4列候選精靈" loading="eager" onerror="this.classList.add('broken')"><span>57 凱拉</span></button>
+<button class="who" data-person="58" aria-label="顯示58號諾亞"><img src="https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/58_ambient_town_11_192x256.png" alt="58 諾亞，3欄4列候選精靈" loading="eager" onerror="this.classList.add('broken')"><span>58 諾亞</span></button>
+<button class="who" data-person="59" aria-label="顯示59號席爾"><img src="https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/59_ambient_town_12_192x256.png" alt="59 席爾，3欄4列候選精靈" loading="eager" onerror="this.classList.add('broken')"><span>59 席爾</span></button>
+<button class="who" data-person="60" aria-label="顯示60號艾薇"><img src="https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/60_ambient_town_13_192x256.png" alt="60 艾薇，3欄4列候選精靈" loading="eager" onerror="this.classList.add('broken')"><span>60 艾薇</span></button>
+<button class="who" data-person="61" aria-label="顯示61號安妮"><img src="https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/61_ambient_camp_0_192x256.png" alt="61 安妮，3欄4列候選精靈" loading="eager" onerror="this.classList.add('broken')"><span>61 安妮</span></button>
+<button class="who" data-person="62" aria-label="顯示62號羅伊"><img src="https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/62_ambient_camp_1_192x256.png" alt="62 羅伊，3欄4列候選精靈" loading="eager" onerror="this.classList.add('broken')"><span>62 羅伊</span></button>
+<button class="who" data-person="63" aria-label="顯示63號菲恩"><img src="https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/63_ambient_camp_2_192x256.png" alt="63 菲恩，3欄4列候選精靈" loading="eager" onerror="this.classList.add('broken')"><span>63 菲恩</span></button>
+<button class="who" data-person="64" aria-label="顯示64號露西"><img src="https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/64_ambient_camp_3_192x256.png" alt="64 露西，3欄4列候選精靈" loading="eager" onerror="this.classList.add('broken')"><span>64 露西</span></button>
+<button class="who" data-person="65" aria-label="顯示65號席爾"><img src="https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/65_ambient_dusk_0_192x256.png" alt="65 席爾，3欄4列候選精靈" loading="eager" onerror="this.classList.add('broken')"><span>65 席爾</span></button>
+<button class="who" data-person="66" aria-label="顯示66號艾薇"><img src="https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/66_ambient_dusk_1_192x256.png" alt="66 艾薇，3欄4列候選精靈" loading="eager" onerror="this.classList.add('broken')"><span>66 艾薇</span></button></div>
+<p class="smallnote">每張縮圖為完整 192×256 PNG，四方向順序依次為下、左、右、上。可直接在手機長按圖片檢查。</p>
+<img id="staticSprite" src="https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/57_ambient_town_10_192x256.png" alt="目前選取角色的3欄4列完整精靈圖集">
+<p id="fallback" class="smallnote">圖片若未顯示，可點 <a href="https://github.com/BigDataTree/starwood-rpg/tree/art/npc-walk-57-66/assets/npc-walk-batches/batch-02" target="_blank" rel="noopener">GitHub 圖集目錄</a> 檢查素材是否能載入。</p>
+</section></div>
+<footer>審查專頁：不修改正式遊戲 index.html。美術驗收標準參照 E1–E7；外觀對應已核准的77人全身正面總覽。</footer>
+<noscript><p style="padding:20px;color:#fff">JavaScript 未啟用，您仍可在上方看到 10 位角色的完整靜態精靈圖集。</p></noscript>
 <script>
-'use strict';
-const ART = [{"number":57,"name":"凱拉","id":"ambient_town_10","sprite_url":"../assets/npc-walk-batches/batch-02/57_ambient_town_10_192x256.png","portrait_url":"../assets/npc-walk-batches/batch-02/reference/57_approved_front.png"},{"number":58,"name":"諾亞","id":"ambient_town_11","sprite_url":"../assets/npc-walk-batches/batch-02/58_ambient_town_11_192x256.png","portrait_url":"../assets/npc-walk-batches/batch-02/reference/58_approved_front.png"},{"number":59,"name":"席爾","id":"ambient_town_12","sprite_url":"../assets/npc-walk-batches/batch-02/59_ambient_town_12_192x256.png","portrait_url":"../assets/npc-walk-batches/batch-02/reference/59_approved_front.png"},{"number":60,"name":"艾薇","id":"ambient_town_13","sprite_url":"../assets/npc-walk-batches/batch-02/60_ambient_town_13_192x256.png","portrait_url":"../assets/npc-walk-batches/batch-02/reference/60_approved_front.png"},{"number":61,"name":"安妮","id":"ambient_camp_0","sprite_url":"../assets/npc-walk-batches/batch-02/61_ambient_camp_0_192x256.png","portrait_url":"../assets/npc-walk-batches/batch-02/reference/61_approved_front.png"},{"number":62,"name":"羅伊","id":"ambient_camp_1","sprite_url":"../assets/npc-walk-batches/batch-02/62_ambient_camp_1_192x256.png","portrait_url":"../assets/npc-walk-batches/batch-02/reference/62_approved_front.png"},{"number":63,"name":"菲恩","id":"ambient_camp_2","sprite_url":"../assets/npc-walk-batches/batch-02/63_ambient_camp_2_192x256.png","portrait_url":"../assets/npc-walk-batches/batch-02/reference/63_approved_front.png"},{"number":64,"name":"露西","id":"ambient_camp_3","sprite_url":"../assets/npc-walk-batches/batch-02/64_ambient_camp_3_192x256.png","portrait_url":"../assets/npc-walk-batches/batch-02/reference/64_approved_front.png"},{"number":65,"name":"席爾","id":"ambient_dusk_0","sprite_url":"../assets/npc-walk-batches/batch-02/65_ambient_dusk_0_192x256.png","portrait_url":"../assets/npc-walk-batches/batch-02/reference/65_approved_front.png"},{"number":66,"name":"艾薇","id":"ambient_dusk_1","sprite_url":"../assets/npc-walk-batches/batch-02/66_ambient_dusk_1_192x256.png","portrait_url":"../assets/npc-walk-batches/batch-02/reference/66_approved_front.png"}];
-const DIRS=['down','left','right','up'];
-const $=id=>document.getElementById(id);
-const images=ART.map(a=>{let i=new Image();i.src=a.sprite_url;return i});
-const order={down:0,left:1,right:2,up:3};
-let selected=0, direction='down',fps=7,auto=true,moveKeys=new Set(),pos={x:480,y:275};
-const ctx=$('world').getContext('2d'),sheetCtx=$('sheet').getContext('2d');ctx.imageSmoothingEnabled=false;sheetCtx.imageSmoothingEnabled=false;
-const word={down:'向下',left:'向左',right:'向右',up:'向上'};
-const stage={w:960,h:540};
-function spriteDraw(ctx,img,x,y,dir,frame,scale=1){if(!img.complete||!img.naturalWidth)return;ctx.imageSmoothingEnabled=false;ctx.drawImage(img,frame*64,order[dir]*64,64,64,Math.round(x),Math.round(y),Math.round(64*scale),Math.round(64*scale));}
-function resizeAware(){let s=$('world').getBoundingClientRect();return s}
-const hashes=ART.map((a,i)=>[a.number,a.name]);
-const small=[];
-const roster=$('roster');
-ART.forEach((a,i)=>{const btn=document.createElement('button');btn.className='char'+(i===0?' selected':'');btn.type='button';btn.setAttribute('aria-label',`${a.number} ${a.name}`);const can=document.createElement('canvas');can.width=90;can.height=90;btn.append(can);const nm=document.createElement('span');nm.textContent=String(a.number).padStart(2,'0')+' '+a.name;btn.append(nm);const type=document.createElement('small');type.textContent='移動 NPC';btn.append(type);btn.addEventListener('click',()=>select(i));roster.append(btn);small.push({canvas:can,ctx:can.getContext('2d'),btn})});
-function select(i){selected=i;pos={x:480,y:275};direction='down';const a=ART[i];$('mainTitle').textContent=a.number+' '+a.name+'｜行走 Demo';$('current').textContent=a.number+' '+a.name;$('approved').src=a.portrait_url;small.forEach((s,k)=>s.btn.classList.toggle('selected',k===i));updateDirButtons();}
-function updateDirButtons(){document.querySelectorAll('[data-dir]').forEach(b=>b.classList.toggle('active',b.dataset.dir===direction));}
-function setDirection(dir){direction=dir;updateDirButtons();}
-document.querySelectorAll('[data-dir]').forEach(el=>el.addEventListener('click',()=>setDirection(el.dataset.dir)));
-$('speed').addEventListener('input',ev=>{fps=Number(ev.target.value);$('speedValue').textContent=fps+' FPS'});
-$('autoplay').addEventListener('click',()=>{auto=!auto;$('autoplay').textContent=auto?'開啟':'關閉';$('autoplay').setAttribute('aria-pressed',String(auto))});
-const keymaps={ArrowUp:'up',ArrowDown:'down',ArrowLeft:'left',ArrowRight:'right',w:'up',s:'down',a:'left',d:'right',W:'up',S:'down',A:'left',D:'right'};
-window.addEventListener('keydown',e=>{const dir=keymaps[e.key];if(!dir||e.repeat&&moveKeys.has(dir))return;if(['INPUT','TEXTAREA'].includes(document.activeElement?.tagName))return;e.preventDefault();moveKeys.add(dir);setDirection(dir)});
-window.addEventListener('keyup',e=>{const dir=keymaps[e.key];if(dir){e.preventDefault();moveKeys.delete(dir)}});
-window.addEventListener('blur',()=>{moveKeys.clear();document.querySelectorAll('[data-move]').forEach(x=>x.classList.remove('on'))});
-document.querySelectorAll('[data-move]').forEach(el=>{const dir=el.dataset.move;const activate=e=>{e.preventDefault();try{el.setPointerCapture(e.pointerId)}catch{}moveKeys.add(dir);setDirection(dir);el.classList.add('on')};const release=e=>{moveKeys.delete(dir);el.classList.remove('on')};el.addEventListener('pointerdown',activate);['pointerup','pointercancel','lostpointercapture'].forEach(ev=>el.addEventListener(ev,release));});
-// Seeded deterministic little tile decorations; canvas is a self-contained offline scene.
-const grass=[];let seed=48237;function rnd(){seed=(seed*1664525+1013904223)>>>0;return seed/4294967296}
-for(let j=0;j<180;j++){grass.push([Math.floor(rnd()*stage.w),Math.floor(rnd()*stage.h),Math.floor(rnd()*5)])}
-function drawScene(){ctx.fillStyle='#47785b';ctx.fillRect(0,0,960,540);
- // Path and lawn, drawn in integer-pixel shapes for a pixel-art look.
- for(let y=0;y<540;y+=32){for(let x=0;x<960;x+=32){let v=(x*3+y*7)%7;ctx.fillStyle=['#487f5c','#46795a','#4d8061','#4d825e','#497e5e','#487d61','#508361'][v];ctx.fillRect(x,y,32,32)}}
- ctx.fillStyle='#b7a077';ctx.fillRect(0,350,960,95);ctx.fillStyle='#c9b184';ctx.fillRect(0,358,960,10);ctx.fillStyle='#9e8867';ctx.fillRect(0,435,960,8);
- for(let i=0;i<grass.length;i++){const [x,y,v]=grass[i];if(y>345&&y<450)continue;ctx.fillStyle=['#a6b86e','#7eb27d','#72975d','#e3c375','#c6db92'][v];ctx.fillRect(x,y,5,3);ctx.fillRect(x+2,y-3,2,6)}
- // Left pond / right leafy arbor.
- ctx.fillStyle='#274b49';ctx.fillRect(54,53,190,138);ctx.fillStyle='#3f8790';ctx.fillRect(62,60,176,123);ctx.fillStyle='#7db1a3';ctx.fillRect(85,83,42,4);ctx.fillRect(155,111,63,5);
- for(let i=0;i<6;i++){const x=776+(i%3)*53,y=75+Math.floor(i/3)*63;ctx.fillStyle='#283f2c';ctx.fillRect(x+8,y+24,13,44);ctx.fillStyle='#2e6e46';ctx.fillRect(x,y,34,35);ctx.fillStyle='#3d8756';ctx.fillRect(x+6,y-9,19,29)}
- // flagstone borders and bench.
- ctx.fillStyle='#6f5d47';ctx.fillRect(350,75,165,22);ctx.fillStyle='#ab845a';ctx.fillRect(361,58,144,18);ctx.fillStyle='#463c33';ctx.fillRect(373,94,14,37);ctx.fillRect(485,94,14,37);
- // Wooden sign.
- ctx.fillStyle='#5a3d29';ctx.fillRect(650,211,14,112);ctx.fillRect(580,211,145,58);ctx.fillStyle='#926849';ctx.fillRect(589,221,127,37);ctx.fillStyle='#fff2d1';ctx.font='bold 23px system-ui';ctx.fillText('星森傳說',601,248);
-}
-let last=0;
-function loop(now){let delta=Math.min((now-last)/1000,.07)||0;last=now;
-const active=moveKeys.size>0;for(const dir of ['left','right','up','down'])if(moveKeys.has(dir))setDirection(dir);
-let vx=(moveKeys.has('right')?1:0)-(moveKeys.has('left')?1:0),vy=(moveKeys.has('down')?1:0)-(moveKeys.has('up')?1:0);
-if(vx||vy){let norm=Math.hypot(vx,vy);pos.x=Math.min(900,Math.max(60,pos.x+vx/norm*165*delta));pos.y=Math.min(465,Math.max(100,pos.y+vy/norm*165*delta));}
-const frame=(active||auto)?Math.floor(now/1000*fps)%3:1;
-drawScene();
-// Additional NPCs for spatial context.
-const others=[{i:1,x:285,y:287,dir:'right'},{i:2,x:730,y:314,dir:'left'},{i:3,x:805,y:395,dir:'up'}];
-others.forEach(({i,x,y,dir},k)=>{if(i===selected)return;ctx.fillStyle='#14291d44';ctx.beginPath();ctx.ellipse(x,y+76,49,10,0,0,Math.PI*2);ctx.fill();spriteDraw(ctx,images[i],x-64,y-52,dir,Math.floor(now/1000*fps+k)%3,2)});
-ctx.fillStyle='#152d24a6';ctx.beginPath();ctx.ellipse(pos.x,pos.y+58,60,13,0,0,Math.PI*2);ctx.fill();
-spriteDraw(ctx,images[selected],pos.x-75,pos.y-90,direction,frame,2.35);
-ctx.fillStyle='#fbefba';ctx.textAlign='center';ctx.font='bold 18px system-ui';ctx.fillText(ART[selected].number+' · '+ART[selected].name,pos.x,pos.y-94);ctx.textAlign='start';
-$('dirword').textContent=word[direction];$('frameno').textContent=frame+1;
-const chosen=images[selected];sheetCtx.clearRect(0,0,192,256);if(chosen.complete&&chosen.naturalWidth)sheetCtx.drawImage(chosen,0,0);
-// Grid previews are updated at a fraction of stage rate, but each shows actual animation.
-small.forEach(({ctx:cx,canvas},i)=>{cx.clearRect(0,0,90,90);spriteDraw(cx,images[i],4,2,'down',Math.floor(now/1000*fps+i*.45)%3,1.3)});
-requestAnimationFrame(loop)}
-select(0);requestAnimationFrame(loop);
+(()=>{"use strict";
+const CHARACTERS=[{"n":57,"id":"ambient_town_10","name":"凱拉","file":"57_ambient_town_10_192x256.png","url":"https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/57_ambient_town_10_192x256.png"},{"n":58,"id":"ambient_town_11","name":"諾亞","file":"58_ambient_town_11_192x256.png","url":"https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/58_ambient_town_11_192x256.png"},{"n":59,"id":"ambient_town_12","name":"席爾","file":"59_ambient_town_12_192x256.png","url":"https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/59_ambient_town_12_192x256.png"},{"n":60,"id":"ambient_town_13","name":"艾薇","file":"60_ambient_town_13_192x256.png","url":"https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/60_ambient_town_13_192x256.png"},{"n":61,"id":"ambient_camp_0","name":"安妮","file":"61_ambient_camp_0_192x256.png","url":"https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/61_ambient_camp_0_192x256.png"},{"n":62,"id":"ambient_camp_1","name":"羅伊","file":"62_ambient_camp_1_192x256.png","url":"https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/62_ambient_camp_1_192x256.png"},{"n":63,"id":"ambient_camp_2","name":"菲恩","file":"63_ambient_camp_2_192x256.png","url":"https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/63_ambient_camp_2_192x256.png"},{"n":64,"id":"ambient_camp_3","name":"露西","file":"64_ambient_camp_3_192x256.png","url":"https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/64_ambient_camp_3_192x256.png"},{"n":65,"id":"ambient_dusk_0","name":"席爾","file":"65_ambient_dusk_0_192x256.png","url":"https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/65_ambient_dusk_0_192x256.png"},{"n":66,"id":"ambient_dusk_1","name":"艾薇","file":"66_ambient_dusk_1_192x256.png","url":"https://raw.githubusercontent.com/BigDataTree/starwood-rpg/art/npc-walk-57-66/assets/npc-walk-batches/batch-02/66_ambient_dusk_1_192x256.png"}];
+const get=id=>document.getElementById(id);
+const canvas=get("screen"),ctx=canvas.getContext("2d"),image=new Image();
+let selected=57,dir=0,frame=0,playing=true,speed=190,last=0;
+ctx.imageSmoothingEnabled=false;
+function bg(){const g=ctx.createLinearGradient(0,0,320,320);g.addColorStop(0,"#416e54");g.addColorStop(1,"#244634");ctx.fillStyle=g;ctx.fillRect(0,0,320,320);
+ctx.fillStyle="#6b7560";for(let y=16;y<320;y+=50){for(let x=8;x<320;x+=48){ctx.fillRect(x+((y/50)|0)%2*17,y,42,32)}}
+ctx.fillStyle="#233b33";ctx.fillRect(0,280,320,40)}
+function render(){bg();if(image.complete&&image.naturalWidth){ctx.fillStyle="#172f2b66";ctx.beginPath();ctx.ellipse(160,272,67,15,0,0,2*Math.PI);ctx.fill();
+ctx.drawImage(image,[0,1,2,1][frame]*64,dir*64,64,64,54,50,212,212)}else{ctx.textAlign="center";ctx.fillStyle="#f1e8d1";ctx.font="16px system-ui";ctx.fillText("正在載入角色…",160,160)}}
+function select(n){const c=CHARACTERS.find(v=>v.n===n);if(!c)return;selected=n;get("charLabel").textContent=c.n+" "+c.name+"｜行走預覽";
+document.querySelectorAll("[data-person]").forEach(b=>b.classList.toggle("on",Number(b.dataset.person)===n));get("staticSprite").src=c.url;
+get("loadStatus").textContent="正在載入圖片…";
+image.onload=()=>{get("loadStatus").textContent="圖片已載入";render()};
+image.onerror=()=>{get("loadStatus").textContent="圖片載入失敗，請使用GitHub素材目錄";render()};
+image.src=c.url;render()}
+document.querySelectorAll("[data-person]").forEach(b=>b.addEventListener("click",()=>{select(Number(b.dataset.person));document.querySelector(".stage").scrollIntoView({behavior:"smooth",block:"start"})}));
+document.querySelectorAll("[data-dir]").forEach(b=>b.addEventListener("click",()=>{dir=Number(b.dataset.dir);document.querySelectorAll("[data-dir]").forEach(x=>x.classList.toggle("sel",x===b));get("direction").textContent=["下","左","右","上"][dir];render()}));
+get("play").addEventListener("click",()=>{playing=!playing;get("play").textContent=playing?"⏸ 暫停":"▶ 播放"});
+get("slow").addEventListener("click",()=>speed=340);get("fast").addEventListener("click",()=>speed=105);
+const cycle=[0,1,2,3];
+function tick(t){if(t-last>speed){if(playing){frame=(frame+1)%4;get("frame").textContent=[1,2,3,2][frame]+" / 3";render()}last=t}requestAnimationFrame(tick)}
+select(57);requestAnimationFrame(tick);
+})();
 </script></body></html>
