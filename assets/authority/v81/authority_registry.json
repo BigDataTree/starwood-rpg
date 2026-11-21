@@ -1,0 +1,989 @@
+{
+  "authority": "User-provided Starwood v8.1 73-character dialogue portrait overview JPG, preserved unchanged",
+  "source_file": "v81_73_npc_portraits_authority.jpg",
+  "source_sha256": "519235d533c979b3d8a3151741b86b6f266c6123169190ced6d4bed0508a02d8",
+  "source_image_px": [
+    1168,
+    1720
+  ],
+  "columns": 8,
+  "npc_count": 73,
+  "hero_count": 4,
+  "npc_portraits": [
+    {
+      "n": 5,
+      "id": "elder",
+      "master_col": 0,
+      "master_row": 0
+    },
+    {
+      "n": 6,
+      "id": "merchant",
+      "master_col": 1,
+      "master_row": 0
+    },
+    {
+      "n": 7,
+      "id": "smith",
+      "master_col": 2,
+      "master_row": 0
+    },
+    {
+      "n": 8,
+      "id": "trainer",
+      "master_col": 3,
+      "master_row": 0
+    },
+    {
+      "n": 9,
+      "id": "healer",
+      "master_col": 4,
+      "master_row": 0
+    },
+    {
+      "n": 10,
+      "id": "guard",
+      "master_col": 5,
+      "master_row": 0
+    },
+    {
+      "n": 11,
+      "id": "librarian",
+      "master_col": 6,
+      "master_row": 0
+    },
+    {
+      "n": 12,
+      "id": "child",
+      "master_col": 7,
+      "master_row": 0
+    },
+    {
+      "n": 13,
+      "id": "guide",
+      "master_col": 0,
+      "master_row": 1
+    },
+    {
+      "n": 14,
+      "id": "scout",
+      "master_col": 1,
+      "master_row": 1
+    },
+    {
+      "n": 15,
+      "id": "campmerchant",
+      "master_col": 2,
+      "master_row": 1
+    },
+    {
+      "n": 16,
+      "id": "camphealer",
+      "master_col": 3,
+      "master_row": 1
+    },
+    {
+      "n": 17,
+      "id": "traveler",
+      "master_col": 4,
+      "master_row": 1
+    },
+    {
+      "n": 18,
+      "id": "duskhead",
+      "master_col": 5,
+      "master_row": 1
+    },
+    {
+      "n": 19,
+      "id": "wood",
+      "master_col": 6,
+      "master_row": 1
+    },
+    {
+      "n": 20,
+      "id": "duskmerchant",
+      "master_col": 7,
+      "master_row": 1
+    },
+    {
+      "n": 21,
+      "id": "duskhealer",
+      "master_col": 0,
+      "master_row": 2
+    },
+    {
+      "n": 22,
+      "id": "seer",
+      "master_col": 1,
+      "master_row": 2
+    },
+    {
+      "n": 23,
+      "id": "herbalist",
+      "master_col": 2,
+      "master_row": 2
+    },
+    {
+      "n": 24,
+      "id": "moonmerchant",
+      "master_col": 3,
+      "master_row": 2
+    },
+    {
+      "n": 25,
+      "id": "moonhealer",
+      "master_col": 4,
+      "master_row": 2
+    },
+    {
+      "n": 26,
+      "id": "cartographer",
+      "master_col": 5,
+      "master_row": 2
+    },
+    {
+      "n": 27,
+      "id": "artificer",
+      "master_col": 6,
+      "master_row": 2
+    },
+    {
+      "n": 28,
+      "id": "forgemerchant",
+      "master_col": 7,
+      "master_row": 2
+    },
+    {
+      "n": 29,
+      "id": "forgehealer",
+      "master_col": 0,
+      "master_row": 3
+    },
+    {
+      "n": 30,
+      "id": "forgeguard",
+      "master_col": 1,
+      "master_row": 3
+    },
+    {
+      "n": 31,
+      "id": "housekeeper_mara",
+      "master_col": 2,
+      "master_row": 3
+    },
+    {
+      "n": 32,
+      "id": "secretary_elin",
+      "master_col": 3,
+      "master_row": 3
+    },
+    {
+      "n": 33,
+      "id": "cook_bram",
+      "master_col": 4,
+      "master_row": 3
+    },
+    {
+      "n": 34,
+      "id": "guest_roan",
+      "master_col": 5,
+      "master_row": 3
+    },
+    {
+      "n": 35,
+      "id": "aide_sena",
+      "master_col": 6,
+      "master_row": 3
+    },
+    {
+      "n": 36,
+      "id": "archivist_nora",
+      "master_col": 7,
+      "master_row": 3
+    },
+    {
+      "n": 37,
+      "id": "astronomer_vega",
+      "master_col": 0,
+      "master_row": 4
+    },
+    {
+      "n": 38,
+      "id": "apprentice_tio",
+      "master_col": 1,
+      "master_row": 4
+    },
+    {
+      "n": 39,
+      "id": "scribe_luna",
+      "master_col": 2,
+      "master_row": 4
+    },
+    {
+      "n": 40,
+      "id": "baker_lumi",
+      "master_col": 3,
+      "master_row": 4
+    },
+    {
+      "n": 41,
+      "id": "florist_nia",
+      "master_col": 4,
+      "master_row": 4
+    },
+    {
+      "n": 42,
+      "id": "innkeeper_doran",
+      "master_col": 5,
+      "master_row": 4
+    },
+    {
+      "n": 43,
+      "id": "campcook_odo",
+      "master_col": 6,
+      "master_row": 4
+    },
+    {
+      "n": 44,
+      "id": "weaver_mira",
+      "master_col": 7,
+      "master_row": 4
+    },
+    {
+      "n": 45,
+      "id": "researcher_sol",
+      "master_col": 0,
+      "master_row": 5
+    },
+    {
+      "n": 46,
+      "id": "quartermaster_bran",
+      "master_col": 1,
+      "master_row": 5
+    },
+    {
+      "n": 47,
+      "id": "ambient_town_0",
+      "master_col": 2,
+      "master_row": 5
+    },
+    {
+      "n": 48,
+      "id": "ambient_town_1",
+      "master_col": 3,
+      "master_row": 5
+    },
+    {
+      "n": 49,
+      "id": "ambient_town_2",
+      "master_col": 4,
+      "master_row": 5
+    },
+    {
+      "n": 50,
+      "id": "ambient_town_3",
+      "master_col": 5,
+      "master_row": 5
+    },
+    {
+      "n": 51,
+      "id": "ambient_town_4",
+      "master_col": 6,
+      "master_row": 5
+    },
+    {
+      "n": 52,
+      "id": "ambient_town_5",
+      "master_col": 7,
+      "master_row": 5
+    },
+    {
+      "n": 53,
+      "id": "ambient_town_6",
+      "master_col": 0,
+      "master_row": 6
+    },
+    {
+      "n": 54,
+      "id": "ambient_town_7",
+      "master_col": 1,
+      "master_row": 6
+    },
+    {
+      "n": 55,
+      "id": "ambient_town_8",
+      "master_col": 2,
+      "master_row": 6
+    },
+    {
+      "n": 56,
+      "id": "ambient_town_9",
+      "master_col": 3,
+      "master_row": 6
+    },
+    {
+      "n": 57,
+      "id": "ambient_town_10",
+      "master_col": 4,
+      "master_row": 6
+    },
+    {
+      "n": 58,
+      "id": "ambient_town_11",
+      "master_col": 5,
+      "master_row": 6
+    },
+    {
+      "n": 59,
+      "id": "ambient_town_12",
+      "master_col": 6,
+      "master_row": 6
+    },
+    {
+      "n": 60,
+      "id": "ambient_town_13",
+      "master_col": 7,
+      "master_row": 6
+    },
+    {
+      "n": 61,
+      "id": "ambient_camp_0",
+      "master_col": 0,
+      "master_row": 7
+    },
+    {
+      "n": 62,
+      "id": "ambient_camp_1",
+      "master_col": 1,
+      "master_row": 7
+    },
+    {
+      "n": 63,
+      "id": "ambient_camp_2",
+      "master_col": 2,
+      "master_row": 7
+    },
+    {
+      "n": 64,
+      "id": "ambient_camp_3",
+      "master_col": 3,
+      "master_row": 7
+    },
+    {
+      "n": 65,
+      "id": "ambient_dusk_0",
+      "master_col": 4,
+      "master_row": 7
+    },
+    {
+      "n": 66,
+      "id": "ambient_dusk_1",
+      "master_col": 5,
+      "master_row": 7
+    },
+    {
+      "n": 67,
+      "id": "ambient_dusk_2",
+      "master_col": 6,
+      "master_row": 7
+    },
+    {
+      "n": 68,
+      "id": "ambient_dusk_3",
+      "master_col": 7,
+      "master_row": 7
+    },
+    {
+      "n": 69,
+      "id": "ambient_dusk_4",
+      "master_col": 0,
+      "master_row": 8
+    },
+    {
+      "n": 70,
+      "id": "ambient_moon_0",
+      "master_col": 1,
+      "master_row": 8
+    },
+    {
+      "n": 71,
+      "id": "ambient_moon_1",
+      "master_col": 2,
+      "master_row": 8
+    },
+    {
+      "n": 72,
+      "id": "ambient_moon_2",
+      "master_col": 3,
+      "master_row": 8
+    },
+    {
+      "n": 73,
+      "id": "ambient_moon_3",
+      "master_col": 4,
+      "master_row": 8
+    },
+    {
+      "n": 74,
+      "id": "ambient_forgecamp_0",
+      "master_col": 5,
+      "master_row": 8
+    },
+    {
+      "n": 75,
+      "id": "ambient_forgecamp_1",
+      "master_col": 6,
+      "master_row": 8
+    },
+    {
+      "n": 76,
+      "id": "ambient_forgecamp_2",
+      "master_col": 7,
+      "master_row": 8
+    },
+    {
+      "n": 77,
+      "id": "ambient_forgecamp_3",
+      "master_col": 0,
+      "master_row": 9
+    }
+  ],
+  "hero_classes": [
+    {
+      "n": 1,
+      "id": "novice",
+      "status": "existing hero, kept unchanged"
+    },
+    {
+      "n": 2,
+      "id": "knight",
+      "status": "new candidate, awaiting review"
+    },
+    {
+      "n": 3,
+      "id": "mage",
+      "status": "new candidate, awaiting review"
+    },
+    {
+      "n": 4,
+      "id": "ranger",
+      "status": "new candidate, awaiting review"
+    }
+  ],
+  "note": "JPG overview is the visual authority. Its thumbnail crops are only previews and not a replacement for original high-resolution per-person assets.",
+  "source_of_individuals": "Embedded ART_DATA original high-resolution WebP files in 星森傳說_對話修改交接版_20261120.html; cross-referenced with user JPG mosaic.",
+  "individuals": [
+    {
+      "n": 5,
+      "id": "elder",
+      "sha256": "511b3101da982c26104477f72767fd6f46d2383ed6ae22242cf6fb4967694166",
+      "bytes": 34098,
+      "file": "original_73_webp/05_elder.webp"
+    },
+    {
+      "n": 6,
+      "id": "merchant",
+      "sha256": "fba319b325e43a2d1b8d599760c6038f4bae0783120e1787f67cabb26bf1bc31",
+      "bytes": 33088,
+      "file": "original_73_webp/06_merchant.webp"
+    },
+    {
+      "n": 7,
+      "id": "smith",
+      "sha256": "97a61657b8786d1bcec44f8e222bdb5568ed8d1ed07f34438234ef2b5aecbd70",
+      "bytes": 30352,
+      "file": "original_73_webp/07_smith.webp"
+    },
+    {
+      "n": 8,
+      "id": "trainer",
+      "sha256": "1010fd8f9079d3e0c634854889b5bcaa43a4a388a2411155fb2cbc5b0151ff4a",
+      "bytes": 31998,
+      "file": "original_73_webp/08_trainer.webp"
+    },
+    {
+      "n": 9,
+      "id": "healer",
+      "sha256": "4c2eb380de8792ccba981020a4a48399204dc18e2165bb33cc3efd52a9963904",
+      "bytes": 28246,
+      "file": "original_73_webp/09_healer.webp"
+    },
+    {
+      "n": 10,
+      "id": "guard",
+      "sha256": "f73513672cd588d57df5da9edc5bdf29fba69c71aa1e139c343ef0e4b8602195",
+      "bytes": 27990,
+      "file": "original_73_webp/10_guard.webp"
+    },
+    {
+      "n": 11,
+      "id": "librarian",
+      "sha256": "855e8eefd249152ac78eb674fcdd51f3c00d34842398067fb12f86f6b1a1520d",
+      "bytes": 31346,
+      "file": "original_73_webp/11_librarian.webp"
+    },
+    {
+      "n": 12,
+      "id": "child",
+      "sha256": "0776f14d3661e82f23b3e7943fbb1043f39289ad809bf2832c68ba7b95e8a794",
+      "bytes": 32670,
+      "file": "original_73_webp/12_child.webp"
+    },
+    {
+      "n": 13,
+      "id": "guide",
+      "sha256": "3729ff853ba80b15ec13770f91e6a1037f779863cd19973cdade60f1d6013472",
+      "bytes": 33092,
+      "file": "original_73_webp/13_guide.webp"
+    },
+    {
+      "n": 14,
+      "id": "scout",
+      "sha256": "8615a9b9bb3c435fda3927b7e7761a6d30fec0f9c0f766bb8af82eb5c6c9caa0",
+      "bytes": 32484,
+      "file": "original_73_webp/14_scout.webp"
+    },
+    {
+      "n": 15,
+      "id": "campmerchant",
+      "sha256": "bc8f6c944385b3023e671db2cc6a034056cf290f96fc1c5cead653f5fb6cb19a",
+      "bytes": 37298,
+      "file": "original_73_webp/15_campmerchant.webp"
+    },
+    {
+      "n": 16,
+      "id": "camphealer",
+      "sha256": "8cf1068895add7aa5089ee2fd21e5e0dd8c957b4300b7b06c2d2bd8b9f1f28fe",
+      "bytes": 34320,
+      "file": "original_73_webp/16_camphealer.webp"
+    },
+    {
+      "n": 17,
+      "id": "traveler",
+      "sha256": "2fda8122f3f878e3ad396ca1995e6434ef7c74c30dd13da29a8af062b35ceff6",
+      "bytes": 34032,
+      "file": "original_73_webp/17_traveler.webp"
+    },
+    {
+      "n": 18,
+      "id": "duskhead",
+      "sha256": "616bf5d9f9cf711db8b37fdc230dcd50efa1b9c184928fce69158e0ddbd409f3",
+      "bytes": 40090,
+      "file": "original_73_webp/18_duskhead.webp"
+    },
+    {
+      "n": 19,
+      "id": "wood",
+      "sha256": "0e04c50bf3a27b718f2e774d5f7af9742e0a639655e4bdff930ad70aa59f953a",
+      "bytes": 35160,
+      "file": "original_73_webp/19_wood.webp"
+    },
+    {
+      "n": 20,
+      "id": "duskmerchant",
+      "sha256": "28b1f0f9b1bcedddd473236964f3cb0874ef131123334550749bcb6c8033eda2",
+      "bytes": 34832,
+      "file": "original_73_webp/20_duskmerchant.webp"
+    },
+    {
+      "n": 21,
+      "id": "duskhealer",
+      "sha256": "e451230bff18d4cdc85ec9e352695775550b04e61e3887f20208d3fb346786c1",
+      "bytes": 38014,
+      "file": "original_73_webp/21_duskhealer.webp"
+    },
+    {
+      "n": 22,
+      "id": "seer",
+      "sha256": "4bb3319e43d1b72073a20ba0a0370203cd61968d852897e83fa992d3dcf34aaf",
+      "bytes": 25874,
+      "file": "original_73_webp/22_seer.webp"
+    },
+    {
+      "n": 23,
+      "id": "herbalist",
+      "sha256": "58282467e295dcf9373dfd56171d48f93026cbdd63e6a72b0c1194cf5a622445",
+      "bytes": 36638,
+      "file": "original_73_webp/23_herbalist.webp"
+    },
+    {
+      "n": 24,
+      "id": "moonmerchant",
+      "sha256": "4f4f476b54bee66cf7e91a239c971b4a4ed460f089a06a980f9c402660dc57a7",
+      "bytes": 36306,
+      "file": "original_73_webp/24_moonmerchant.webp"
+    },
+    {
+      "n": 25,
+      "id": "moonhealer",
+      "sha256": "ca092c6f9686aa3e982902208a0f3267ef8c88ded13ccaf3631d0432845657f7",
+      "bytes": 36070,
+      "file": "original_73_webp/25_moonhealer.webp"
+    },
+    {
+      "n": 26,
+      "id": "cartographer",
+      "sha256": "684da0d85fdec4a555414d915c04137eda4abcfe0b1ba82f02a8d6ea8d832a80",
+      "bytes": 37330,
+      "file": "original_73_webp/26_cartographer.webp"
+    },
+    {
+      "n": 27,
+      "id": "artificer",
+      "sha256": "fb01a5f81138eac04c383b1617b37d9e60e2fce94cff9c06aab4cf70dfaf1397",
+      "bytes": 37342,
+      "file": "original_73_webp/27_artificer.webp"
+    },
+    {
+      "n": 28,
+      "id": "forgemerchant",
+      "sha256": "a20b3f6a51691bf33e77b1d67252be946037a11ec3542350900fff7cc71b8345",
+      "bytes": 35392,
+      "file": "original_73_webp/28_forgemerchant.webp"
+    },
+    {
+      "n": 29,
+      "id": "forgehealer",
+      "sha256": "24b2fdac7f81b178d3f7e7305d09caf65a543f9914a24d625f7c0ff325886516",
+      "bytes": 31922,
+      "file": "original_73_webp/29_forgehealer.webp"
+    },
+    {
+      "n": 30,
+      "id": "forgeguard",
+      "sha256": "662c14744116e1dc9d45e3d0db7cc02654b134fa883e024eb688dfc5f2c66a07",
+      "bytes": 37980,
+      "file": "original_73_webp/30_forgeguard.webp"
+    },
+    {
+      "n": 31,
+      "id": "housekeeper_mara",
+      "sha256": "ef6a4a8640d0fda5f1992a61b6cb982830dc3a0a9516e1a2b8a93c346407b30c",
+      "bytes": 24374,
+      "file": "original_73_webp/31_housekeeper_mara.webp"
+    },
+    {
+      "n": 32,
+      "id": "secretary_elin",
+      "sha256": "5c34422e01f4e76092166c11ca7f91fe77ae0dcc3444c2e230b58dea0d38942a",
+      "bytes": 32552,
+      "file": "original_73_webp/32_secretary_elin.webp"
+    },
+    {
+      "n": 33,
+      "id": "cook_bram",
+      "sha256": "ec05ca62f68b82acd44101c636abd6a39e750c4e10ca5813acad72837abff6ca",
+      "bytes": 25980,
+      "file": "original_73_webp/33_cook_bram.webp"
+    },
+    {
+      "n": 34,
+      "id": "guest_roan",
+      "sha256": "7f6ffd4c256c4fdb5e178c339e8abe19616c587870cde6d37c8d735700723d87",
+      "bytes": 30020,
+      "file": "original_73_webp/34_guest_roan.webp"
+    },
+    {
+      "n": 35,
+      "id": "aide_sena",
+      "sha256": "9b97a54900b935fbe287282926461dddc8cff8ccd037bad67ac5a762c971d542",
+      "bytes": 33348,
+      "file": "original_73_webp/35_aide_sena.webp"
+    },
+    {
+      "n": 36,
+      "id": "archivist_nora",
+      "sha256": "6085a20b66a8c9d4fa2b8084cbfb18df0a34356f22c81383fc05e1d2d714a648",
+      "bytes": 29786,
+      "file": "original_73_webp/36_archivist_nora.webp"
+    },
+    {
+      "n": 37,
+      "id": "astronomer_vega",
+      "sha256": "35e1e97f5fafaa247f38c5d8e56ae55ec3cf7d484531059534a68172046bd828",
+      "bytes": 33876,
+      "file": "original_73_webp/37_astronomer_vega.webp"
+    },
+    {
+      "n": 38,
+      "id": "apprentice_tio",
+      "sha256": "11f5d834389ef45b3fc4f8ca2dba1b13238709655e7564ff0aef8e56eda1dc68",
+      "bytes": 29064,
+      "file": "original_73_webp/38_apprentice_tio.webp"
+    },
+    {
+      "n": 39,
+      "id": "scribe_luna",
+      "sha256": "31a59eb7926ca271cf0e3102366b90c19ebdcb14f249c04dc246e8595bdb7cce",
+      "bytes": 34424,
+      "file": "original_73_webp/39_scribe_luna.webp"
+    },
+    {
+      "n": 40,
+      "id": "baker_lumi",
+      "sha256": "6485e1591e2ebaa24e4568265e494609aca4314989a61febd083472d3fa1ba28",
+      "bytes": 31162,
+      "file": "original_73_webp/40_baker_lumi.webp"
+    },
+    {
+      "n": 41,
+      "id": "florist_nia",
+      "sha256": "a9113b6183d3ae1c48e3a41d0b9ec2f4bbb2333ca79d6bcf10981f1b5c19c4bb",
+      "bytes": 34272,
+      "file": "original_73_webp/41_florist_nia.webp"
+    },
+    {
+      "n": 42,
+      "id": "innkeeper_doran",
+      "sha256": "c02ce5a4f04e415758cad4b9746cc406f9374075f37a8333006210966d3ca2af",
+      "bytes": 29714,
+      "file": "original_73_webp/42_innkeeper_doran.webp"
+    },
+    {
+      "n": 43,
+      "id": "campcook_odo",
+      "sha256": "18789c7d03faad43d06de98c726002f0a85c1dfc25b7eb2ecf7760424d94096d",
+      "bytes": 26044,
+      "file": "original_73_webp/43_campcook_odo.webp"
+    },
+    {
+      "n": 44,
+      "id": "weaver_mira",
+      "sha256": "b4653a8d14545a242891e8163a1fb6dfa86f1f23a7b982d37cd81ed955b504ed",
+      "bytes": 35794,
+      "file": "original_73_webp/44_weaver_mira.webp"
+    },
+    {
+      "n": 45,
+      "id": "researcher_sol",
+      "sha256": "e61d098369a4bd9b5c5b35bfb223851082f51f2a179a643a00e40a84e3a6719b",
+      "bytes": 30562,
+      "file": "original_73_webp/45_researcher_sol.webp"
+    },
+    {
+      "n": 46,
+      "id": "quartermaster_bran",
+      "sha256": "f4f05fac5e4e4702ca0d169e08faecb6e8a29501cc662b25c818b669e9a20cd2",
+      "bytes": 27350,
+      "file": "original_73_webp/46_quartermaster_bran.webp"
+    },
+    {
+      "n": 47,
+      "id": "ambient_town_0",
+      "sha256": "e9d0c0e7fb9af8e0391e6d323e0896933cf3e9d8a877347006ef119fd474c226",
+      "bytes": 32594,
+      "file": "original_73_webp/47_ambient_town_0.webp"
+    },
+    {
+      "n": 48,
+      "id": "ambient_town_1",
+      "sha256": "92fb53a99a9e3bf8e40bb401f4cbf0b95859fbcc43208c7b8683a2386ac02edf",
+      "bytes": 32882,
+      "file": "original_73_webp/48_ambient_town_1.webp"
+    },
+    {
+      "n": 49,
+      "id": "ambient_town_2",
+      "sha256": "7c5bbae86d218b0177259b80459cbd2595aac86ddf82976f58abfb20ac2335d7",
+      "bytes": 33090,
+      "file": "original_73_webp/49_ambient_town_2.webp"
+    },
+    {
+      "n": 50,
+      "id": "ambient_town_3",
+      "sha256": "3bec2852469455481dc0287c92cdf7be05076356ccc0d55a4bc99dfc46c29988",
+      "bytes": 31864,
+      "file": "original_73_webp/50_ambient_town_3.webp"
+    },
+    {
+      "n": 51,
+      "id": "ambient_town_4",
+      "sha256": "97d889254bfff76a69f7983a872aca1665d4f6adcfa527a4638c73642c2f3f8c",
+      "bytes": 31526,
+      "file": "original_73_webp/51_ambient_town_4.webp"
+    },
+    {
+      "n": 52,
+      "id": "ambient_town_5",
+      "sha256": "603bcdb0cc27a2b0f9b76be969f4c9b54ce1332eabd90d1d45d84782770fd678",
+      "bytes": 32320,
+      "file": "original_73_webp/52_ambient_town_5.webp"
+    },
+    {
+      "n": 53,
+      "id": "ambient_town_6",
+      "sha256": "98afeb5240105dfd5cf3a196b1a07c2d784a1aac391046bb7f850319016eb71b",
+      "bytes": 32100,
+      "file": "original_73_webp/53_ambient_town_6.webp"
+    },
+    {
+      "n": 54,
+      "id": "ambient_town_7",
+      "sha256": "47f7e489475455817a19a177e89167f2efbb045b03240b30d6f03fa231e91614",
+      "bytes": 36296,
+      "file": "original_73_webp/54_ambient_town_7.webp"
+    },
+    {
+      "n": 55,
+      "id": "ambient_town_8",
+      "sha256": "c3e6e3ead204e854ee57a1029cd6cdfdf84ef3230eed748d3ac4c220099412e3",
+      "bytes": 36554,
+      "file": "original_73_webp/55_ambient_town_8.webp"
+    },
+    {
+      "n": 56,
+      "id": "ambient_town_9",
+      "sha256": "d3e8b849aabfe902264387823a06823f2826611983b749800a25701cfeb81697",
+      "bytes": 34766,
+      "file": "original_73_webp/56_ambient_town_9.webp"
+    },
+    {
+      "n": 57,
+      "id": "ambient_town_10",
+      "sha256": "038528e586476a16724605cca87c297f64f527b815ece920c55946b74d595018",
+      "bytes": 34946,
+      "file": "original_73_webp/57_ambient_town_10.webp"
+    },
+    {
+      "n": 58,
+      "id": "ambient_town_11",
+      "sha256": "87d4a365a19ec61ee978a14b4c8dc73b83e05c65a969aa52c002def9fb37dc29",
+      "bytes": 33200,
+      "file": "original_73_webp/58_ambient_town_11.webp"
+    },
+    {
+      "n": 59,
+      "id": "ambient_town_12",
+      "sha256": "e94019e7541348ec06510f628682c5f6ca7343b8261eb16852690dcc859d90c4",
+      "bytes": 35370,
+      "file": "original_73_webp/59_ambient_town_12.webp"
+    },
+    {
+      "n": 60,
+      "id": "ambient_town_13",
+      "sha256": "5d53da2aba09f22b3b5432cec0d020edfc8df9cdfef98c5358222caa13787f02",
+      "bytes": 28530,
+      "file": "original_73_webp/60_ambient_town_13.webp"
+    },
+    {
+      "n": 61,
+      "id": "ambient_camp_0",
+      "sha256": "939f6ae7c6a544d2003685eaf6007805e4ce39fd33c2e7087c25c5e54a4fa397",
+      "bytes": 31106,
+      "file": "original_73_webp/61_ambient_camp_0.webp"
+    },
+    {
+      "n": 62,
+      "id": "ambient_camp_1",
+      "sha256": "99f7b426226f4eafdf545f57cf7a1bda3e445d8c964398edc05a5546830736a3",
+      "bytes": 33026,
+      "file": "original_73_webp/62_ambient_camp_1.webp"
+    },
+    {
+      "n": 63,
+      "id": "ambient_camp_2",
+      "sha256": "b83942d3557424b948617f9d8ce7dfebaadbd0c6173ac16438658951eee837e1",
+      "bytes": 29098,
+      "file": "original_73_webp/63_ambient_camp_2.webp"
+    },
+    {
+      "n": 64,
+      "id": "ambient_camp_3",
+      "sha256": "39be997d72da3621166e888aadccff112c8dd7f95fbb133b7f0b1053cfe42292",
+      "bytes": 32122,
+      "file": "original_73_webp/64_ambient_camp_3.webp"
+    },
+    {
+      "n": 65,
+      "id": "ambient_dusk_0",
+      "sha256": "28f77dbf8ed3a064d3c0baf6182ac53e7c56be2e198aa670be20fc572b7b904c",
+      "bytes": 33424,
+      "file": "original_73_webp/65_ambient_dusk_0.webp"
+    },
+    {
+      "n": 66,
+      "id": "ambient_dusk_1",
+      "sha256": "1f43a1645bfe204f466a92d8ae32aa2c49b8291933d16f3d26d46e695c13db3e",
+      "bytes": 37802,
+      "file": "original_73_webp/66_ambient_dusk_1.webp"
+    },
+    {
+      "n": 67,
+      "id": "ambient_dusk_2",
+      "sha256": "02fa40d10c759499f6d129d2fd382da7aa30776901f7d64cee63cd78aef50f47",
+      "bytes": 35044,
+      "file": "original_73_webp/67_ambient_dusk_2.webp"
+    },
+    {
+      "n": 68,
+      "id": "ambient_dusk_3",
+      "sha256": "be95b9bcfa554cb83aa97ed1c9925e4e64f824a5b53556b62873b517f682f9d2",
+      "bytes": 33912,
+      "file": "original_73_webp/68_ambient_dusk_3.webp"
+    },
+    {
+      "n": 69,
+      "id": "ambient_dusk_4",
+      "sha256": "e499c056930dc709c2e32d116ce4c1d0bce3ff559bb6116a243d75652b15ddc2",
+      "bytes": 33156,
+      "file": "original_73_webp/69_ambient_dusk_4.webp"
+    },
+    {
+      "n": 70,
+      "id": "ambient_moon_0",
+      "sha256": "e69a4374b01d8b9fead589a23261e36e0600bfcabb8144355cc8663d8242cda9",
+      "bytes": 36282,
+      "file": "original_73_webp/70_ambient_moon_0.webp"
+    },
+    {
+      "n": 71,
+      "id": "ambient_moon_1",
+      "sha256": "739bb5aec30842d71e437f9aa13bd6d81c0f2c4ae33c1f35cf3043ddb33b2594",
+      "bytes": 31126,
+      "file": "original_73_webp/71_ambient_moon_1.webp"
+    },
+    {
+      "n": 72,
+      "id": "ambient_moon_2",
+      "sha256": "c09ffe1dca001f327e0f599ee7400614a60276f565d5eefaa97fb432429fca7a",
+      "bytes": 34912,
+      "file": "original_73_webp/72_ambient_moon_2.webp"
+    },
+    {
+      "n": 73,
+      "id": "ambient_moon_3",
+      "sha256": "1cbb6dd4ebb8b7b47a5a66c3cae34d6718bc80b57388e6a9b72454f7f96332d6",
+      "bytes": 33814,
+      "file": "original_73_webp/73_ambient_moon_3.webp"
+    },
+    {
+      "n": 74,
+      "id": "ambient_forgecamp_0",
+      "sha256": "ac39c02a0efedc197382a4810f0939c87525e488ebcd640747142f111177bf11",
+      "bytes": 35004,
+      "file": "original_73_webp/74_ambient_forgecamp_0.webp"
+    },
+    {
+      "n": 75,
+      "id": "ambient_forgecamp_1",
+      "sha256": "652a9b4439a845e1f3cb7ac8c5fcf7e0ceea16c2c9b4eed02c60b11455d63aae",
+      "bytes": 31520,
+      "file": "original_73_webp/75_ambient_forgecamp_1.webp"
+    },
+    {
+      "n": 76,
+      "id": "ambient_forgecamp_2",
+      "sha256": "31ce5b4022a9b1385f567a1422a978ac9aa67aad2c3f78d7687ffcd81586b9c7",
+      "bytes": 33716,
+      "file": "original_73_webp/76_ambient_forgecamp_2.webp"
+    },
+    {
+      "n": 77,
+      "id": "ambient_forgecamp_3",
+      "sha256": "bdc9e2c6b5784312a81e5c725957dfb0cdc94cbd95fbb23a54e536b9b748b3dd",
+      "bytes": 28806,
+      "file": "original_73_webp/77_ambient_forgecamp_3.webp"
+    }
+  ]
+}
