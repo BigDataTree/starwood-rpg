@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#132c2b" />
+<title>星森傳說 · 57–66 移動 NPC 四方向動畫 Demo</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Noto Sans TC","PingFang TC",sans-serif;color:#e8f4ef;background:#0c1b1e; color-scheme:dark}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 80% -20%,#284e46 0,transparent 45%),linear-gradient(145deg,#0e2023,#0c1b1e 70%);}
+header{max-width:1380px;margin:auto;padding:24px 20px 14px}h1{font-size:clamp(21px,3vw,30px);letter-spacing:.03em;margin:0 0 8px}header p{margin:4px 0;color:#b6d0c8;font-size:14px;line-height:1.7}.eyebrow{color:#dbbe7c;font-size:12px;font-weight:800;letter-spacing:.15em;margin-bottom:5px}.status{display:inline-flex;border:1px solid #466659;border-radius:999px;padding:4px 10px;color:#e8d99b;font-size:12px;margin-left:10px;vertical-align:middle}.layout{max-width:1380px;margin:0 auto;padding:0 20px 30px;display:grid;grid-template-columns:minmax(0,2fr) minmax(300px, .95fr);gap:16px}.panel{background:#172b2e;border:1px solid #35504c;border-radius:17px;overflow:hidden;box-shadow:0 12px 30px #0004}.panel h2{font-size:17px;margin:0}.panelhead{padding:14px 16px;border-bottom:1px solid #31504b;display:flex;align-items:center;justify-content:space-between;gap:8px}.hint{font-size:12px;color:#abc6bc}.stage{position:relative;padding:12px;background:#142827}.stage canvas{width:100%;height:auto;aspect-ratio:16 / 9;image-rendering:pixelated;display:block;border-radius:11px;background:#31634c;border:1px solid #4d7463;touch-action:none}.gamebar{padding:12px 16px 16px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between}.controller{display:grid;grid-template-columns:repeat(3,48px);grid-template-rows:repeat(3,43px);gap:5px;user-select:none;touch-action:none}.ctrl{background:#254540;border:1px solid #49766b;border-radius:11px;color:#effdf2;font-size:20px;touch-action:none;cursor:pointer;min-width:0;padding:0}.ctrl:active,.ctrl.on{background:#76a68a;color:#071d19}.ctrl.blank{visibility:hidden}.tall{display:grid;gap:8px;align-content:center;flex:1;min-width:120px}.tall .item{display:flex;align-items:center;justify-content:space-between;gap:8px}.value{font-size:12px;color:#b2cdc3}.tall input{width:100%;accent-color:#cde3a1}.toggle{border:1px solid #527463;background:#25433d;color:#e5f1d1;border-radius:8px;font-weight:700;padding:8px 11px;cursor:pointer}.previewgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px}.smallcap{color:#c6d9ce;font-size:12px;margin-bottom:6px}.portrait{width:100%;height:220px;object-fit:contain;object-position:center;border-radius:10px;background:#f5f6f5}.sheetpanel{padding:12px;border-radius:10px;background:#e6ebec;background-image:linear-gradient(45deg,#dde4e5 25%,transparent 25%,transparent 75%,#dde4e5 75%,#dde4e5),linear-gradient(45deg,#dde4e5 25%,transparent 25%,transparent 75%,#dde4e5 75%,#dde4e5);background-size:20px 20px;background-position:0 0,10px 10;overflow:hidden}.sheetpanel canvas{width:100%;max-width:220px;display:block;margin:auto;image-rendering:pixelated}.direction-row{padding:6px 16px 13px;display:flex;gap:6px;flex-wrap:wrap}.dirbtn{border:1px solid #526f64;border-radius:10px;background:#25433b;color:#d0e6db;padding:8px 11px;cursor:pointer}.dirbtn.active{background:#a9cb9e;color:#12241a;font-weight:750}.roster{grid-column:1 / -1}.rostergrid{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:7px;padding:12px}.char{color:#cde3d9;background:#203b38;border:1px solid #3c5b51;border-radius:11px;padding:8px 4px;cursor:pointer;transition:background .12s,border-color .12s;min-width:0}.char.selected{background:#365e47;border-color:#d3c881;box-shadow:inset 0 0 0 1px #b1c47e}.char canvas{width:100%;height:88px;object-fit:contain;image-rendering:pixelated;display:block}.char span{display:block;font-weight:750;font-size:12px;white-space:nowrap}.char small{display:block;font-size:11px;opacity:.7;margin-top:4px;white-space:nowrap}.footnote{grid-column:1 / -1;color:#a7c3b8;font-size:13px;line-height:1.7;padding:3px 5px}a{color:#d6e9a3}button:focus-visible{outline:3px solid #e0cc87;outline-offset:2px}.light{color:#e2d38d}.name{color:#e6db9b;font-weight:800}.statline{padding:0 16px 10px;font-size:12px;color:#b7d0c4}.statline strong{color:#fff}.rowgroup{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;padding:0 12px 12px}.rowgroup div{font-size:11px;color:#acbfb7;text-align:center}
+@media (max-width:950px){.layout{grid-template-columns:1fr}.rostergrid{grid-template-columns:repeat(5,minmax(0,1fr))}.portrait{height:190px}}
+@media (max-width:540px){.layout{padding:0 10px 18px;gap:12px}header{padding:18px 13px 12px}.rostergrid{grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}.char{padding:5px 2px}.char canvas{height:62px}.char span{font-size:11px}.char small{font-size:10px}.panelhead{padding:11px 12px}.gamebar{flex-wrap:nowrap;padding:10px 12px}.controller{grid-template-columns:repeat(3,42px);grid-template-rows:repeat(3,40px);gap:4px}.previewgrid{gap:8px;padding:8px}.portrait{height:180px}.sheetpanel{padding:4px}.hint{font-size:11px}.statline{font-size:11px}}
+</style>
+</head>
+<body>
+<header><div class="eyebrow">星森傳說 · 64PX WALK ANIMATION</div><h1>移動 NPC｜第二批 57–66 <span class="status">美術審核版 · 第二批候選</span></h1>
+<p>10 位 NPC · 每位 4 方向 × 3 影格 · 64×64 RGBA PNG（美術候選，非正式定稿）。使用方向鍵／WASD 或手機方向按鈕移動；可檢查每位人物四方向的外觀與腳步動畫。</p><p style="color:#ffe7a7">來源校驗：已核准的 77 人總覽 SHA256 c03701c3…6655bf。本 GitHub 分支預覽版從 assets 載入 10 張透明圖集；仍須做最終美術驗收。</p></header>
+<main class="layout">
+<section class="panel"><div class="panelhead"><h2 id="mainTitle">57 凱拉｜行走 Demo</h2><span class="hint">場景可移動 · 圖片從同分支載入</span></div>
+<div class="stage"><canvas id="world" width="960" height="540" aria-label="可操作的像素遊戲場景"></canvas></div>
+<div class="gamebar"><div class="controller" aria-label="手機方向鍵">
+<button class="ctrl blank" tabindex="-1"> </button><button class="ctrl" data-move="up" aria-label="向上走">▲</button><button class="ctrl blank" tabindex="-1"> </button>
+<button class="ctrl" data-move="left" aria-label="向左走">◀</button><button class="ctrl" data-move="down" aria-label="向下走">▼</button><button class="ctrl" data-move="right" aria-label="向右走">▶</button>
+</div><div class="tall"><div class="item"><label class="value" for="speed">動畫速度</label><strong class="value" id="speedValue">7 FPS</strong></div><input id="speed" type="range" min="2" max="12" value="7" step="1"/><div class="item"><span class="value">待機也播放步伐</span><button type="button" id="autoplay" class="toggle" aria-pressed="true">開啟</button></div></div></div>
+</section>
+<section class="panel"><div class="panelhead"><h2>角色細節與 12 格精靈圖</h2><span class="hint">每格 64 × 64 px</span></div>
+<div class="previewgrid"><div><div class="smallcap">已核准的 77 人正面造型</div><img class="portrait" id="approved" alt="角色既有權威正面造型"/></div><div><div class="smallcap">實際 192 × 256 圖集</div><div class="sheetpanel"><canvas id="sheet" width="192" height="256" aria-label="精靈圖集 3 欄乘 4 列"></canvas></div></div></div>
+<div class="rowgroup"><div>第1列：下</div><div>第2列：左</div><div>第3列：右</div><div>第4列：上</div></div>
+<div class="statline">目前檢視：<strong id="current">57 凱拉</strong> · <span id="dirword">向下</span> · 第 <span id="frameno">2</span> 格</div>
+<div class="direction-row"><button class="dirbtn active" data-dir="down">↓ 正面</button><button class="dirbtn" data-dir="left">← 左側</button><button class="dirbtn" data-dir="right">→ 右側</button><button class="dirbtn" data-dir="up">↑ 背面</button></div>
+</section>
+<section class="panel roster"><div class="panelhead"><h2>第二批角色清單</h2><span class="hint">點選切換 Demo · 共 10 位</span></div><div id="roster" class="rostergrid"></div></section>
+<p class="footnote">素材說明：⚠ 此為第二批技術測試稿。57–61 的四方向有 AI 繪製來源，但 60–61 部分踏步是技術補幀；62–66 的正面忠於核准總覽，側面與背面為過渡候選，並非精修定案。請勿直接整合至正式版。請逐位檢查是否為同一角色、手腳是否自然、頭身比例、服裝、透明邊緣。</p>
+</main>
+<script>
+'use strict';
+const ART = [{"number":57,"name":"凱拉","id":"ambient_town_10","sprite_url":"../assets/npc-walk-batches/batch-02/57_ambient_town_10_192x256.png","portrait_url":"../assets/npc-walk-batches/batch-02/reference/57_approved_front.png"},{"number":58,"name":"諾亞","id":"ambient_town_11","sprite_url":"../assets/npc-walk-batches/batch-02/58_ambient_town_11_192x256.png","portrait_url":"../assets/npc-walk-batches/batch-02/reference/58_approved_front.png"},{"number":59,"name":"席爾","id":"ambient_town_12","sprite_url":"../assets/npc-walk-batches/batch-02/59_ambient_town_12_192x256.png","portrait_url":"../assets/npc-walk-batches/batch-02/reference/59_approved_front.png"},{"number":60,"name":"艾薇","id":"ambient_town_13","sprite_url":"../assets/npc-walk-batches/batch-02/60_ambient_town_13_192x256.png","portrait_url":"../assets/npc-walk-batches/batch-02/reference/60_approved_front.png"},{"number":61,"name":"安妮","id":"ambient_camp_0","sprite_url":"../assets/npc-walk-batches/batch-02/61_ambient_camp_0_192x256.png","portrait_url":"../assets/npc-walk-batches/batch-02/reference/61_approved_front.png"},{"number":62,"name":"羅伊","id":"ambient_camp_1","sprite_url":"../assets/npc-walk-batches/batch-02/62_ambient_camp_1_192x256.png","portrait_url":"../assets/npc-walk-batches/batch-02/reference/62_approved_front.png"},{"number":63,"name":"菲恩","id":"ambient_camp_2","sprite_url":"../assets/npc-walk-batches/batch-02/63_ambient_camp_2_192x256.png","portrait_url":"../assets/npc-walk-batches/batch-02/reference/63_approved_front.png"},{"number":64,"name":"露西","id":"ambient_camp_3","sprite_url":"../assets/npc-walk-batches/batch-02/64_ambient_camp_3_192x256.png","portrait_url":"../assets/npc-walk-batches/batch-02/reference/64_approved_front.png"},{"number":65,"name":"席爾","id":"ambient_dusk_0","sprite_url":"../assets/npc-walk-batches/batch-02/65_ambient_dusk_0_192x256.png","portrait_url":"../assets/npc-walk-batches/batch-02/reference/65_approved_front.png"},{"number":66,"name":"艾薇","id":"ambient_dusk_1","sprite_url":"../assets/npc-walk-batches/batch-02/66_ambient_dusk_1_192x256.png","portrait_url":"../assets/npc-walk-batches/batch-02/reference/66_approved_front.png"}];
+const DIRS=['down','left','right','up'];
+const $=id=>document.getElementById(id);
+const images=ART.map(a=>{let i=new Image();i.src=a.sprite_url;return i});
+const order={down:0,left:1,right:2,up:3};
+let selected=0, direction='down',fps=7,auto=true,moveKeys=new Set(),pos={x:480,y:275};
+const ctx=$('world').getContext('2d'),sheetCtx=$('sheet').getContext('2d');ctx.imageSmoothingEnabled=false;sheetCtx.imageSmoothingEnabled=false;
+const word={down:'向下',left:'向左',right:'向右',up:'向上'};
+const stage={w:960,h:540};
+function spriteDraw(ctx,img,x,y,dir,frame,scale=1){if(!img.complete||!img.naturalWidth)return;ctx.imageSmoothingEnabled=false;ctx.drawImage(img,frame*64,order[dir]*64,64,64,Math.round(x),Math.round(y),Math.round(64*scale),Math.round(64*scale));}
+function resizeAware(){let s=$('world').getBoundingClientRect();return s}
+const hashes=ART.map((a,i)=>[a.number,a.name]);
+const small=[];
+const roster=$('roster');
+ART.forEach((a,i)=>{const btn=document.createElement('button');btn.className='char'+(i===0?' selected':'');btn.type='button';btn.setAttribute('aria-label',`${a.number} ${a.name}`);const can=document.createElement('canvas');can.width=90;can.height=90;btn.append(can);const nm=document.createElement('span');nm.textContent=String(a.number).padStart(2,'0')+' '+a.name;btn.append(nm);const type=document.createElement('small');type.textContent='移動 NPC';btn.append(type);btn.addEventListener('click',()=>select(i));roster.append(btn);small.push({canvas:can,ctx:can.getContext('2d'),btn})});
+function select(i){selected=i;pos={x:480,y:275};direction='down';const a=ART[i];$('mainTitle').textContent=a.number+' '+a.name+'｜行走 Demo';$('current').textContent=a.number+' '+a.name;$('approved').src=a.portrait_url;small.forEach((s,k)=>s.btn.classList.toggle('selected',k===i));updateDirButtons();}
+function updateDirButtons(){document.querySelectorAll('[data-dir]').forEach(b=>b.classList.toggle('active',b.dataset.dir===direction));}
+function setDirection(dir){direction=dir;updateDirButtons();}
+document.querySelectorAll('[data-dir]').forEach(el=>el.addEventListener('click',()=>setDirection(el.dataset.dir)));
+$('speed').addEventListener('input',ev=>{fps=Number(ev.target.value);$('speedValue').textContent=fps+' FPS'});
+$('autoplay').addEventListener('click',()=>{auto=!auto;$('autoplay').textContent=auto?'開啟':'關閉';$('autoplay').setAttribute('aria-pressed',String(auto))});
+const keymaps={ArrowUp:'up',ArrowDown:'down',ArrowLeft:'left',ArrowRight:'right',w:'up',s:'down',a:'left',d:'right',W:'up',S:'down',A:'left',D:'right'};
+window.addEventListener('keydown',e=>{const dir=keymaps[e.key];if(!dir||e.repeat&&moveKeys.has(dir))return;if(['INPUT','TEXTAREA'].includes(document.activeElement?.tagName))return;e.preventDefault();moveKeys.add(dir);setDirection(dir)});
+window.addEventListener('keyup',e=>{const dir=keymaps[e.key];if(dir){e.preventDefault();moveKeys.delete(dir)}});
+window.addEventListener('blur',()=>{moveKeys.clear();document.querySelectorAll('[data-move]').forEach(x=>x.classList.remove('on'))});
+document.querySelectorAll('[data-move]').forEach(el=>{const dir=el.dataset.move;const activate=e=>{e.preventDefault();try{el.setPointerCapture(e.pointerId)}catch{}moveKeys.add(dir);setDirection(dir);el.classList.add('on')};const release=e=>{moveKeys.delete(dir);el.classList.remove('on')};el.addEventListener('pointerdown',activate);['pointerup','pointercancel','lostpointercapture'].forEach(ev=>el.addEventListener(ev,release));});
+// Seeded deterministic little tile decorations; canvas is a self-contained offline scene.
+const grass=[];let seed=48237;function rnd(){seed=(seed*1664525+1013904223)>>>0;return seed/4294967296}
+for(let j=0;j<180;j++){grass.push([Math.floor(rnd()*stage.w),Math.floor(rnd()*stage.h),Math.floor(rnd()*5)])}
+function drawScene(){ctx.fillStyle='#47785b';ctx.fillRect(0,0,960,540);
+ // Path and lawn, drawn in integer-pixel shapes for a pixel-art look.
+ for(let y=0;y<540;y+=32){for(let x=0;x<960;x+=32){let v=(x*3+y*7)%7;ctx.fillStyle=['#487f5c','#46795a','#4d8061','#4d825e','#497e5e','#487d61','#508361'][v];ctx.fillRect(x,y,32,32)}}
+ ctx.fillStyle='#b7a077';ctx.fillRect(0,350,960,95);ctx.fillStyle='#c9b184';ctx.fillRect(0,358,960,10);ctx.fillStyle='#9e8867';ctx.fillRect(0,435,960,8);
+ for(let i=0;i<grass.length;i++){const [x,y,v]=grass[i];if(y>345&&y<450)continue;ctx.fillStyle=['#a6b86e','#7eb27d','#72975d','#e3c375','#c6db92'][v];ctx.fillRect(x,y,5,3);ctx.fillRect(x+2,y-3,2,6)}
+ // Left pond / right leafy arbor.
+ ctx.fillStyle='#274b49';ctx.fillRect(54,53,190,138);ctx.fillStyle='#3f8790';ctx.fillRect(62,60,176,123);ctx.fillStyle='#7db1a3';ctx.fillRect(85,83,42,4);ctx.fillRect(155,111,63,5);
+ for(let i=0;i<6;i++){const x=776+(i%3)*53,y=75+Math.floor(i/3)*63;ctx.fillStyle='#283f2c';ctx.fillRect(x+8,y+24,13,44);ctx.fillStyle='#2e6e46';ctx.fillRect(x,y,34,35);ctx.fillStyle='#3d8756';ctx.fillRect(x+6,y-9,19,29)}
+ // flagstone borders and bench.
+ ctx.fillStyle='#6f5d47';ctx.fillRect(350,75,165,22);ctx.fillStyle='#ab845a';ctx.fillRect(361,58,144,18);ctx.fillStyle='#463c33';ctx.fillRect(373,94,14,37);ctx.fillRect(485,94,14,37);
+ // Wooden sign.
+ ctx.fillStyle='#5a3d29';ctx.fillRect(650,211,14,112);ctx.fillRect(580,211,145,58);ctx.fillStyle='#926849';ctx.fillRect(589,221,127,37);ctx.fillStyle='#fff2d1';ctx.font='bold 23px system-ui';ctx.fillText('星森傳說',601,248);
+}
+let last=0;
+function loop(now){let delta=Math.min((now-last)/1000,.07)||0;last=now;
+const active=moveKeys.size>0;for(const dir of ['left','right','up','down'])if(moveKeys.has(dir))setDirection(dir);
+let vx=(moveKeys.has('right')?1:0)-(moveKeys.has('left')?1:0),vy=(moveKeys.has('down')?1:0)-(moveKeys.has('up')?1:0);
+if(vx||vy){let norm=Math.hypot(vx,vy);pos.x=Math.min(900,Math.max(60,pos.x+vx/norm*165*delta));pos.y=Math.min(465,Math.max(100,pos.y+vy/norm*165*delta));}
+const frame=(active||auto)?Math.floor(now/1000*fps)%3:1;
+drawScene();
+// Additional NPCs for spatial context.
+const others=[{i:1,x:285,y:287,dir:'right'},{i:2,x:730,y:314,dir:'left'},{i:3,x:805,y:395,dir:'up'}];
+others.forEach(({i,x,y,dir},k)=>{if(i===selected)return;ctx.fillStyle='#14291d44';ctx.beginPath();ctx.ellipse(x,y+76,49,10,0,0,Math.PI*2);ctx.fill();spriteDraw(ctx,images[i],x-64,y-52,dir,Math.floor(now/1000*fps+k)%3,2)});
+ctx.fillStyle='#152d24a6';ctx.beginPath();ctx.ellipse(pos.x,pos.y+58,60,13,0,0,Math.PI*2);ctx.fill();
+spriteDraw(ctx,images[selected],pos.x-75,pos.y-90,direction,frame,2.35);
+ctx.fillStyle='#fbefba';ctx.textAlign='center';ctx.font='bold 18px system-ui';ctx.fillText(ART[selected].number+' · '+ART[selected].name,pos.x,pos.y-94);ctx.textAlign='start';
+$('dirword').textContent=word[direction];$('frameno').textContent=frame+1;
+const chosen=images[selected];sheetCtx.clearRect(0,0,192,256);if(chosen.complete&&chosen.naturalWidth)sheetCtx.drawImage(chosen,0,0);
+// Grid previews are updated at a fraction of stage rate, but each shows actual animation.
+small.forEach(({ctx:cx,canvas},i)=>{cx.clearRect(0,0,90,90);spriteDraw(cx,images[i],4,2,'down',Math.floor(now/1000*fps+i*.45)%3,1.3)});
+requestAnimationFrame(loop)}
+select(0);requestAnimationFrame(loop);
+</script></body></html>

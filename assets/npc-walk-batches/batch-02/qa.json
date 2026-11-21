@@ -1,0 +1,27 @@
+{
+  "batch": "batch-02",
+  "stage": "candidate_not_approved",
+  "source_sha256": "c03701c3e4dcd20ae7ba30d7cc373cd9b993200a34918277baf711d6816655bf",
+  "frame_size": [
+    64,
+    64
+  ],
+  "atlas_size": [
+    192,
+    256
+  ],
+  "characters": 10,
+  "frames": 120,
+  "alpha": "all alpha=0 background with pixel opacity 0 or 255",
+  "frame_uniqueness": "3 distinct pixel arrays per row on all 10 sprites, not evidence of genuine walk",
+  "qa": {
+    "E1": "passed",
+    "E2": "not_accepted",
+    "E3": "failed_rework",
+    "E4": "failed_rework",
+    "E5": "manual_review_pending",
+    "E6": "simulated_browser_pass_real_device_pending",
+    "E7": "user_approval_pending"
+  },
+  "notes": "57-59 generated multi-view; 60-61 supplemental step; 62-66 front from approved reference, side/back donor-based prototype; not for game integration"
+}
