@@ -23,12 +23,12 @@
 - `05–46` 僅一張正面64px站立，不進行多方向產製。
 
 ## 每批 SOP
-1. **讀權威**：取本 README、batches.json、角色對照與已確認的 77 人正面總覽；同時讀本批分支最新 `coordination/status.md`。來源不齊：停在待來源，不猜。
+1. **讀權威**：取本 README、batches.json、角色對照與已確認的 77 人正面總覽；同時讀本批分支最新 `coordination/status/batch-XX.md`。來源不齊：停在待來源，不猜。
 2. **鎖範圍**：每個對話只修改自己的分支與編號，例如第2批只能處理57–66；任務開始前核對分支最新 commit，避免覆蓋。
 3. **製作**：每人12張彼此動作不同的 64px 影格；按標準拼接為單人192×256 Sprite Sheet；保留角色身分和真實背面、兩側面。
 4. **機械驗證**：逐人驗證尺寸、RGBA alpha、背景透明、越界裁切、列次序、影格差異、腳底定位。記錄程式報告。
 5. **視覺與實機 E1～E7**：每人白／黑／綠／藍底；原生64px＋整數放大；提供可用手機Safari與桌機直接開啟的 HTML 動畫Demo（需先實際驗證，不可僅以生成就宣稱可用）。不能生成白/灰/紅色光暈；不得用 CSS 變形取代繪製。
-6. **提交**：只 commit 到本批分支：`assets/npc-walk-batches/batch-XX/`、`demos/npc-walk-batch-XX.html`、`coordination/status.md`；留下來源SHA、QA表、GitHub commit與可開啟URL。
+6. **提交**：只 commit 到本批分支：`assets/npc-walk-batches/batch-XX/`、`demos/npc-walk-batch-XX.html`、`coordination/status/batch-XX.md`；留下來源SHA、QA表、GitHub commit與可開啟URL。
 7. **總控驗收**：總控對話比較每批、檢查重複角色、玩家確認美術；通過才 PR / 合併 `main`，最終由總控決定正式遊戲版本號與發布。
 
 ## 嚴禁
