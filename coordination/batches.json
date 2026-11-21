@@ -1,14 +1,18 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-21",
+  "updated_at": "2026-11-22",
   "repository": "BigDataTree/starwood-rpg",
   "main_protected_by_process": true,
   "authority": {
-    "approved_front_overview_filename": "星森傳說_77位全身正面_48-66修正版總覽.png",
-    "sha256": "c03701c3e4dcd20ae7ba30d7cc373cd9b993200a34918277baf711d6816655bf",
+    "approved_front_overview_filename": "9D8B993B-45C9-4531-B95C-3121270819DD.jpeg",
+    "sha256": "941ed1fa5927d8b11d7f5704e20e312402111a483a06d0748fb6ba0934cdc06d",
     "github_presence": "not yet verified",
-    "source_status": "conversation attachment; supply or verify exact source before producing",
-    "npc_portrait_root": "assets/authority/v81/portraits"
+    "source_status": "user-approved visual appearance; numbering incorrect; remapping pending; original JPEG conversation attachment; derived reference embedded in authority-remap-20261122.html",
+    "npc_portrait_root": "assets/authority/v81/portraits",
+    "audit_url": "https://bigdatatree.github.io/starwood-rpg/authority-remap-20261122.html",
+    "index_authority": "unverified",
+    "previous_approved_front_overview_filename": "星森傳說_77位全身正面_48-66修正版總覽.png",
+    "previous_approved_front_sha256": "c03701c3e4dcd20ae7ba30d7cc373cd9b993200a34918277baf711d6816655bf"
   },
   "sprite_spec": {
     "cell_px": [
@@ -74,7 +78,8 @@
       "characters": 10,
       "expected_frames": 120,
       "source_candidate_zip_sha256": "387f08a8e97d584ccbaf89c7e5aa8e27ae05fb1df7f1f2f8c4dd7210f43c4121",
-      "notes": "Candidate sprite sheets exist as ChatGPT attachment. Transparent alpha observed previously but outline fringe must be manually repaired; no completed public deployment verified."
+      "notes": "Candidate sprite sheets exist as ChatGPT attachment. Transparent alpha observed previously but outline fringe must be manually repaired; no completed public deployment verified.",
+      "integration_blocker": "do_not_assign_character_id_from_existing_77_sheet_labels_until_full_remap_approved"
     },
     {
       "id": "batch-02",
@@ -85,7 +90,8 @@
       "branch": "art/npc-walk-57-66",
       "status": "not_started",
       "characters": 10,
-      "expected_frames": 120
+      "expected_frames": 120,
+      "integration_blocker": "do_not_assign_character_id_from_existing_77_sheet_labels_until_full_remap_approved"
     },
     {
       "id": "batch-03",
@@ -96,7 +102,8 @@
       "branch": "art/npc-walk-67-76",
       "status": "not_started",
       "characters": 10,
-      "expected_frames": 120
+      "expected_frames": 120,
+      "integration_blocker": "do_not_assign_character_id_from_existing_77_sheet_labels_until_full_remap_approved"
     },
     {
       "id": "batch-04",
@@ -107,7 +114,8 @@
       "branch": "art/npc-walk-77",
       "status": "not_started",
       "characters": 1,
-      "expected_frames": 12
+      "expected_frames": 12,
+      "integration_blocker": "do_not_assign_character_id_from_existing_77_sheet_labels_until_full_remap_approved"
     },
     {
       "id": "hero",
@@ -118,12 +126,14 @@
       "branch": "art/hero-walk-01-04",
       "status": "separate_task",
       "characters": 4,
-      "expected_frames": 48
+      "expected_frames": 48,
+      "integration_blocker": "do_not_assign_character_id_from_existing_77_sheet_labels_until_full_remap_approved"
     }
   ],
   "expected_mobile_npc_count": 31,
   "expected_mobile_npc_frames": 372,
   "expected_hero_mobile_total": 35,
   "expected_animated_frames": 420,
-  "acceptance": "E1-E7 all pass, then user art approval before merge"
+  "acceptance": "E1-E7 all pass, then user art approval before merge",
+  "development_gate": "blocked_pending_authoritative_visual_numbering_remap"
 }
