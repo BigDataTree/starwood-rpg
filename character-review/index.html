@@ -27,12 +27,29 @@ article{border:1px solid #d0ddd2;background:#fff;border-radius:11px;padding:9px;
 .dir{background:#67dfca;display:flex;align-items:center;justify-content:space-between;padding:4px 9px;border-radius:3px;min-height:36px}
 .dir b{font-weight:500;font-size:clamp(18px,2.5vw,27px)}
 .dir span{font-size:11px;color:#3a7167}
+.directions.ready{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;gap:5px}
+.dir-preview{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:0;padding:3px 2px;border:1px solid #a4e3cf;background:#67dfca;border-radius:5px;color:#174f44;cursor:pointer;font:inherit}
+.dir-preview canvas{display:block;width:100%;max-width:80px;aspect-ratio:1;image-rendering:pixelated;background:#66c368;border-radius:3px}
+.dir-preview span{font-size:11px;font-weight:700;line-height:1.2}
+.dir-preview:focus-visible{outline:2px solid #0f5347;outline-offset:1px}
+.walk-note{font-size:10px;color:#416d62;text-align:center;margin:5px 0 0}
+#walk-detail{border:1px solid #96bba9;border-radius:12px;padding:17px;max-width:min(95vw,390px);background:#eff8f2;color:#153f35;text-align:center}
+#walk-detail::backdrop{background:#071711b9}
+#walk-detail canvas{display:block;width:min(64vw,256px);height:auto;aspect-ratio:1;image-rendering:pixelated;background:#66c368;border-radius:6px;margin:12px auto}
+#walk-detail button{background:#245b4a;color:white;border:0;border-radius:8px;padding:10px 18px;font-size:15px}
+#walk-detail p{font-size:12px;color:#42675c}
 @media(max-width:620px){main{padding:7px 5px 20px;gap:8px}article{padding:6px;border-radius:8px;contain-intrinsic-size:auto 225px}.g{gap:6px;padding:7px;grid-template-columns:1fr 1fr .85fr}.caption{font-size:10px;margin-bottom:4px}.head{padding-bottom:6px}.name{font-size:13px}.region{font-size:10px}.dir{padding:2px 4px;min-height:25px}.dir b{font-size:17px}.dir span{font-size:9px}.top{padding:10px}}
 </style>
 </head>
 <body>
 <header><div class="top"><h1>🌲 星森傳說｜77 位角色</h1><a href="../assets/authority/64px/authority_77_numbered.png" target="_blank" rel="noopener">64px 權威原圖</a></div></header>
 <main id="list"></main>
+<dialog id="walk-detail" aria-label="角色四方向行走動畫放大檢查">
+ <strong id="walk-detail-title">四方向走路</strong>
+ <canvas id="walk-detail-canvas" width="64" height="64"></canvas>
+ <p>歷史候選素材；右側正面須以 64px 權威圖為準</p>
+ <button type="button" id="walk-detail-close">關閉</button>
+</dialog>
 <script>
 const DATA=[{"n":"01","name":"見習冒險者","id":"novice","region":"全地圖","kind":"主角職業","portrait":"../assets/common/heroPortrait.webp"},{"n":"02","name":"星盾騎士","id":"knight","region":"全地圖","kind":"主角職業","portrait":"../assets/authority/v81/hero/02_knight_portrait_candidate.jpg"},{"n":"03","name":"星語法師","id":"mage","region":"全地圖","kind":"主角職業","portrait":"../assets/authority/v81/hero/03_mage_portrait_candidate.jpg"},{"n":"04","name":"森語遊俠","id":"ranger","region":"全地圖","kind":"主角職業","portrait":"../assets/authority/v81/hero/04_ranger_portrait_candidate.jpg"},{"n":"05","name":"艾洛長老","id":"elder","region":"星燈鎮","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/05_elder.webp"},{"n":"06","name":"米露商人","id":"merchant","region":"星燈鎮","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/06_merchant.webp"},{"n":"07","name":"布洛鐵匠","id":"smith","region":"星燈鎮","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/07_smith.webp"},{"n":"08","name":"黎恩轉職導師","id":"trainer","region":"星燈鎮","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/08_trainer.webp"},{"n":"09","name":"芙蘿醫師","id":"healer","region":"星燈鎮","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/09_healer.webp"},{"n":"10","name":"凱恩守衛","id":"guard","region":"星燈鎮","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/10_guard.webp"},{"n":"11","name":"莎雅學者","id":"librarian","region":"星燈鎮","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/11_librarian.webp"},{"n":"12","name":"小露","id":"child","region":"星燈鎮","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/12_child.webp"},{"n":"13","name":"羅安嚮導","id":"guide","region":"星燈鎮","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/13_guide.webp"},{"n":"14","name":"瑞德斥候","id":"scout","region":"綠葉營地","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/14_scout.webp"},{"n":"15","name":"商隊阿可","id":"campmerchant","region":"綠葉營地","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/15_campmerchant.webp"},{"n":"16","name":"營地醫師","id":"camphealer","region":"綠葉營地","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/16_camphealer.webp"},{"n":"17","name":"旅人莉雅","id":"traveler","region":"綠葉營地","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/17_traveler.webp"},{"n":"18","name":"若葉村長","id":"duskhead","region":"暮枝村","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/18_duskhead.webp"},{"n":"19","name":"樵夫柯爾","id":"wood","region":"暮枝村","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/19_wood.webp"},{"n":"20","name":"精靈行商","id":"duskmerchant","region":"暮枝村","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/20_duskmerchant.webp"},{"n":"21","name":"林語治癒師","id":"duskhealer","region":"暮枝村","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/21_duskhealer.webp"},{"n":"22","name":"月泉預言者","id":"seer","region":"月泉村／月泉驛站（名稱待統一）","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/22_seer.webp"},{"n":"23","name":"藥草師蒂娜","id":"herbalist","region":"月泉村／月泉驛站（名稱待統一）","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/23_herbalist.webp"},{"n":"24","name":"月泉補給商","id":"moonmerchant","region":"月泉村／月泉驛站（名稱待統一）","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/24_moonmerchant.webp"},{"n":"25","name":"月泉治癒師","id":"moonhealer","region":"月泉村／月泉驛站（名稱待統一）","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/25_moonhealer.webp"},{"n":"26","name":"觀星地圖師","id":"cartographer","region":"月泉村／月泉驛站（名稱待統一）","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/26_cartographer.webp"},{"n":"27","name":"星鑄工匠","id":"artificer","region":"星鑄前哨","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/27_artificer.webp"},{"n":"28","name":"礦工商隊","id":"forgemerchant","region":"星鑄前哨","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/28_forgemerchant.webp"},{"n":"29","name":"堡壘醫護員","id":"forgehealer","region":"星鑄前哨","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/29_forgehealer.webp"},{"n":"30","name":"礦坑警衛","id":"forgeguard","region":"星鑄前哨","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/30_forgeguard.webp"},{"n":"31","name":"管家瑪拉","id":"housekeeper_mara","region":"長老之家 1F","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/31_housekeeper_mara.webp"},{"n":"32","name":"書記艾琳","id":"secretary_elin","region":"長老之家 1F","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/32_secretary_elin.webp"},{"n":"33","name":"廚師布朗","id":"cook_bram","region":"長老之家 1F","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/33_cook_bram.webp"},{"n":"34","name":"旅學者羅恩","id":"guest_roan","region":"長老之家 1F","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/34_guest_roan.webp"},{"n":"35","name":"長老助理瑟娜","id":"aide_sena","region":"長老之家 1F","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/35_aide_sena.webp"},{"n":"36","name":"檔案官諾拉","id":"archivist_nora","region":"長老之家 2F","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/36_archivist_nora.webp"},{"n":"37","name":"觀星師維嘉","id":"astronomer_vega","region":"長老之家 2F","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/37_astronomer_vega.webp"},{"n":"38","name":"學徒提歐","id":"apprentice_tio","region":"長老之家 2F","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/38_apprentice_tio.webp"},{"n":"39","name":"抄寫員露娜","id":"scribe_luna","region":"長老之家 2F","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/39_scribe_luna.webp"},{"n":"40","name":"麵包師露米","id":"baker_lumi","region":"星燈鎮","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/40_baker_lumi.webp"},{"n":"41","name":"花藝師妮雅","id":"florist_nia","region":"星燈鎮","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/41_florist_nia.webp"},{"n":"42","name":"旅店主人多蘭","id":"innkeeper_doran","region":"星燈鎮","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/42_innkeeper_doran.webp"},{"n":"43","name":"營地廚師歐多","id":"campcook_odo","region":"綠葉營地","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/43_campcook_odo.webp"},{"n":"44","name":"織匠米菈","id":"weaver_mira","region":"暮枝村","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/44_weaver_mira.webp"},{"n":"45","name":"研究員索爾","id":"researcher_sol","region":"月泉村／月泉驛站（名稱待統一）","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/45_researcher_sol.webp"},{"n":"46","name":"補給官布蘭","id":"quartermaster_bran","region":"星鑄前哨","kind":"固定 NPC","portrait":"../assets/authority/v81/portraits/46_quartermaster_bran.webp"},{"n":"47","name":"悠娜","id":"ambient-town-0","region":"星燈鎮","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/47_ambient_town_0.webp"},{"n":"48","name":"柏恩","id":"ambient-town-1","region":"星燈鎮","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/48_ambient_town_1.webp"},{"n":"49","name":"希亞","id":"ambient-town-2","region":"星燈鎮","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/49_ambient_town_2.webp"},{"n":"50","name":"洛可","id":"ambient-town-3","region":"星燈鎮","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/50_ambient_town_3.webp"},{"n":"51","name":"米婭","id":"ambient-town-4","region":"星燈鎮","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/51_ambient_town_4.webp"},{"n":"52","name":"提歐","id":"ambient-town-5","region":"星燈鎮","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/52_ambient_town_5.webp"},{"n":"53","name":"安妮","id":"ambient-town-6","region":"星燈鎮","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/53_ambient_town_6.webp"},{"n":"54","name":"羅伊","id":"ambient-town-7","region":"星燈鎮","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/54_ambient_town_7.webp"},{"n":"55","name":"菲恩","id":"ambient-town-8","region":"星燈鎮","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/55_ambient_town_8.webp"},{"n":"56","name":"露西","id":"ambient-town-9","region":"星燈鎮","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/56_ambient_town_9.webp"},{"n":"57","name":"凱拉","id":"ambient-town-10","region":"星燈鎮","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/57_ambient_town_10.webp"},{"n":"58","name":"諾亞","id":"ambient-town-11","region":"星燈鎮","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/58_ambient_town_11.webp"},{"n":"59","name":"席爾","id":"ambient-town-12","region":"星燈鎮","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/59_ambient_town_12.webp"},{"n":"60","name":"艾薇","id":"ambient-town-13","region":"星燈鎮","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/60_ambient_town_13.webp"},{"n":"61","name":"安妮","id":"ambient-camp-0","region":"綠葉營地","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/61_ambient_camp_0.webp"},{"n":"62","name":"羅伊","id":"ambient-camp-1","region":"綠葉營地","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/62_ambient_camp_1.webp"},{"n":"63","name":"菲恩","id":"ambient-camp-2","region":"綠葉營地","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/63_ambient_camp_2.webp"},{"n":"64","name":"露西","id":"ambient-camp-3","region":"綠葉營地","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/64_ambient_camp_3.webp"},{"n":"65","name":"席爾","id":"ambient-dusk-0","region":"暮枝村","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/65_ambient_dusk_0.webp"},{"n":"66","name":"艾薇","id":"ambient-dusk-1","region":"暮枝村","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/66_ambient_dusk_1.webp"},{"n":"67","name":"杜克","id":"ambient-dusk-2","region":"暮枝村","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/67_ambient_dusk_2.webp"},{"n":"68","name":"莉亞","id":"ambient-dusk-3","region":"暮枝村","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/68_ambient_dusk_3.webp"},{"n":"69","name":"托比","id":"ambient-dusk-4","region":"暮枝村","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/69_ambient_dusk_4.webp"},{"n":"70","name":"莉亞","id":"ambient-moon-0","region":"月泉村／月泉驛站（名稱待統一）","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/70_ambient_moon_0.webp"},{"n":"71","name":"托比","id":"ambient-moon-1","region":"月泉村／月泉驛站（名稱待統一）","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/71_ambient_moon_1.webp"},{"n":"72","name":"妮可","id":"ambient-moon-2","region":"月泉村／月泉驛站（名稱待統一）","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/72_ambient_moon_2.webp"},{"n":"73","name":"亞倫","id":"ambient-moon-3","region":"月泉村／月泉驛站（名稱待統一）","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/73_ambient_moon_3.webp"},{"n":"74","name":"莎菲","id":"ambient-forgecamp-0","region":"星鑄前哨","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/74_ambient_forgecamp_0.webp"},{"n":"75","name":"傑恩","id":"ambient-forgecamp-1","region":"星鑄前哨","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/75_ambient_forgecamp_1.webp"},{"n":"76","name":"可可","id":"ambient-forgecamp-2","region":"星鑄前哨","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/76_ambient_forgecamp_2.webp"},{"n":"77","name":"夏洛","id":"ambient-forgecamp-3","region":"星鑄前哨","kind":"移動 NPC","portrait":"../assets/authority/v81/portraits/77_ambient_forgecamp_3.webp"}];
 const COLS=[[30,120],[170,262],[319,410],[454,548],[593,684],[731,825],[865,969],[1008,1101],[1152,1230],[1279,1369],[1415,1508]];
@@ -48,10 +65,64 @@ for(const char of DATA){
  row.innerHTML='<div class="head"><span class="num">'+char.n+'</span><span class="name">'+esc(char.name)+'</span><span class="region">'+esc(char.region||"")+'</span></div>'+
  '<div class="g"><div class="col"><div class="caption">特寫圖</div><div class="visual"><img alt="'+esc(char.name)+'" loading="lazy" src="'+esc(char.portrait)+'"></div></div>'+
  '<div class="col"><div class="caption">64px 權威正面</div><div class="visual"><canvas width="140" height="140" aria-label="'+esc(char.name)+'正面圖"></canvas></div></div>'+
- '<div class="col"><div class="caption">走路</div><div class="directions">'+["上","下","左","右"].map(s=>'<div class="dir"><b>'+s+'</b><span>待製作</span></div>').join("")+'</div></div></div>';
+ '<div class="col"><div class="caption">'+(+char.n<=4?'四方向走路':'走路')+'</div>'+
+ (+char.n<=4
+  ? '<div class="directions ready">'+["上","下","左","右"].map((s,k)=>'<button type="button" class="dir-preview" data-actor="'+char.n+'" data-dir="'+[3,0,1,2][k]+'" aria-label="'+esc(char.name)+'往'+s+'的走路動畫，點擊放大"><canvas width="64" height="64"></canvas><span>'+s+'</span></button>').join("")+'</div><p class="walk-note">候選動畫 · 點擊放大</p>'
+  : '<div class="directions">'+["上","下","左","右"].map(s=>'<div class="dir"><b>'+s+'</b><span>待製作</span></div>').join("")+'</div>')+
+ '</div></div>';
  main.append(row);
  canvases.push(row.querySelector("canvas"));
 }
+// Only 01–04 display historical animation candidates. Canonical front images stay untouched.
+const WALK_HERO_FILES={
+ "01":"01_novice_64x64_4dir_3walk.png",
+ "02":"02_knight_64x64_4dir_3walk.png",
+ "03":"03_mage_64x64_4dir_3walk.png",
+ "04":"04_ranger_64x64_4dir_3walk.png"
+};
+const walkImages={};
+for(const [id,file] of Object.entries(WALK_HERO_FILES)){
+ const im=new Image();
+ im.decoding="async";
+ im.src="../assets/walk64-v118/"+file;
+ walkImages[id]=im;
+}
+const walkButtons=Array.from(document.querySelectorAll(".dir-preview"));
+const walkDetail=document.getElementById("walk-detail");
+const walkDetailCanvas=document.getElementById("walk-detail-canvas");
+let selectedWalk=null,lastWalkFrame=-1;
+document.getElementById("walk-detail-close").onclick=()=>walkDetail.close();
+walkDetail.addEventListener("click",e=>{if(e.target===walkDetail)walkDetail.close()});
+for(const button of walkButtons){
+ button.onclick=()=>{
+  selectedWalk={actor:button.dataset.actor,dir:+button.dataset.dir};
+  const ch=DATA[+button.dataset.actor-1];
+  document.getElementById("walk-detail-title").textContent=ch.n+"・"+ch.name+"｜"+["下","左","右","上"][+button.dataset.dir];
+  if(!walkDetail.open)walkDetail.showModal();
+  lastWalkFrame=-1;
+ };
+}
+function paintWalk(canvas,im,d,frame){
+ if(!im?.complete||im.naturalWidth!==192||im.naturalHeight!==256)return;
+ const ctx=canvas.getContext("2d");
+ ctx.imageSmoothingEnabled=false;
+ ctx.clearRect(0,0,64,64);
+ ctx.drawImage(im,frame*64,d*64,64,64,0,0,64,64);
+}
+const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)");
+function animateWalk(t){
+ const frame=reduceMotion.matches?1:[1,0,1,2][Math.floor(t/190)%4];
+ if(frame!==lastWalkFrame){
+  for(const button of walkButtons){
+   paintWalk(button.querySelector("canvas"),walkImages[button.dataset.actor],+button.dataset.dir,frame);
+  }
+  if(selectedWalk&&walkDetail.open)paintWalk(walkDetailCanvas,walkImages[selectedWalk.actor],selectedWalk.dir,frame);
+  lastWalkFrame=frame;
+ }
+ requestAnimationFrame(animateWalk);
+}
+for(const im of Object.values(walkImages))im.addEventListener("load",()=>{lastWalkFrame=-1});
+requestAnimationFrame(animateWalk);
 function drawAll(){
  if(src.naturalWidth!==1536||src.naturalHeight!==980)return;
  canvases.forEach((canvas,i)=>{
