@@ -61,7 +61,7 @@ const anchor="function actorDraw(key,x,y,dir=0,frame=0,w=64,h=64){";const patch=
    reader.onload=()=>resolve(reader.result);reader.readAsDataURL(authorityBlob);
   });
   // Bundle every moving NPC portrait into offline HTML/ZIP (no network needed).
-  const movingDef=patch.match(/const SW64_MOVING_FRONT_FILES=(\\{[^;]+\\});/);
+  const movingDef=patch.match(/const SW64_MOVING_FRONT_FILES=(\{[^;]+\});/);
   if(!movingDef)throw Error('找不到移動NPC權威圖對照表');
   const movingEntries=Object.entries(JSON.parse(movingDef[1]));
   if(movingEntries.length!==31)throw Error('移動NPC圖像數量錯誤：'+movingEntries.length);
