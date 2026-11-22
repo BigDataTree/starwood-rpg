@@ -1,0 +1,401 @@
+{
+  "schema_version": 1,
+  "role": "canonical_64px_appearance",
+  "priority": 1,
+  "authority": "assets/authority/64px/authority_77_numbered.png",
+  "original_image_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+  "original_dimensions": [
+    1536,
+    980
+  ],
+  "character_count": 77,
+  "numbering": "left-to-right top-to-bottom 11 columns x 7 rows, 01..77",
+  "policy": "Only this corrected numbered uncut PNG is authoritative for 64px appearance. Other walk64 and draft sprite sheets are historical non-authoritative references. Four-direction animation is pending; the game renderer is unchanged.",
+  "characters": [
+    {
+      "number": "01",
+      "actor_id": "novice",
+      "name": "見習冒險者"
+    },
+    {
+      "number": "02",
+      "actor_id": "knight",
+      "name": "星盾騎士"
+    },
+    {
+      "number": "03",
+      "actor_id": "mage",
+      "name": "星語法師"
+    },
+    {
+      "number": "04",
+      "actor_id": "ranger",
+      "name": "森語遊俠"
+    },
+    {
+      "number": "05",
+      "actor_id": "elder",
+      "name": "艾洛長老"
+    },
+    {
+      "number": "06",
+      "actor_id": "merchant",
+      "name": "米露商人"
+    },
+    {
+      "number": "07",
+      "actor_id": "smith",
+      "name": "布洛鐵匠"
+    },
+    {
+      "number": "08",
+      "actor_id": "trainer",
+      "name": "黎恩轉職導師"
+    },
+    {
+      "number": "09",
+      "actor_id": "healer",
+      "name": "芙蘿醫師"
+    },
+    {
+      "number": "10",
+      "actor_id": "guard",
+      "name": "凱恩守衛"
+    },
+    {
+      "number": "11",
+      "actor_id": "librarian",
+      "name": "莎雅學者"
+    },
+    {
+      "number": "12",
+      "actor_id": "child",
+      "name": "小露"
+    },
+    {
+      "number": "13",
+      "actor_id": "guide",
+      "name": "羅安嚮導"
+    },
+    {
+      "number": "14",
+      "actor_id": "scout",
+      "name": "瑞德斥候"
+    },
+    {
+      "number": "15",
+      "actor_id": "campmerchant",
+      "name": "商隊阿可"
+    },
+    {
+      "number": "16",
+      "actor_id": "camphealer",
+      "name": "營地醫師"
+    },
+    {
+      "number": "17",
+      "actor_id": "traveler",
+      "name": "旅人莉雅"
+    },
+    {
+      "number": "18",
+      "actor_id": "duskhead",
+      "name": "若葉村長"
+    },
+    {
+      "number": "19",
+      "actor_id": "wood",
+      "name": "樵夫柯爾"
+    },
+    {
+      "number": "20",
+      "actor_id": "duskmerchant",
+      "name": "精靈行商"
+    },
+    {
+      "number": "21",
+      "actor_id": "duskhealer",
+      "name": "林語治癒師"
+    },
+    {
+      "number": "22",
+      "actor_id": "seer",
+      "name": "月泉預言者"
+    },
+    {
+      "number": "23",
+      "actor_id": "herbalist",
+      "name": "藥草師蒂娜"
+    },
+    {
+      "number": "24",
+      "actor_id": "moonmerchant",
+      "name": "月泉補給商"
+    },
+    {
+      "number": "25",
+      "actor_id": "moonhealer",
+      "name": "月泉治癒師"
+    },
+    {
+      "number": "26",
+      "actor_id": "cartographer",
+      "name": "觀星地圖師"
+    },
+    {
+      "number": "27",
+      "actor_id": "artificer",
+      "name": "星鑄工匠"
+    },
+    {
+      "number": "28",
+      "actor_id": "forgemerchant",
+      "name": "礦工商隊"
+    },
+    {
+      "number": "29",
+      "actor_id": "forgehealer",
+      "name": "堡壘醫護員"
+    },
+    {
+      "number": "30",
+      "actor_id": "forgeguard",
+      "name": "礦坑警衛"
+    },
+    {
+      "number": "31",
+      "actor_id": "housekeeper_mara",
+      "name": "管家瑪拉"
+    },
+    {
+      "number": "32",
+      "actor_id": "secretary_elin",
+      "name": "書記艾琳"
+    },
+    {
+      "number": "33",
+      "actor_id": "cook_bram",
+      "name": "廚師布朗"
+    },
+    {
+      "number": "34",
+      "actor_id": "guest_roan",
+      "name": "旅學者羅恩"
+    },
+    {
+      "number": "35",
+      "actor_id": "aide_sena",
+      "name": "長老助理瑟娜"
+    },
+    {
+      "number": "36",
+      "actor_id": "archivist_nora",
+      "name": "檔案官諾拉"
+    },
+    {
+      "number": "37",
+      "actor_id": "astronomer_vega",
+      "name": "觀星師維嘉"
+    },
+    {
+      "number": "38",
+      "actor_id": "apprentice_tio",
+      "name": "學徒提歐"
+    },
+    {
+      "number": "39",
+      "actor_id": "scribe_luna",
+      "name": "抄寫員露娜"
+    },
+    {
+      "number": "40",
+      "actor_id": "baker_lumi",
+      "name": "麵包師露米"
+    },
+    {
+      "number": "41",
+      "actor_id": "florist_nia",
+      "name": "花藝師妮雅"
+    },
+    {
+      "number": "42",
+      "actor_id": "innkeeper_doran",
+      "name": "旅店主人多蘭"
+    },
+    {
+      "number": "43",
+      "actor_id": "campcook_odo",
+      "name": "營地廚師歐多"
+    },
+    {
+      "number": "44",
+      "actor_id": "weaver_mira",
+      "name": "織匠米菈"
+    },
+    {
+      "number": "45",
+      "actor_id": "researcher_sol",
+      "name": "研究員索爾"
+    },
+    {
+      "number": "46",
+      "actor_id": "quartermaster_bran",
+      "name": "補給官布蘭"
+    },
+    {
+      "number": "47",
+      "actor_id": "ambient-town-0",
+      "name": "悠娜"
+    },
+    {
+      "number": "48",
+      "actor_id": "ambient-town-1",
+      "name": "柏恩"
+    },
+    {
+      "number": "49",
+      "actor_id": "ambient-town-2",
+      "name": "希亞"
+    },
+    {
+      "number": "50",
+      "actor_id": "ambient-town-3",
+      "name": "洛可"
+    },
+    {
+      "number": "51",
+      "actor_id": "ambient-town-4",
+      "name": "米婭"
+    },
+    {
+      "number": "52",
+      "actor_id": "ambient-town-5",
+      "name": "提歐"
+    },
+    {
+      "number": "53",
+      "actor_id": "ambient-town-6",
+      "name": "安妮"
+    },
+    {
+      "number": "54",
+      "actor_id": "ambient-town-7",
+      "name": "羅伊"
+    },
+    {
+      "number": "55",
+      "actor_id": "ambient-town-8",
+      "name": "菲恩"
+    },
+    {
+      "number": "56",
+      "actor_id": "ambient-town-9",
+      "name": "露西"
+    },
+    {
+      "number": "57",
+      "actor_id": "ambient-town-10",
+      "name": "凱拉"
+    },
+    {
+      "number": "58",
+      "actor_id": "ambient-town-11",
+      "name": "諾亞"
+    },
+    {
+      "number": "59",
+      "actor_id": "ambient-town-12",
+      "name": "席爾"
+    },
+    {
+      "number": "60",
+      "actor_id": "ambient-town-13",
+      "name": "艾薇"
+    },
+    {
+      "number": "61",
+      "actor_id": "ambient-camp-0",
+      "name": "安妮"
+    },
+    {
+      "number": "62",
+      "actor_id": "ambient-camp-1",
+      "name": "羅伊"
+    },
+    {
+      "number": "63",
+      "actor_id": "ambient-camp-2",
+      "name": "菲恩"
+    },
+    {
+      "number": "64",
+      "actor_id": "ambient-camp-3",
+      "name": "露西"
+    },
+    {
+      "number": "65",
+      "actor_id": "ambient-dusk-0",
+      "name": "席爾"
+    },
+    {
+      "number": "66",
+      "actor_id": "ambient-dusk-1",
+      "name": "艾薇"
+    },
+    {
+      "number": "67",
+      "actor_id": "ambient-dusk-2",
+      "name": "杜克"
+    },
+    {
+      "number": "68",
+      "actor_id": "ambient-dusk-3",
+      "name": "莉亞"
+    },
+    {
+      "number": "69",
+      "actor_id": "ambient-dusk-4",
+      "name": "托比"
+    },
+    {
+      "number": "70",
+      "actor_id": "ambient-moon-0",
+      "name": "莉亞"
+    },
+    {
+      "number": "71",
+      "actor_id": "ambient-moon-1",
+      "name": "托比"
+    },
+    {
+      "number": "72",
+      "actor_id": "ambient-moon-2",
+      "name": "妮可"
+    },
+    {
+      "number": "73",
+      "actor_id": "ambient-moon-3",
+      "name": "亞倫"
+    },
+    {
+      "number": "74",
+      "actor_id": "ambient-forgecamp-0",
+      "name": "莎菲"
+    },
+    {
+      "number": "75",
+      "actor_id": "ambient-forgecamp-1",
+      "name": "傑恩"
+    },
+    {
+      "number": "76",
+      "actor_id": "ambient-forgecamp-2",
+      "name": "可可"
+    },
+    {
+      "number": "77",
+      "actor_id": "ambient-forgecamp-3",
+      "name": "夏洛"
+    }
+  ]
+}
