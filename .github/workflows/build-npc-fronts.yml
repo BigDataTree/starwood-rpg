@@ -1,0 +1,33 @@
+name: Build canonical NPC front sprites
+on:
+  push:
+    branches: [main]
+    paths:
+      - "tools/build_npc_fronts.py"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: build-npc-fronts
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Prepare image tools
+        run: python3 -m pip install --quiet pillow
+      - name: Build 31 moving NPC fronts from canonical atlas
+        run: python3 tools/build_npc_fronts.py
+      - name: Commit deterministic generated sprites
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/authority/64px/fronts coordination/npc-fronts-preview.b64 coordination/npc-fronts-quality.json
+          if ! git diff --cached --quiet; then
+            git commit -m "assets: 31 canonical moving NPC front sprites"
+            git push origin HEAD:main
+          fi
