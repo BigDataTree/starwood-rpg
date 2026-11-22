@@ -1,0 +1,688 @@
+{
+  "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+  "image_count": 31,
+  "metrics": [
+    {
+      "number": 47,
+      "actor_id": "ambient-town-0",
+      "crop_size": [
+        92,
+        114
+      ],
+      "silhouette_bbox": [
+        1,
+        3,
+        81,
+        114
+      ],
+      "opaque_pixels": 1855,
+      "bytes": 6895,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 48,
+      "actor_id": "ambient-town-1",
+      "crop_size": [
+        95,
+        114
+      ],
+      "silhouette_bbox": [
+        0,
+        5,
+        90,
+        114
+      ],
+      "opaque_pixels": 2064,
+      "bytes": 7769,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 49,
+      "actor_id": "ambient-town-2",
+      "crop_size": [
+        92,
+        114
+      ],
+      "silhouette_bbox": [
+        4,
+        5,
+        86,
+        114
+      ],
+      "opaque_pixels": 1844,
+      "bytes": 6630,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 50,
+      "actor_id": "ambient-town-3",
+      "crop_size": [
+        95,
+        114
+      ],
+      "silhouette_bbox": [
+        0,
+        3,
+        89,
+        114
+      ],
+      "opaque_pixels": 1919,
+      "bytes": 7074,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 51,
+      "actor_id": "ambient-town-4",
+      "crop_size": [
+        105,
+        114
+      ],
+      "silhouette_bbox": [
+        0,
+        1,
+        96,
+        114
+      ],
+      "opaque_pixels": 2155,
+      "bytes": 7643,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 52,
+      "actor_id": "ambient-town-5",
+      "crop_size": [
+        94,
+        114
+      ],
+      "silhouette_bbox": [
+        0,
+        2,
+        92,
+        114
+      ],
+      "opaque_pixels": 1877,
+      "bytes": 7168,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 53,
+      "actor_id": "ambient-town-6",
+      "crop_size": [
+        79,
+        114
+      ],
+      "silhouette_bbox": [
+        0,
+        3,
+        79,
+        114
+      ],
+      "opaque_pixels": 1905,
+      "bytes": 7111,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 54,
+      "actor_id": "ambient-town-7",
+      "crop_size": [
+        91,
+        114
+      ],
+      "silhouette_bbox": [
+        3,
+        4,
+        91,
+        113
+      ],
+      "opaque_pixels": 1953,
+      "bytes": 6899,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 55,
+      "actor_id": "ambient-town-8",
+      "crop_size": [
+        94,
+        114
+      ],
+      "silhouette_bbox": [
+        1,
+        5,
+        94,
+        114
+      ],
+      "opaque_pixels": 2120,
+      "bytes": 7711,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 56,
+      "actor_id": "ambient-town-9",
+      "crop_size": [
+        91,
+        103
+      ],
+      "silhouette_bbox": [
+        0,
+        2,
+        90,
+        102
+      ],
+      "opaque_pixels": 2431,
+      "bytes": 8435,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 57,
+      "actor_id": "ambient-town-10",
+      "crop_size": [
+        93,
+        103
+      ],
+      "silhouette_bbox": [
+        0,
+        1,
+        92,
+        103
+      ],
+      "opaque_pixels": 2212,
+      "bytes": 8051,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 58,
+      "actor_id": "ambient-town-11",
+      "crop_size": [
+        92,
+        103
+      ],
+      "silhouette_bbox": [
+        1,
+        2,
+        77,
+        102
+      ],
+      "opaque_pixels": 1924,
+      "bytes": 7043,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 59,
+      "actor_id": "ambient-town-12",
+      "crop_size": [
+        95,
+        103
+      ],
+      "silhouette_bbox": [
+        0,
+        3,
+        91,
+        103
+      ],
+      "opaque_pixels": 2239,
+      "bytes": 8255,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 60,
+      "actor_id": "ambient-town-13",
+      "crop_size": [
+        92,
+        103
+      ],
+      "silhouette_bbox": [
+        0,
+        3,
+        91,
+        102
+      ],
+      "opaque_pixels": 2390,
+      "bytes": 8314,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 61,
+      "actor_id": "ambient-camp-0",
+      "crop_size": [
+        95,
+        103
+      ],
+      "silhouette_bbox": [
+        4,
+        2,
+        86,
+        101
+      ],
+      "opaque_pixels": 2111,
+      "bytes": 7577,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 62,
+      "actor_id": "ambient-camp-1",
+      "crop_size": [
+        105,
+        103
+      ],
+      "silhouette_bbox": [
+        4,
+        2,
+        92,
+        103
+      ],
+      "opaque_pixels": 2244,
+      "bytes": 8247,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 63,
+      "actor_id": "ambient-camp-2",
+      "crop_size": [
+        94,
+        103
+      ],
+      "silhouette_bbox": [
+        6,
+        0,
+        90,
+        103
+      ],
+      "opaque_pixels": 1930,
+      "bytes": 7209,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 64,
+      "actor_id": "ambient-camp-3",
+      "crop_size": [
+        79,
+        103
+      ],
+      "silhouette_bbox": [
+        0,
+        3,
+        79,
+        103
+      ],
+      "opaque_pixels": 1757,
+      "bytes": 6459,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 65,
+      "actor_id": "ambient-dusk-0",
+      "crop_size": [
+        91,
+        103
+      ],
+      "silhouette_bbox": [
+        0,
+        1,
+        91,
+        102
+      ],
+      "opaque_pixels": 2475,
+      "bytes": 8835,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 66,
+      "actor_id": "ambient-dusk-1",
+      "crop_size": [
+        94,
+        103
+      ],
+      "silhouette_bbox": [
+        0,
+        3,
+        93,
+        102
+      ],
+      "opaque_pixels": 2210,
+      "bytes": 7982,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 67,
+      "actor_id": "ambient-dusk-2",
+      "crop_size": [
+        91,
+        98
+      ],
+      "silhouette_bbox": [
+        2,
+        5,
+        88,
+        98
+      ],
+      "opaque_pixels": 2552,
+      "bytes": 9245,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 68,
+      "actor_id": "ambient-dusk-3",
+      "crop_size": [
+        93,
+        98
+      ],
+      "silhouette_bbox": [
+        0,
+        4,
+        92,
+        98
+      ],
+      "opaque_pixels": 2502,
+      "bytes": 8911,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 69,
+      "actor_id": "ambient-dusk-4",
+      "crop_size": [
+        92,
+        98
+      ],
+      "silhouette_bbox": [
+        0,
+        3,
+        74,
+        98
+      ],
+      "opaque_pixels": 1959,
+      "bytes": 7186,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 70,
+      "actor_id": "ambient-moon-0",
+      "crop_size": [
+        95,
+        98
+      ],
+      "silhouette_bbox": [
+        0,
+        3,
+        89,
+        98
+      ],
+      "opaque_pixels": 2678,
+      "bytes": 9201,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 71,
+      "actor_id": "ambient-moon-1",
+      "crop_size": [
+        92,
+        98
+      ],
+      "silhouette_bbox": [
+        0,
+        3,
+        92,
+        98
+      ],
+      "opaque_pixels": 2730,
+      "bytes": 9476,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 72,
+      "actor_id": "ambient-moon-2",
+      "crop_size": [
+        95,
+        98
+      ],
+      "silhouette_bbox": [
+        1,
+        2,
+        86,
+        98
+      ],
+      "opaque_pixels": 2378,
+      "bytes": 8229,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 73,
+      "actor_id": "ambient-moon-3",
+      "crop_size": [
+        105,
+        98
+      ],
+      "silhouette_bbox": [
+        2,
+        3,
+        90,
+        98
+      ],
+      "opaque_pixels": 2677,
+      "bytes": 9346,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 74,
+      "actor_id": "ambient-forgecamp-0",
+      "crop_size": [
+        94,
+        98
+      ],
+      "silhouette_bbox": [
+        0,
+        2,
+        84,
+        98
+      ],
+      "opaque_pixels": 2221,
+      "bytes": 8106,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 75,
+      "actor_id": "ambient-forgecamp-1",
+      "crop_size": [
+        79,
+        98
+      ],
+      "silhouette_bbox": [
+        0,
+        5,
+        78,
+        98
+      ],
+      "opaque_pixels": 2179,
+      "bytes": 7841,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 76,
+      "actor_id": "ambient-forgecamp-2",
+      "crop_size": [
+        91,
+        98
+      ],
+      "silhouette_bbox": [
+        0,
+        3,
+        91,
+        98
+      ],
+      "opaque_pixels": 2736,
+      "bytes": 9301,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 77,
+      "actor_id": "ambient-forgecamp-3",
+      "crop_size": [
+        94,
+        98
+      ],
+      "silhouette_bbox": [
+        0,
+        4,
+        94,
+        98
+      ],
+      "opaque_pixels": 2385,
+      "bytes": 8448,
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,599 @@
+{
+  "schema_version": 1,
+  "derived_from": "assets/authority/64px/authority_77_numbered.png",
+  "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+  "approved_numbering": "47–77",
+  "status": "source-preserving derived sprites; manual visual review recommended",
+  "image_count": 31,
+  "characters": [
+    {
+      "number": 47,
+      "actor_id": "ambient-town-0",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        319,
+        614,
+        411,
+        728
+      ],
+      "output": "assets/authority/64px/fronts/47_ambient-town-0.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 48,
+      "actor_id": "ambient-town-1",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        454,
+        614,
+        549,
+        728
+      ],
+      "output": "assets/authority/64px/fronts/48_ambient-town-1.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 49,
+      "actor_id": "ambient-town-2",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        593,
+        614,
+        685,
+        728
+      ],
+      "output": "assets/authority/64px/fronts/49_ambient-town-2.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 50,
+      "actor_id": "ambient-town-3",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        731,
+        614,
+        826,
+        728
+      ],
+      "output": "assets/authority/64px/fronts/50_ambient-town-3.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 51,
+      "actor_id": "ambient-town-4",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        865,
+        614,
+        970,
+        728
+      ],
+      "output": "assets/authority/64px/fronts/51_ambient-town-4.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 52,
+      "actor_id": "ambient-town-5",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        1008,
+        614,
+        1102,
+        728
+      ],
+      "output": "assets/authority/64px/fronts/52_ambient-town-5.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 53,
+      "actor_id": "ambient-town-6",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        1152,
+        614,
+        1231,
+        728
+      ],
+      "output": "assets/authority/64px/fronts/53_ambient-town-6.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 54,
+      "actor_id": "ambient-town-7",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        1279,
+        614,
+        1370,
+        728
+      ],
+      "output": "assets/authority/64px/fronts/54_ambient-town-7.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 55,
+      "actor_id": "ambient-town-8",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        1415,
+        614,
+        1509,
+        728
+      ],
+      "output": "assets/authority/64px/fronts/55_ambient-town-8.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 56,
+      "actor_id": "ambient-town-9",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        30,
+        747,
+        121,
+        850
+      ],
+      "output": "assets/authority/64px/fronts/56_ambient-town-9.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 57,
+      "actor_id": "ambient-town-10",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        170,
+        747,
+        263,
+        850
+      ],
+      "output": "assets/authority/64px/fronts/57_ambient-town-10.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 58,
+      "actor_id": "ambient-town-11",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        319,
+        747,
+        411,
+        850
+      ],
+      "output": "assets/authority/64px/fronts/58_ambient-town-11.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 59,
+      "actor_id": "ambient-town-12",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        454,
+        747,
+        549,
+        850
+      ],
+      "output": "assets/authority/64px/fronts/59_ambient-town-12.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 60,
+      "actor_id": "ambient-town-13",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        593,
+        747,
+        685,
+        850
+      ],
+      "output": "assets/authority/64px/fronts/60_ambient-town-13.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 61,
+      "actor_id": "ambient-camp-0",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        731,
+        747,
+        826,
+        850
+      ],
+      "output": "assets/authority/64px/fronts/61_ambient-camp-0.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 62,
+      "actor_id": "ambient-camp-1",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        865,
+        747,
+        970,
+        850
+      ],
+      "output": "assets/authority/64px/fronts/62_ambient-camp-1.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 63,
+      "actor_id": "ambient-camp-2",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        1008,
+        747,
+        1102,
+        850
+      ],
+      "output": "assets/authority/64px/fronts/63_ambient-camp-2.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 64,
+      "actor_id": "ambient-camp-3",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        1152,
+        747,
+        1231,
+        850
+      ],
+      "output": "assets/authority/64px/fronts/64_ambient-camp-3.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 65,
+      "actor_id": "ambient-dusk-0",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        1279,
+        747,
+        1370,
+        850
+      ],
+      "output": "assets/authority/64px/fronts/65_ambient-dusk-0.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 66,
+      "actor_id": "ambient-dusk-1",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        1415,
+        747,
+        1509,
+        850
+      ],
+      "output": "assets/authority/64px/fronts/66_ambient-dusk-1.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 67,
+      "actor_id": "ambient-dusk-2",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        30,
+        868,
+        121,
+        966
+      ],
+      "output": "assets/authority/64px/fronts/67_ambient-dusk-2.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 68,
+      "actor_id": "ambient-dusk-3",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        170,
+        868,
+        263,
+        966
+      ],
+      "output": "assets/authority/64px/fronts/68_ambient-dusk-3.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 69,
+      "actor_id": "ambient-dusk-4",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        319,
+        868,
+        411,
+        966
+      ],
+      "output": "assets/authority/64px/fronts/69_ambient-dusk-4.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 70,
+      "actor_id": "ambient-moon-0",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        454,
+        868,
+        549,
+        966
+      ],
+      "output": "assets/authority/64px/fronts/70_ambient-moon-0.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 71,
+      "actor_id": "ambient-moon-1",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        593,
+        868,
+        685,
+        966
+      ],
+      "output": "assets/authority/64px/fronts/71_ambient-moon-1.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 72,
+      "actor_id": "ambient-moon-2",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        731,
+        868,
+        826,
+        966
+      ],
+      "output": "assets/authority/64px/fronts/72_ambient-moon-2.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 73,
+      "actor_id": "ambient-moon-3",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        865,
+        868,
+        970,
+        966
+      ],
+      "output": "assets/authority/64px/fronts/73_ambient-moon-3.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 74,
+      "actor_id": "ambient-forgecamp-0",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        1008,
+        868,
+        1102,
+        966
+      ],
+      "output": "assets/authority/64px/fronts/74_ambient-forgecamp-0.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 75,
+      "actor_id": "ambient-forgecamp-1",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        1152,
+        868,
+        1231,
+        966
+      ],
+      "output": "assets/authority/64px/fronts/75_ambient-forgecamp-1.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 76,
+      "actor_id": "ambient-forgecamp-2",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        1279,
+        868,
+        1370,
+        966
+      ],
+      "output": "assets/authority/64px/fronts/76_ambient-forgecamp-2.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    },
+    {
+      "number": 77,
+      "actor_id": "ambient-forgecamp-3",
+      "source": "assets/authority/64px/authority_77_numbered.png",
+      "source_sha256": "8e8f8e8b3c9b38c3234dbb07dc3fd83740f0f5f3b95e468d6b18472d32b566d4",
+      "crop_xyxy": [
+        1415,
+        868,
+        1509,
+        966
+      ],
+      "output": "assets/authority/64px/fronts/77_ambient-forgecamp-3.png",
+      "size": [
+        64,
+        64
+      ],
+      "format": "RGBA",
+      "validation": "machine-checked; visual acceptance pending"
+    }
+  ]
+}
