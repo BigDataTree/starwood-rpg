@@ -1,0 +1,31 @@
+name: Audit Starwood NPC rendering
+on:
+  push:
+    branches: [main]
+    paths:
+      - "tools/npc_scene_audit.py"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: npc-audit
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Inspect original actor and NPC render paths
+        run: python3 tools/npc_scene_audit.py
+      - name: Commit small source audit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add coordination/npc-render-audit.md
+          if ! git diff --staged --quiet; then
+            git commit -m "docs: audit actual NPC render routing"
+            git push origin HEAD:main
+          fi
