@@ -19,12 +19,14 @@ jobs:
           ref: main
           fetch-depth: 0
       - name: Inspect original actor and NPC render paths
-        run: python3 tools/npc_scene_audit.py
+        run: |
+          python3 -m pip install --quiet pillow
+          python3 tools/npc_scene_audit.py
       - name: Commit small source audit report
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add coordination/npc-render-audit.md
+          git add coordination/npc-render-audit.md coordination/npc-atlas-stats.md coordination/npc-crop-preview.b64
           if ! git diff --staged --quiet; then
             git commit -m "docs: audit actual NPC render routing"
             git push origin HEAD:main
