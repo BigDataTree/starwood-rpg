@@ -1,0 +1,30 @@
+{
+  "character": "002",
+  "version": "v6",
+  "frame_size": [
+    64,
+    64
+  ],
+  "sheet_size": [
+    192,
+    256
+  ],
+  "directions": [
+    "down",
+    "left",
+    "right",
+    "up"
+  ],
+  "frame_order": [
+    0,
+    1,
+    2,
+    1
+  ],
+  "sha256": {
+    "preview.png": "81f09054c16bce41fff4579bb033ad540ee48a96729f93cd390fc877dff4133b",
+    "index.html": "89c1a14a6df16c63215a97e4636a51d343b8cc7f9d00fb934c322ed237f6c45a",
+    "sprites.png": "9a5822c532a340fc5047b4fa141541054bedbb7124751ecc55de91cf3892431c",
+    "review.js": "cc65ca2beb12ec05564df39aa623c66f1ffd20d203de1c6ed5935acb6a5c7e77"
+  }
+}
